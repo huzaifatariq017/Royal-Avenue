@@ -63,7 +63,7 @@ footer p{color:#bbb;font-size:14px;margin:6px 0;line-height:1.6}
 </style>
 </head>
 <body>
-<div class="topbar">🔥 MEGA SALE - UP TO 50% OFF | FREE DELIVERY IN VEHARI ON ORDERS OVER Rs.1500 🔥</div>
+<div class="topbar">🔥 MEGA SALE - UP TO 50% OFF | FREE DELIVERY IN VEHARI ON ORDERS OVER Rs.2000 🔥</div>
 <header><div class="head-top">
 <div class="logo">URBAN <span>MART</span> 🛍️</div>
 <div class="search-box"><input id="searchInput" placeholder="Search - T-Shirt, Shoes, Watch, Headphones..." onkeyup="filterProducts()"><button onclick="filterProducts()">Search</button></div>
@@ -84,9 +84,9 @@ footer p{color:#bbb;font-size:14px;margin:6px 0;line-height:1.6}
 <div class="cat-section"><button class="active" onclick="setCat('All',this)">All Products</button><button onclick="setCat('Fashion',this)">Fashion</button><button onclick="setCat('Shoes',this)">Shoes</button><button onclick="setCat('Watches',this)">Watches</button><button onclick="setCat('Electronics',this)">Electronics</button><button onclick="setCat('Beauty',this)">Beauty</button><button onclick="setCat('Home',this)">Home</button><button onclick="setCat('Kids',this)">Kids</button></div>
 <h2 class="section-title">🔥 Best Selling Products - <span id="showCat">All</span> (<span id="countShow">0</span> items)</h2>
 <div class="products" id="shop"></div>
-<div style="text-align:center;padding:20px;background:#fff;max-width:1200px;margin:20px auto;border-radius:15px"><h2>Why Urban Mart?</h2><p style="color:#666;margin-top:8px;line-height:1.7">Hum Vehari me sab se sasti or achi quality dete hain. Order karo, ghar bethay payment Cash On Delivery par karo. Koi advance payment nahi. Product pasand na aaye to 7 din me easy return.</p><p style="margin-top:10px;font-weight:bold">📍 Location: Main Bazaar, Vehari, Punjab, Pakistan<br>📞 WhatsApp: 0300-0000000 | ⏰ Open: 9 AM - 11 PM Daily</p></div>
-<footer><h2>URBAN <span>MART</span> 🛍️</h2><p>Pakistan Ka Apna Online Store - Best Quality, Best Price, Fast Delivery</p><p>📍 Main Bazaar, Vehari, Punjab, Pakistan<br>📞 WhatsApp Order: 0300-0000000 | 📧 urbanmartvehari@gmail.com</p><p>© 2026 Urban Mart Vehari - All Rights Reserved</p></footer>
-<a class="wa" href="https://wa.me/923000000000?text=Assalam-o-Alaikum%20Urban%20Mart%20Mujhe%20Order%20Karna%20Hai" target="_blank">WhatsApp Order 💬</a>
+<div style="text-align:center;padding:20px;background:#fff;max-width:1200px;margin:20px auto;border-radius:15px"><h2>Why Urban Mart?</h2><p style="color:#666;margin-top:8px;line-height:1.7">Hum Vehari me sab se sasti or achi quality dete hain. Order karo, ghar bethay payment Cash On Delivery par karo. Koi advance payment nahi. Product pasand na aaye to 7 din me easy return.</p><p style="margin-top:10px;font-weight:bold">📍 Location: Main Bazaar, Vehari, Punjab, Pakistan<br>📞 WhatsApp: 0334-1765911 | ⏰ Open: 9 AM - 11 PM Daily</p></div>
+<footer><h2>URBAN <span>MART</span> 🛍️</h2><p>Pakistan Ka Apna Online Store - Best Quality, Best Price, Fast Delivery</p><p>📍 Main Bazaar, Vehari, Punjab, Pakistan<br>📞 WhatsApp Order: 0334-1765911 | 📧 urbanmartvehari@gmail.com</p><p>© 2026 Urban Mart Vehari - All Rights Reserved</p></footer>
+<a class="wa" href="https://wa.me/0334-1765911?text=Assalam-o-Alaikum%20Urban%20Mart%20Mujhe%20Order%20Karna%20Hai" target="_blank">WhatsApp Order 💬</a>
 <div class="overlay" id="overlay" onclick="closeCart()"></div>
 <div id="cartDrawer"><div class="cart-head"><b>🛒 Your Bag</b><button onclick="closeCart()">X Close</button></div><div id="cartItems"><p style="text-align:center;color:#888;padding:30px">Bag khali hai. Koi product Add karo.</p></div><div class="cart-foot"><b>Total: Rs. <span id="cartTotal">0</span></b><p style="font-size:12px;color:#888">Delivery: Rs. 200 (Free over Rs.1500) - Vehari</p><input id="custName" placeholder="Apna Naam - e.g. Huzaifa"><input id="custPhone" placeholder="Mobile Number - e.g. 0300-1234567"><input id="custAddress" placeholder="Full Address - Vehari, Punjab"><button class="checkout" onclick="checkout()">✅ WhatsApp Par Order Karein</button></div></div>
 <script>
@@ -153,7 +153,7 @@ function checkout(){
  let phone=document.getElementById('custPhone').value||'Not Given';
  let addr=document.getElementById('custAddress').value||'Vehari';
  let msg=`Assalam-o-Alaikum URBAN MART! Mujhe Order Karna Hai.%0A%0AName: ${name}%0APhone: ${phone}%0AAddress: ${addr}, Vehari, Punjab%0A%0AOrder:%0A`+cart.map(i=>`- ${i.name} x ${i.qty} = Rs.${i.price*i.qty}`).join('%0A')+`%0A%0ATotal: Rs.${cart.reduce((s,i)=>s+i.qty*i.price,0)}%0APayment: Cash On Delivery`;
- window.open(`https://wa.me/923000000000?text=${msg}`,'_blank');
+ window.open(`https://wa.me/0334-175911?text=${msg}`,'_blank');
 }
 render();
 </script>
