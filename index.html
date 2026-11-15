@@ -101,6 +101,7 @@ footer h2{font-size:26px}footer h2 span{color:#ff3b30}footer p{color:#aaa;font-s
 <script>
 let selColor={};
 const P=(name,cat,price,old,img,colors)=>({name,cat,price,old,img,colors});
+const FALLBACK="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=500";
 const products=[
 // FASHION - 12 - VERIFIED
 P("Men White T-Shirt","Fashion",999,1499,"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500",["White","Black","Grey"]),
@@ -127,7 +128,7 @@ P("Sports Shoes Men","Shoes",2299,3299,"https://images.unsplash.com/photo-160823
 P("Slippers Comfort","Shoes",699,999,"https://images.unsplash.com/photo-1560343090-f0409e92791a?w=500",["Black","White","Blue"]),
 P("Leather Boots","Shoes",3499,4999,"https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=500",["Brown","Black"]),
 P("Kids Sneakers","Shoes",1399,1999,"https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=500",["Red","Blue","Pink"]),
-// WATCHES - 10 - FIXED ALAG ALAG PICS
+// WATCHES - 10 - ALAG ALAG PICS
 P("Luxury Men Watch","Watches",3499,5999,"https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500",["Gold","Silver","Black"]),
 P("Smart Watch Black","Watches",2999,4999,"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",["Black","White","Blue"]),
 P("Couple Watches Set","Watches",3999,6499,"https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=500",["Gold","Silver"]),
@@ -149,7 +150,7 @@ P("USB Type-C Cable","Electronics",499,799,"https://images.unsplash.com/photo-15
 P("Laptop Stand Metal","Electronics",1499,2299,"https://images.unsplash.com/photo-1593642702749-b7d2a768a4a1?w=500",["Silver","Black"]),
 P("HD Webcam","Electronics",2999,4499,"https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=500",["Black"]),
 P("Smart TV Remote","Electronics",799,1299,"https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=500",["Black"]),
-// MOBILE - 10 - 100% FIXED
+// MOBILE - 10 - 100% FIXED - LIVE SITE WALA MASLA KHATAM
 P("Power Bank 20000mAh","Mobile",2299,3499,"https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=500",["Black","White","Blue"]),
 P("Fast Mobile Charger 25W","Mobile",899,1499,"https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=500",["White","Black"]),
 P("Mobile Cover Premium","Mobile",499,799,"https://images.unsplash.com/photo-1601593346740-925612772716?w=500",["Black","Transparent","Blue","Pink"]),
@@ -160,7 +161,7 @@ P("Tempered Glass Protector","Mobile",399,699,"https://images.unsplash.com/photo
 P("Wired Earphone","Mobile",699,999,"https://images.unsplash.com/photo-1484704849700-f032a568e944?w=500",["White","Black"]),
 P("Selfie Stick With Tripod","Mobile",999,1599,"https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=500",["Black","White"]),
 P("Mobile Stand Desktop Holder","Mobile",699,1099,"https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=500",["Black","Silver"]),
-// BEAUTY - 10 - FIXED ALAG PICS
+// BEAUTY - 10 - ALAG PICS
 P("Face Wash Glow","Beauty",699,999,"https://images.unsplash.com/photo-1556228720-195a672e8a03?w=500",["White"]),
 P("Makeup Kit Professional","Beauty",1999,2999,"https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=500",["Pink","Nude","Brown"]),
 P("Oud Perfume 100ml","Beauty",1499,2299,"https://images.unsplash.com/photo-1541643600914-78b084683601?w=500",["Oud","Rose","Jasmine"]),
@@ -171,7 +172,7 @@ P("Nail Polish Set","Beauty",799,1299,"https://images.unsplash.com/photo-1604654
 P("Face Serum Vitamin C","Beauty",999,1599,"https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=500",["Vitamin C"]),
 P("Hair Straightener","Beauty",2199,3299,"https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=500",["Black","Pink"]),
 P("Body Lotion","Beauty",899,1399,"https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500",["Rose","Aloe Vera","Coconut"]),
-// HOME - 10 - FIXED
+// HOME - 10
 P("Double Bedsheet Cotton","Home",1299,1999,"https://images.unsplash.com/photo-1522770179533-24471fcdba45?w=500",["Blue","Pink","Grey","Green"]),
 P("LED Table Lamp","Home",999,1599,"https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500",["White","Black","Gold"]),
 P("Wall Clock Round","Home",899,1399,"https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?w=500",["Black","White","Wooden"]),
@@ -182,7 +183,7 @@ P("Curtains Pair","Home",1499,2299,"https://images.unsplash.com/photo-1513694203
 P("Cushion Covers 5 Pcs","Home",999,1599,"https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=500",["Multicolor","Grey","Blue"]),
 P("Dinner Set 24 Pcs","Home",4999,7999,"https://images.unsplash.com/photo-1603199506016-b9a594b593c0?w=500",["White","Blue","Floral"]),
 P("Storage Box Large","Home",899,1399,"https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=500",["Grey","Blue","Beige"]),
-// GROCERY - 10 - FIXED
+// GROCERY - 10
 P("Basmati Rice 5KG","Grocery",1499,1999,"https://images.unsplash.com/photo-1586201375761-83865001e31c?w=500",["5KG","10KG"]),
 P("Cooking Oil 5 Litre","Grocery",2499,2999,"https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=500",["5L","3L"]),
 P("Fresh Dates Khajoor 1KG","Grocery",999,1499,"https://images.unsplash.com/photo-1593904308074-e1d8f0f0e3e3?w=500",["1KG","500g"]),
@@ -193,7 +194,7 @@ P("Dry Fruits Mix 1KG","Grocery",1999,2999,"https://images.unsplash.com/photo-15
 P("Rooh Afza 3L","Grocery",899,1199,"https://images.unsplash.com/photo-1554866585-cd94860890b7?w=500",["3L","1.5L"]),
 P("Pasta Spaghetti 500g","Grocery",499,699,"https://images.unsplash.com/photo-1556761223-4c4282c73f77?w=500",["500g"]),
 P("Pink Himalayan Salt 1KG","Grocery",599,899,"https://images.unsplash.com/photo-1518110925495-5fe2fda0442c?w=500",["1KG","500g"]),
-// KIDS - 10 - FIXED
+// KIDS - 10
 P("Kids T-Shirt","Kids",599,899,"https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?w=500",["Red","Blue","Yellow","Pink"]),
 P("Kids Sneakers","Kids",1199,1799,"https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=500",["Red","Blue","Pink"]),
 P("Baby Romper","Kids",799,1199,"https://images.unsplash.com/photo-1522771930-78848d9293e8?w=500",["Pink","Blue","Yellow","White"]),
@@ -204,7 +205,7 @@ P("Baby Feeder Bottle","Kids",699,999,"https://images.unsplash.com/photo-1584839
 P("Kids Cap","Kids",399,599,"https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=500",["Red","Blue","Black"]),
 P("Kids Winter Jacket","Kids",1499,2299,"https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500",["Red","Blue","Green"]),
 P("Baby Blanket Soft","Kids",899,1399,"https://images.unsplash.com/photo-1522771930-78848d9293e8?w=500",["Pink","Blue","Yellow"]),
-// TOYS - 10 - FIXED ALAG ALAG
+// TOYS - 10 - ALAG ALAG
 P("Remote Control Toy Car","Toys",1499,2299,"https://images.unsplash.com/photo-1558060370-d644479cb6f7?w=500",["Red","Blue","Black"]),
 P("Teddy Bear Soft Toy","Toys",999,1499,"https://images.unsplash.com/photo-1559454403-b8fb88521f11?w=500",["Brown","Pink","White"]),
 P("Building Blocks 100 Pcs","Toys",1299,1999,"https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=500",["Multicolor"]),
@@ -215,7 +216,7 @@ P("Kids Drum Set","Toys",999,1499,"https://images.unsplash.com/photo-14932254571
 P("Water Gun","Toys",799,1199,"https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=500",["Blue","Green","Yellow"]),
 P("Board Game Ludo","Toys",599,899,"https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?w=500",["Multicolor"]),
 P("Toy Train Set","Toys",1399,1999,"https://images.unsplash.com/photo-1558060370-d644479cb6f7?w=500",["Red","Blue"]),
-// SPORTS - 11 - FIXED
+// SPORTS - 11 - ALAG ALAG
 P("Football","Sports",1299,1999,"https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=500",["White","Black"]),
 P("Cricket Bat Kashmir Willow","Sports",1899,2799,"https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=500",["Wooden"]),
 P("Gym Gloves","Sports",799,1199,"https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=500",["Black","Red","Blue"]),
@@ -240,10 +241,10 @@ function doRegister(){let name=document.getElementById('regName').value.trim(),p
 function doLogin(){let phone=document.getElementById('loginPhone').value.trim(),pass=document.getElementById('loginPass').value.trim();if(!phone||!pass){alert('Mobile aur Password likho!');return;}let users=JSON.parse(localStorage.getItem('um_users')||'[]');let u=users.find(x=>x.phone===phone&&x.pass===pass);if(!u){alert('Galat Mobile ya Password! Pehle Register karo.');return;}localStorage.setItem('um_user',JSON.stringify(u));closeModal('authModal');updateUserArea();alert('Welcome back '+u.name+'! 👋');openDashboard();}
 function doLogout(){localStorage.removeItem('um_user');closeModal('dashModal');updateUserArea();alert('Logout ho gaya. Phir aana! 👋')}
 function editProfile(){let u=getUser();let nn=prompt('New Name:',u.name);if(nn){u.name=nn;let users=JSON.parse(localStorage.getItem('um_users')||'[]');let idx=users.findIndex(x=>x.phone===u.phone);if(idx>-1){users[idx]=u;localStorage.setItem('um_users',JSON.stringify(users));}localStorage.setItem('um_user',JSON.stringify(u));updateUserArea();openDashboard();}}
-function openDashboard(){let u=getUser();if(!u){openAuth();return;}let orders=getOrders().filter(o=>o.phone===u.phone);let spent=orders.reduce((s,o)=>s+o.total,0);document.getElementById('dashWelcome').innerText=`Welcome, ${u.name}! 👋`;document.getElementById('statOrders').innerText=orders.length;document.getElementById('statSpent').innerText='Rs.'+spent.toLocaleString();document.getElementById('statWish').innerText=wishlist.length;document.getElementById('dashProfile').innerHTML=`👤 <b>${u.name}</b><br>📞 ${u.phone}<br>📍 ${u.city||'Vehari'}<br>🗓️ Joined: ${u.joined||'Today'}`;document.getElementById('dashAddress').innerText=u.address||'No address saved';document.getElementById('dashOrders').innerHTML=orders.length?orders.map(o=>`<div class="order-item"><b>${o.id}</b> - ${o.date} <span style="background:#e6ffe6;padding:2px 8px;border-radius:10px;font-size:11px">✅ ${o.status}</span><br>${o.items} • <b>Rs.${o.total.toLocaleString()}</b><br>💳 ${o.pay}</div>`).join(''):`<p>Abhi koi order nahi. Pehla order karo! 🛒</p>`;document.getElementById('dashWish').innerHTML=wishlist.length?wishlist.map(id=>{let p=products[id];return p?`<div style="display:flex;gap:8px;align-items:center;margin:5px 0"><img src="${p.img}" style="width:40px;height:40px;border-radius:8px;object-fit:cover"><span style="flex:1;font-size:13px">${p.name} - Rs.${p.price}</span><button onclick="addToCart(${id});closeModal('dashModal')" style="background:#111;color:#fff;border:none;padding:6px 12px;border-radius:15px;cursor:pointer">Add</button></div>`:''}).join(''):`<p>Wishlist khali hai. ❤️ dabao!</p>`;document.getElementById('dashModal').classList.add('show');}
+function openDashboard(){let u=getUser();if(!u){openAuth();return;}let orders=getOrders().filter(o=>o.phone===u.phone);let spent=orders.reduce((s,o)=>s+o.total,0);document.getElementById('dashWelcome').innerText=`Welcome, ${u.name}! 👋`;document.getElementById('statOrders').innerText=orders.length;document.getElementById('statSpent').innerText='Rs.'+spent.toLocaleString();document.getElementById('statWish').innerText=wishlist.length;document.getElementById('dashProfile').innerHTML=`👤 <b>${u.name}</b><br>📞 ${u.phone}<br>📍 ${u.city||'Vehari'}<br>🗓️ Joined: ${u.joined||'Today'}`;document.getElementById('dashAddress').innerText=u.address||'No address saved';document.getElementById('dashOrders').innerHTML=orders.length?orders.map(o=>`<div class="order-item"><b>${o.id}</b> - ${o.date} <span style="background:#e6ffe6;padding:2px 8px;border-radius:10px;font-size:11px">✅ ${o.status}</span><br>${o.items} • <b>Rs.${o.total.toLocaleString()}</b><br>💳 ${o.pay}</div>`).join(''):`<p>Abhi koi order nahi. Pehla order karo! 🛒</p>`;document.getElementById('dashWish').innerHTML=wishlist.length?wishlist.map(id=>{let p=products[id];return p?`<div style="display:flex;gap:8px;align-items:center;margin:5px 0"><img src="${p.img}" onerror="this.onerror=null;this.src='${FALLBACK}'" style="width:40px;height:40px;border-radius:8px;object-fit:cover"><span style="flex:1;font-size:13px">${p.name} - Rs.${p.price}</span><button onclick="addToCart(${id});closeModal('dashModal')" style="background:#111;color:#fff;border:none;padding:6px 12px;border-radius:15px;cursor:pointer">Add</button></div>`:''}).join(''):`<p>Wishlist khali hai. ❤️ dabao!</p>`;document.getElementById('dashModal').classList.add('show');}
 function toggleWish(idx){let i=wishlist.indexOf(idx);if(i>-1)wishlist.splice(i,1);else wishlist.push(idx);localStorage.setItem('um_wish',JSON.stringify(wishlist));updateWishUI();renderProducts();}
 function updateWishUI(){document.getElementById('wishCount').innerText=wishlist.length;}
-function showWishlist(){let list=wishlist.map(id=>products[id]).filter(Boolean);document.getElementById('wishListBox').innerHTML=list.length?list.map((p)=>{let realIdx=products.indexOf(p);return `<div style="display:flex;gap:10px;align-items:center;border-bottom:1px solid #eee;padding:10px 0"><img src="${p.img}" style="width:55px;height:55px;border-radius:10px;object-fit:cover"><div style="flex:1"><b style="font-size:14px">${p.name}</b><br>Rs.${p.price.toLocaleString()}</div><button onclick="addToCart(${realIdx});closeModal('wishModal')" style="background:#111;color:#fff;border:none;padding:8px 14px;border-radius:20px;cursor:pointer">Add 🛒</button><button onclick="toggleWish(${realIdx});showWishlist()" style="background:none;border:none;font-size:18px;cursor:pointer">❌</button></div>`}).join(''):`<p style="text-align:center;padding:20px">Wishlist khali hai. Kisi product pe ❤️ dabao!</p>`;document.getElementById('wishModal').classList.add('show');}
+function showWishlist(){let list=wishlist.map(id=>products[id]).filter(Boolean);document.getElementById('wishListBox').innerHTML=list.length?list.map((p)=>{let realIdx=products.indexOf(p);return `<div style="display:flex;gap:10px;align-items:center;border-bottom:1px solid #eee;padding:10px 0"><img src="${p.img}" onerror="this.onerror=null;this.src='${FALLBACK}'" style="width:55px;height:55px;border-radius:10px;object-fit:cover"><div style="flex:1"><b style="font-size:14px">${p.name}</b><br>Rs.${p.price.toLocaleString()}</div><button onclick="addToCart(${realIdx});closeModal('wishModal')" style="background:#111;color:#fff;border:none;padding:8px 14px;border-radius:20px;cursor:pointer">Add 🛒</button><button onclick="toggleWish(${realIdx});showWishlist()" style="background:none;border:none;font-size:18px;cursor:pointer">❌</button></div>`}).join(''):`<p style="text-align:center;padding:20px">Wishlist khali hai. Kisi product pe ❤️ dabao!</p>`;document.getElementById('wishModal').classList.add('show');}
 function setColor(idx,color,btn){ selColor[idx]=color; let p=btn.parentElement.querySelectorAll('button'); p.forEach(b=>b.classList.remove('sel')); btn.classList.add('sel'); }
 function renderProducts(){
   let f=products.filter(p=>(currentCat==='All'||p.cat===currentCat)&&p.name.toLowerCase().includes(searchText.toLowerCase()));
@@ -254,13 +255,13 @@ function renderProducts(){
     let off=Math.round((1-p.price/p.old)*100);
     let colorBtns=p.colors.map(c=>`<button class="${selColor[realIdx]===c?'sel':''}" onclick="setColor(${realIdx},'${c}',this)">${c}</button>`).join('');
     let isWish=wishlist.includes(realIdx);
-    return `<div class="card"><span class="badge-off">-${off}% OFF</span><img src="${p.img}" alt="${p.name}"><h3>${p.name}</h3><p>${p.cat} • ⭐ 4.8 • URBAN MART</p><div class="colors">${colorBtns}</div><div class="price">Rs. ${p.price.toLocaleString()} <s>Rs. ${p.old.toLocaleString()}</s> <b>SAVE Rs.${(p.old-p.price).toLocaleString()}</b></div><div class="card-actions"><button class="add" onclick="addToCart(${realIdx})">Add to Cart 🛒</button><button class="heart ${isWish?'active':''}" onclick="toggleWish(${realIdx})">${isWish?'❤️':'🤍'}</button></div></div>`;
+    return `<div class="card"><span class="badge-off">-${off}% OFF</span><img src="${p.img}" onerror="this.onerror=null;this.src='${FALLBACK}'" alt="${p.name}"><h3>${p.name}</h3><p>${p.cat} • ⭐ 4.8 • URBAN MART</p><div class="colors">${colorBtns}</div><div class="price">Rs. ${p.price.toLocaleString()} <s>Rs. ${p.old.toLocaleString()}</s> <b>SAVE Rs.${(p.old-p.price).toLocaleString()}</b></div><div class="card-actions"><button class="add" onclick="addToCart(${realIdx})">Add to Cart 🛒</button><button class="heart ${isWish?'active':''}" onclick="toggleWish(${realIdx})">${isWish?'❤️':'🤍'}</button></div></div>`;
   }).join('')||'<p style="text-align:center;padding:30px">Koi product nahi mila.</p>';
 }
 function setCat(c,b){currentCat=c;document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));if(b)b.classList.add('active');renderProducts();}
 function filterProducts(){searchText=document.getElementById('searchInput').value;renderProducts();}
 function addToCart(idx){let p=products[idx];let col=selColor[idx]||p.colors[0];let key=p.name+'|'+col;let f=cart.find(x=>x.key===key);if(f)f.qty++;else cart.push({key,name:p.name,price:p.price,img:p.img,qty:1,color:col});updateCart();openCart();}
-function updateCart(){let t=cart.reduce((s,x)=>s+x.price*x.qty,0);let c=cart.reduce((s,x)=>s+x.qty,0);document.getElementById('cartCount').innerText=c;document.getElementById('cartTotal').innerText=t.toLocaleString();document.getElementById('cartTotalTop').innerText=t.toLocaleString();if(cart.length===0){document.getElementById('cartItems').innerHTML='<p style="text-align:center;color:#888;padding:30px">Bag khali hai.</p>';return;}document.getElementById('cartItems').innerHTML=cart.map((x,i)=>`<div class="cart-item"><img src="${x.img}"><div style="flex:1"><b style="font-size:14px">${x.name}</b><br><span style="font-size:12px;background:#eee;padding:2px 8px;border-radius:10px">🎨 ${x.color}</span><br><span>Rs. ${x.price.toLocaleString()}</span><div class="qty" style="margin-top:5px"><button onclick="changeQty(${i},-1)">-</button> ${x.qty} <button onclick="changeQty(${i},1)">+</button> <button onclick="removeItem(${i})" style="color:red;border:none;background:none;cursor:pointer">🗑️</button></div></div><b>Rs. ${(x.price*x.qty).toLocaleString()}</b></div>`).join('');}
+function updateCart(){let t=cart.reduce((s,x)=>s+x.price*x.qty,0);let c=cart.reduce((s,x)=>s+x.qty,0);document.getElementById('cartCount').innerText=c;document.getElementById('cartTotal').innerText=t.toLocaleString();document.getElementById('cartTotalTop').innerText=t.toLocaleString();if(cart.length===0){document.getElementById('cartItems').innerHTML='<p style="text-align:center;color:#888;padding:30px">Bag khali hai.</p>';return;}document.getElementById('cartItems').innerHTML=cart.map((x,i)=>`<div class="cart-item"><img src="${x.img}" onerror="this.onerror=null;this.src='${FALLBACK}'"><div style="flex:1"><b style="font-size:14px">${x.name}</b><br><span style="font-size:12px;background:#eee;padding:2px 8px;border-radius:10px">🎨 ${x.color}</span><br><span>Rs. ${x.price.toLocaleString()}</span><div class="qty" style="margin-top:5px"><button onclick="changeQty(${i},-1)">-</button> ${x.qty} <button onclick="changeQty(${i},1)">+</button> <button onclick="removeItem(${i})" style="color:red;border:none;background:none;cursor:pointer">🗑️</button></div></div><b>Rs. ${(x.price*x.qty).toLocaleString()}</b></div>`).join('');}
 function changeQty(i,d){cart[i].qty+=d;if(cart[i].qty<=0)cart.splice(i,1);updateCart();}
 function removeItem(i){cart.splice(i,1);updateCart();}
 function openCart(){document.getElementById('cartDrawer').classList.add('open');document.getElementById('overlay').classList.add('show');}
