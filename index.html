@@ -46,8 +46,19 @@ nav button:hover{background:#333;color:#fff}nav button.active{background:linear-
 .heart{background:#fff;border:2px solid #eee;padding:10px 12px;border-radius:50%;cursor:pointer;font-size:16px}
 .heart.active{background:#ffe8e8;border-color:#ff3b30}
 .badge-off{position:absolute;top:12px;left:12px;background:linear-gradient(90deg,#ff3b30,#ff6a00);color:#fff;padding:5px 11px;border-radius:20px;font-size:11px;font-weight:bold;z-index:2}
-footer{background:#0f0f0f;color:#fff;padding:35px 15px;text-align:center;margin-top:20px;border-top:3px solid #ff3b30}
-footer h2{font-size:26px}footer h2 span{color:#ff3b30}footer p{color:#aaa;font-size:14px;margin:6px 0;line-height:1.6}
+/* PROFESSIONAL FOOTER */
+.prof-footer{background:#0b0b0f;color:#d1d1d1;margin-top:30px;border-top:4px solid #ff3b30}
+.prof-footer .foot-wrap{max-width:1200px;margin:auto;padding:40px 18px 20px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:28px}
+.prof-footer h3{color:#fff;font-size:18px;margin-bottom:12px}
+.prof-footer h2{color:#fff;font-size:28px}
+.prof-footer h2 span{color:#ff3b30}
+.prof-footer p{font-size:13px;line-height:1.8;color:#aaa}
+.prof-footer ul{list-style:none}
+.prof-footer ul li{font-size:13px;padding:5px 0;cursor:pointer}
+.prof-footer ul li:hover{color:#fff}
+.foot-badge{display:inline-block;background:#1a1a1a;border:1px solid #333;padding:6px 12px;border-radius:20px;font-size:12px;margin:4px 4px 0 0;color:#fff}
+.foot-bottom{border-top:1px solid #222;max-width:1200px;margin:auto;padding:16px 18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px;color:#888}
+.pay-box span{background:#fff;color:#111;padding:5px 10px;border-radius:6px;font-weight:bold;font-size:11px;margin-left:5px}
 .wa{position:fixed;bottom:18px;right:18px;background:#25D366;color:#fff;padding:14px 22px;border-radius:50px;text-decoration:none;font-weight:bold;z-index:200;box-shadow:0 8px 20px rgba(37,211,102,.4)}
 #cartDrawer{position:fixed;top:0;right:-100%;width:400px;max-width:92%;height:100%;background:#fff;z-index:300;transition:.3s;display:flex;flex-direction:column}
 #cartDrawer.open{right:0}.cart-head{background:#111;color:#fff;padding:16px;display:flex;justify-content:space-between}
@@ -74,7 +85,8 @@ footer h2{font-size:26px}footer h2 span{color:#ff3b30}footer p{color:#aaa;font-s
 .stat{background:linear-gradient(135deg,#111,#333);color:#fff;border-radius:14px;padding:14px;text-align:center}
 .stat:nth-child(2){background:linear-gradient(135deg,#ff3b30,#ff6a00)}.stat:nth-child(3){background:linear-gradient(135deg,#25D366,#128C7E)}
 .stat h3{font-size:22px}.stat p{font-size:12px;color:#ddd}
-@media(max-width:600px){.hero h1{font-size:28px}.search-box{max-width:100%;order:3}nav{top:118px}}
+@media(max-width:700px){.hero h1{font-size:28px}.search-box{max-width:100%;order:3}nav{top:118px}.prof-footer .foot-wrap{grid-template-columns:1fr 1fr}}
+@media(max-width:450px){.prof-footer .foot-wrap{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -91,7 +103,18 @@ footer h2{font-size:26px}footer h2 span{color:#ff3b30}footer p{color:#aaa;font-s
 <h2 class="section-title">🔥 Best Selling - <span id="showCat">All</span> (<span id="countShow">0</span> items)</h2>
 <div class="products" id="shop"></div>
 <div style="text-align:center;padding:25px;background:#fff;max-width:1200px;margin:20px auto;border-radius:15px"><h2>Why URBAN MART?</h2><p style="color:#666;margin-top:8px;line-height:1.7">Login karo, order karo, apna Dashboard me order track karo.<br><b>📍 Main Bazaar, Vehari | 📞 03341765911 | ⏰ 9 AM - 11 PM Daily</b></p><button onclick="openAuth()" style="margin-top:12px;background:#111;color:#fff;border:none;padding:12px 25px;border-radius:25px;font-weight:bold;cursor:pointer">👤 Create Free Account</button></div>
-<footer><h2>URBAN <span>MART</span> 🛍️</h2><p>Pakistan Ka Apna Online Store - Best Quality, Best Price, Fast Delivery</p><p>📍 Main Bazaar, Vehari, Punjab, Pakistan<br>📞 WhatsApp: 03341765911 | 📧 urbanmartvehari@gmail.com</p><p>© 2026 URBAN MART Vehari - Made by Huzaifa Tariq</p></footer>
+
+<!-- PROFESSIONAL FOOTER -->
+<footer class="prof-footer">
+<div class="foot-wrap">
+<div><h2>URBAN <span>MART</span> 🛍️</h2><p>Vehari ka apna trusted online store. Best quality, best price, fast delivery. 2000+ happy customers ka bharosa.</p><div style="margin-top:12px"><span class="foot-badge">✅ 100% Original</span><span class="foot-badge">🚚 Fast Delivery</span><span class="foot-badge">🔄 7 Days Return</span></div></div>
+<div><h3>Shop</h3><ul><li onclick="setCat('Fashion',null);window.scrollTo(0,400)">👕 Fashion</li><li onclick="setCat('Shoes',null);window.scrollTo(0,400)">👟 Shoes</li><li onclick="setCat('Watches',null);window.scrollTo(0,400)">⌚ Watches</li><li onclick="setCat('Electronics',null);window.scrollTo(0,400)">🎧 Electronics</li><li onclick="setCat('Grocery',null);window.scrollTo(0,400)">🛒 Grocery</li><li onclick="setCat('Toys',null);window.scrollTo(0,400)">🧸 Toys & Kids</li></ul></div>
+<div><h3>Customer Care</h3><ul><li>📦 Track My Order</li><li>🔄 Return & Exchange</li><li>🚚 Delivery Info - Vehari</li><li>💳 Payment Methods</li><li>❓ FAQs</li><li onclick="openAuth()">👤 My Account / Dashboard</li></ul></div>
+<div><h3>Contact Us</h3><p>📍 Main Bazaar, Vehari,<br>Punjab, Pakistan<br>📞 WhatsApp: 0334 1765911<br>📧 urbanmartvehari@gmail.com<br>⏰ Mon - Sun: 9 AM - 11 PM</p><p style="margin-top:10px;color:#fff;font-weight:bold">We Accept:</p><div class="pay-box"><span>COD</span><span>JazzCash</span><span>Easypaisa</span><span>Bank Transfer</span></div></div>
+</div>
+<div class="foot-bottom"><span>© 2026 URBAN MART Vehari - Made with ❤️ by Huzaifa Tariq | All Rights Reserved</span><span>Privacy Policy • Terms • Refund Policy</span></div>
+</footer>
+
 <a class="wa" href="https://wa.me/923341765911?text=Assalam-o-Alaikum%20URBAN%20MART%20Mujhe%20Order%20Karna%20Hai" target="_blank">WhatsApp Order 💬</a>
 <div class="modal" id="authModal"><div class="modal-box"><button class="close-modal" onclick="closeModal('authModal')">✕</button><h2>👋 Welcome to URBAN MART</h2><p>Login karo ya Free Account banao</p><div class="tabs"><button id="tabLogin" class="active" onclick="switchTab('login')">Login</button><button id="tabReg" onclick="switchTab('register')">Register</button></div><div id="loginBox"><input id="loginPhone" placeholder="📞 Mobile Number"><input id="loginPass" type="password" placeholder="🔒 Password"><button class="main" onclick="doLogin()">Login Karo →</button><p style="margin-top:12px">Account nahi hai? <b style="color:#ff3b30;cursor:pointer" onclick="switchTab('register')">Register Karo</b></p></div><div id="registerBox" style="display:none"><input id="regName" placeholder="👤 Full Name *"><input id="regPhone" placeholder="📞 Mobile Number *"><input id="regCity" placeholder="📍 City - Vehari"><input id="regAddress" placeholder="🏠 Full Address"><input id="regPass" type="password" placeholder="🔒 Password Banao *"><button class="main" onclick="doRegister()">Create Free Account →</button><p style="margin-top:12px">Pehle se account hai? <b style="color:#ff3b30;cursor:pointer" onclick="switchTab('login')">Login Karo</b></p></div></div></div>
 <div class="modal" id="dashModal"><div class="modal-box" style="width:520px"><button class="close-modal" onclick="closeModal('dashModal')">✕</button><h2>📊 My Dashboard</h2><p id="dashWelcome">Welcome!</p><div class="stat-row"><div class="stat"><h3 id="statOrders">0</h3><p>Total Orders</p></div><div class="stat"><h3 id="statSpent">Rs.0</h3><p>Total Spent</p></div><div class="stat"><h3 id="statWish">0</h3><p>Wishlist</p></div></div><div class="dash-card"><b>👤 My Profile</b><p id="dashProfile">-</p><button onclick="editProfile()" style="margin-top:8px;background:#111;color:#fff;border:none;padding:8px 15px;border-radius:20px;cursor:pointer;font-size:12px">✏️ Edit Profile</button> <button onclick="doLogout()" style="margin-top:8px;background:#ff3b30;color:#fff;border:none;padding:8px 15px;border-radius:20px;cursor:pointer;font-size:12px">🚪 Logout</button></div><div class="dash-card"><b>📦 My Orders</b><div id="dashOrders"></div></div><div class="dash-card"><b>❤️ My Wishlist</b><div id="dashWish"></div></div><div class="dash-card"><b>📍 My Address</b><p id="dashAddress">-</p></div><div class="dash-card"><b>🎁 Offers For You</b><p>🔥 URBAN10 - 10% OFF on Rs.2000+ | 🚚 FREE Delivery Rs.1500+ | 🎉 First Order pe FREE Gift!</p></div></div></div>
@@ -103,7 +126,7 @@ let selColor={};
 const P=(name,cat,price,old,img,colors)=>({name,cat,price,old,img,colors});
 const FALLBACK="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=500";
 const products=[
-// ============ FASHION - 12 ============
+// FASHION - 12 - BAQI SAB SAME, KOI CHANGE NAHI
 P("Men White T-Shirt","Fashion",999,1499,"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500",["White","Black","Grey"]),
 P("Men Denim Jeans","Fashion",1599,2299,"https://images.unsplash.com/photo-1542272604-787c3835535d?w=500",["Blue","Black","Light Blue"]),
 P("Men Black Hoodie","Fashion",1799,2599,"https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500",["Black","Grey","Navy"]),
@@ -116,30 +139,30 @@ P("Men Shalwar Kameez","Fashion",1999,2999,"https://fancyfashions.co.uk/cdn/shop
 P("Women Lawn Suit 3PC","Fashion",2499,3499,"https://cdn.ecommercedns.uk/files/8/216208/5/56157805/5-8-5227ad23-6a04-4822-9900-7c9d639aa937.png",["Pink","Blue","Yellow","Green"]),
 P("Men Check Shirt","Fashion",1299,1899,"https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=500",["Red Check","Blue Check","Green Check"]),
 P("Women Abaya","Fashion",2199,3299,"https://i.pinimg.com/736x/8b/b4/80/8bb480fe8a295b9e1c4fb894ba3c783b.jpg",["Black","Navy","Brown"]),
-// ============ SHOES - 11 ============
+// SHOES - 11 - 2 THEEK KIYE: Sandals, Slippers - BAQI SAME
 P("White Sneakers","Shoes",2199,3299,"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500",["White","Black","Red"]),
 P("Running Joggers Shoes","Shoes",2499,3599,"https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500",["Black","White","Blue"]),
 P("Peshawari Chappal","Shoes",1499,2199,"https://images.unsplash.com/photo-1603487742131-4160ec999306?w=500",["Brown","Black","Mustard"]),
 P("Women High Heels","Shoes",1899,2799,"https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500",["Black","Red","Beige"]),
-P("Women Sandals","Shoes",1299,1899,"https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=500",["Black","Brown","White"]),
+P("Women Sandals","Shoes",1299,1899,"https://rukminim2.flixcart.com/image/1600/2130/xif0q/sandal/s/6/k/7-sd402-40-0-vendoz-black-original-imahfctfgmxrgsez.jpeg?q=80",["Black","Brown","White"]),
 P("Men Leather Shoes","Shoes",2799,3999,"https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=500",["Black","Brown","Tan"]),
 P("Canvas Shoes","Shoes",1599,2299,"https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=500",["White","Black","Blue"]),
 P("Sports Shoes Men","Shoes",2299,3299,"https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=500",["Grey","Black","Green"]),
-P("Slippers Comfort","Shoes",699,999,"https://ae01.alicdn.com/kf/S64461da607b843928c22b2356c5cc266k/Men-Flip-flops-Men-s-Beach-Slippers-For-Droping-Shipping-Size-40-45.jpg_Q90.jpg_.webp",["Black","White","Blue"]),
+P("Slippers Comfort","Shoes",699,999,"https://rukmini1.flixcart.com/image/1500/1500/kt4ozgw0/slipper-flip-flop/f/i/c/6-749-blk-731-gry-752-blk-fabbmate-multicolor-original-imag6jn7hzhhy7f9.jpeg",["Black","White","Blue"]),
 P("Leather Boots","Shoes",3499,4999,"https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=500",["Brown","Black"]),
 P("Kids Sneakers","Shoes",1399,1999,"https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=500",["Red","Blue","Pink"]),
-// ============ WATCHES - 10 ============
+// WATCHES - 10 - 3 THEEK KIYE: Digital, Leather Strap, Couple - BAQI SAME
 P("Luxury Men Watch","Watches",3499,5999,"https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500",["Gold","Silver","Black"]),
 P("Smart Watch Black","Watches",2999,4999,"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",["Black","White","Blue"]),
-P("Couple Watches Set","Watches",3999,6499,"https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=500",["Gold","Silver"]),
+P("Couple Watches Set","Watches",3999,6499,"https://m.media-amazon.com/images/I/61x08XEN7gL._AC_SL1000_.jpg",["Gold","Silver"]),
 P("Smart Watch Ultra","Watches",3999,5999,"https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=500",["Black","Orange","White"]),
 P("Women Elegant Watch","Watches",2499,3999,"https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=500",["Rose Gold","Silver","Gold"]),
-P("Sports Digital Watch","Watches",1999,2999,"https://images.unsplash.com/photo-1508057198894-247b23fe5ade?w=500",["Black","Green","Blue"]),
-P("Leather Strap Watch","Watches",2799,4299,"https://images.unsplash.com/photo-1526045431048-f857369baa09?w=500",["Brown","Black"]),
+P("Sports Digital Watch","Watches",1999,2999,"https://img.kilimall.com/c/obs/seller/9513/goods_image/251010041609_3ab13bccdfd43878ea31b61d53548d9e.jpg",["Black","Green","Blue"]),
+P("Leather Strap Watch","Watches",2799,4299,"https://fossil.scene7.com/is/image/FossilPartners/FS5666_main?$sfcc_fos_hi-res$",["Brown","Black"]),
 P("Chronograph Watch","Watches",3299,4999,"https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=500",["Black","Silver","Blue"]),
 P("Kids Digital Watch","Watches",999,1499,"https://sg-test-11.slatic.net/p/915e72b08f1af673e04f78fff1fbaa70.jpg",["Blue","Pink","Green"]),
 P("Smart Watch Series 8","Watches",4499,6999,"https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?w=500",["Black","White"]),
-// ============ ELECTRONICS - 10 ============
+// ELECTRONICS - 10 - 2 THEEK KIYE: Laptop Stand, Webcam - BAQI SAME
 P("Wireless Earbuds","Electronics",1799,2999,"https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500",["Black","White","Blue"]),
 P("Bluetooth Headphones","Electronics",2499,3999,"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500",["Black","White","Blue"]),
 P("Bluetooth Speaker","Electronics",1999,2999,"https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500",["Black","Blue","Red"]),
@@ -147,10 +170,10 @@ P("Wireless Mouse","Electronics",899,1499,"https://images.unsplash.com/photo-152
 P("RGB Gaming Keyboard","Electronics",2199,3299,"https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=500",["Black","White"]),
 P("LED Ring Light","Electronics",1299,1999,"https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=500",["Black","White"]),
 P("USB Type-C Cable","Electronics",499,799,"https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=500",["White","Black"]),
-P("Laptop Stand Metal","Electronics",1499,2299,"https://images.unsplash.com/photo-1593642702749-b7d2a768a4a1?w=500",["Silver","Black"]),
-P("HD Webcam","Electronics",2999,4499,"https://www.hardware.com.br/wp-content/uploads/static/wp/2020/01/30/90-2.jpg",["Black"]),
+P("Laptop Stand Metal","Electronics",1499,2299,"https://www.xmediasat.com/bilder/big/webp/ht17.webp",["Silver","Black"]),
+P("HD Webcam","Electronics",2999,4499,"https://www.megasavershop.com/wp-content/uploads/2022/01/E27617-84-1.jpg",["Black"]),
 P("Smart TV Remote","Electronics",799,1299,"https://i.ebayimg.com/00/s/MTYwMFgxNjAw/z/Up4AAOSwHkNjkYQA/$_57.JPG?set_id=880000500F",["Black"]),
-// ============ MOBILE - 10 ============
+// MOBILE - 10 - 1 THEEK KIYA: Mobile Stand - BAQI SAME
 P("Power Bank 20000mAh","Mobile",2299,3499,"https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=500",["Black","White","Blue"]),
 P("Fast Mobile Charger 25W","Mobile",899,1499,"https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=500",["White","Black"]),
 P("Mobile Cover Premium","Mobile",499,799,"https://images.unsplash.com/photo-1601593346740-925612772716?w=500",["Black","Transparent","Blue","Pink"]),
@@ -160,8 +183,8 @@ P("Mobile Holder For Bike","Mobile",799,1299,"https://images.unsplash.com/photo-
 P("Tempered Glass Protector","Mobile",399,699,"https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=500",["Clear","Black"]),
 P("Wired Earphone","Mobile",699,999,"https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=500",["White","Black"]),
 P("Selfie Stick With Tripod","Mobile",999,1599,"https://m.media-amazon.com/images/I/61GZzMcZxVL.jpg_BO30,255,255,255_UF900,850_SR1910,1000,0,C_QL100_.jpg",["Black","White"]),
-P("Mobile Stand Desktop Holder","Mobile",699,1099,"https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=500",["Black","Silver"]),
-// ============ BEAUTY - 10 ============
+P("Mobile Stand Desktop Holder","Mobile",699,1099,"https://m.media-amazon.com/images/I/61Zbuc0Ey8L.jpg",["Black","Silver"]),
+// BEAUTY - 10 - KOI CHANGE NAHI
 P("Face Wash Glow","Beauty",699,999,"https://images.unsplash.com/photo-1556228720-195a672e8a03?w=500",["White"]),
 P("Makeup Kit Professional","Beauty",1999,2999,"https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=500",["Pink","Nude","Brown"]),
 P("Oud Perfume 100ml","Beauty",1499,2299,"https://images.unsplash.com/photo-1541643600914-78b084683601?w=500",["Oud","Rose","Jasmine"]),
@@ -172,8 +195,8 @@ P("Nail Polish Set","Beauty",799,1299,"https://images.unsplash.com/photo-1604654
 P("Face Serum Vitamin C","Beauty",999,1599,"https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=500",["Vitamin C"]),
 P("Hair Straightener","Beauty",2199,3299,"https://i.pinimg.com/originals/d7/8b/9f/d78b9f835a7362ae1d8d506d2058afd1.jpg",["Black","Pink"]),
 P("Body Lotion","Beauty",899,1399,"https://www.medoget.com/cdn/shop/files/downloadcopy_535d815d-6b1f-448b-8e37-ac6257151eb2_1024x.png?v=1697705271",["Rose","Aloe Vera","Coconut"]),
-// ============ HOME - 10 ============
-P("Double Bedsheet Cotton","Home",1299,1999,"https://images.unsplash.com/photo-1522770179533-24471fcdba45?w=500",["Blue","Pink","Grey","Green"]),
+// HOME - 10 - 1 THEEK KIYA: Bedsheet - BAQI SAME
+P("Double Bedsheet Cotton","Home",1299,1999,"https://i.ebayimg.com/images/g/Ix0AAOSw6jllGm2t/s-l1200.webp",["Blue","Pink","Grey","Green"]),
 P("LED Table Lamp","Home",999,1599,"https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500",["White","Black","Gold"]),
 P("Wall Clock Round","Home",899,1399,"https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?w=500",["Black","White","Wooden"]),
 P("Steel Water Bottle 1L","Home",799,1199,"https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=500",["Silver","Black","Blue","Pink"]),
@@ -183,40 +206,40 @@ P("Curtains Pair","Home",1499,2299,"https://images.unsplash.com/photo-1513694203
 P("Cushion Covers 5 Pcs","Home",999,1599,"https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=500",["Multicolor","Grey","Blue"]),
 P("Dinner Set 24 Pcs","Home",4999,7999,"https://images.unsplash.com/photo-1603199506016-b9a594b593c0?w=500",["White","Blue","Floral"]),
 P("Storage Box Large","Home",899,1399,"https://id.plasticscmould.com/uploads/41957/plastic-storage-box71776.jpg",["Grey","Blue","Beige"]),
-// ============ GROCERY - 10 - VERIFIED ============
+// GROCERY - 10 - 4 THEEK KIYE: Honey, Dry Fruits, Rooh Afza, Fresh Dates - BAQI SAME
 P("Basmati Rice 5KG","Grocery",1499,1999,"https://images.unsplash.com/photo-1586201375761-83865001e31c?w=500",["5KG","10KG"]),
 P("Cooking Oil 5 Litre","Grocery",2499,2999,"https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=500",["5L","3L"]),
-P("Fresh Dates Khajoor 1KG","Grocery",999,1499,"https://images.unsplash.com/photo-1593904308074-e1d8f0f0e3e3?w=500",["1KG","500g"]),
-P("Pure Honey 1KG","Grocery",1299,1799,"https://ruhkhush.com/wp-content/uploads/2026/10/food-honey-02.jpg",["1KG","500g"]),
+P("Fresh Dates Khajoor 1KG","Grocery",999,1499,"https://thepremiumbasket.com/wp-content/uploads/2024/11/Dates.jpg",["1KG","500g"]),
+P("Pure Honey 1KG","Grocery",1299,1799,"https://www.yera.com/cdn/shop/files/JH500_2.jpg?v=1771246903&width=1920",["1KG","500g"]),
 P("Tea Chai Patti 900g","Grocery",1199,1599,"https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=500",["900g","450g"]),
 P("Desi Ghee 1KG","Grocery",1899,2499,"https://mastergadgets.com/wp-content/uploads/2021/06/Buy-Desi-Cow-Ghee.jpg",["1KG","500g"]),
-P("Dry Fruits Mix 1KG","Grocery",1999,2999,"https://images.unsplash.com/photo-1596591606975-97ee5cef3a1e?w=500",["1KG","500g"]),
-P("Rooh Afza 3L","Grocery",899,1199,"https://hungryforever.net/wp-content/uploads/2019/05/61R2qNGZ7L._SL1024_.jpg",["3L","1.5L"]),
+P("Dry Fruits Mix 1KG","Grocery",1999,2999,"https://rukminim2.flixcart.com/image/800/800/xif0q/nut-dry-fruit/e/w/1/1-mix-dry-fruits-healthy-tasty-snack-nutritious-energy-boost-1-original-imahgj4xghzzjzhk.jpeg?q=80",["1KG","500g"]),
+P("Rooh Afza 3L","Grocery",899,1199,"https://alfatah.pk/cdn/shop/files/8964000122105.jpg?v=1703105077&width=1426",["3L","1.5L"]),
 P("Pasta Spaghetti 500g","Grocery",499,699,"https://images.unsplash.com/photo-1556761223-4c4282c73f77?w=500",["500g"]),
 P("Pink Himalayan Salt 1KG","Grocery",599,899,"https://cdn.shopify.com/s/files/1/0756/6082/0646/files/6a17d95309d4d88fa239d48452aac444.jpg",["1KG","500g"]),
-// ============ KIDS - 10 - VERIFIED ============
+// KIDS - 10 - 2 THEEK KIYE: Frock, Feeder - BAQI SAME
 P("Kids T-Shirt","Kids",599,899,"https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?w=500",["Red","Blue","Yellow","Pink"]),
 P("Kids Sneakers","Kids",1199,1799,"https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=500",["Red","Blue","Pink"]),
 P("Baby Romper","Kids",799,1199,"https://images.unsplash.com/photo-1522771930-78848d9293e8?w=500",["Pink","Blue","Yellow","White"]),
 P("Kids School Bag","Kids",1399,1999,"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500",["Blue","Pink","Red","Black"]),
-P("Kids Frock","Kids",999,1499,"https://cartnear.s3.us-east-2.amazonaws.com/products/b631dbf11cd69b5ad9471d623c91e76f.jpeg",["Pink","Red","Purple"]),
+P("Kids Frock","Kids",999,1499,"https://rukminim2.flixcart.com/image/1600/2130/xif0q/kids-dress/y/e/g/18-24-months-plane-frock-155-lm-fashion-original-imahdwhcz7f5yzdg.jpeg?q=80",["Pink","Red","Purple"]),
 P("Kids Jeans","Kids",899,1399,"https://images.unsplash.com/photo-1542272604-787c3835535d?w=500",["Blue","Black"]),
-P("Baby Feeder Bottle","Kids",699,999,"https://images.unsplash.com/photo-1584839404042-8bc21d240e91?w=500",["Blue","Pink","White"]),
+P("Baby Feeder Bottle","Kids",699,999,"https://m.media-amazon.com/images/I/51e2Bu8aqQS.jpg",["Blue","Pink","White"]),
 P("Kids Cap","Kids",399,599,"https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=500",["Red","Blue","Black"]),
 P("Kids Winter Jacket","Kids",1499,2299,"https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500",["Red","Blue","Green"]),
 P("Baby Blanket Soft","Kids",899,1399,"https://s3.ap-southeast-1.amazonaws.com/auito-upload-sls-prd-document/66a30e0495181df4fd7379eb/83012bea-9e78-48fe-b280-6eee7f1f2439_Gemini_Generated_Image_5j1ums5j1ums5j1u.original.jpg",["Pink","Blue","Yellow"]),
-// ============ TOYS - 10 - VERIFIED ============
+// TOYS - 10 - 1 THEEK KIYA: Drum Set - BAQI SAME
 P("Remote Control Toy Car","Toys",1499,2299,"https://cdn.zeptonow.com/production/ik-seo/tr:w-1000,ar-1500-1500,pr-true,f-avif,q-40,dpr-2/cms/product_variant/ea5168b4-16d3-4cd4-ba43-4c83328752fb/ea5168b4-16d3-4cd4-ba43-4c83328752fb-jpg.jpg",["Red","Blue","Black"]),
 P("Teddy Bear Soft Toy","Toys",999,1499,"https://images.unsplash.com/photo-1559454403-b8fb88521f11?w=500",["Brown","Pink","White"]),
 P("Building Blocks 100 Pcs","Toys",1299,1999,"https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=500",["Multicolor"]),
 P("Kids Puzzle Game","Toys",699,999,"https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=500",["Multicolor"]),
 P("Doll Barbie","Toys",1199,1799,"https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=500",["Pink","Purple"]),
 P("Toy Helicopter","Toys",1799,2599,"https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=500",["Red","Blue"]),
-P("Kids Drum Set","Toys",999,1499,"https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=500",["Red","Blue"]),
+P("Kids Drum Set","Toys",999,1499,"https://i5.walmartimages.com/seo/Kids-Drum-Set-for-Toddlers-Musical-Instrument-Toys-Percussion-Beginner-Christmas-Gift-Toys-for-3-4-5-6-Years-Old_9bd2b90f-59be-4398-9c15-9b047222dee6.8d0175b69c9766ac97aabcb224867d83.jpeg",["Red","Blue"]),
 P("Water Gun","Toys",799,1199,"https://m.media-amazon.com/images/I/81mYjmE0oJL._AC_SL2048_.jpg",["Blue","Green","Yellow"]),
 P("Board Game Ludo","Toys",599,899,"https://m.media-amazon.com/images/I/81d-on04EnL.jpg_BO30,255,255,255_UF750,750_SR1910,1000,0,C_QL100_.jpg",["Multicolor"]),
 P("Toy Train Set","Toys",1399,1999,"https://i.pinimg.com/originals/27/22/57/2722573a7888c0e1781e67dbe3e48a1f.jpg",["Red","Blue"]),
-// ============ SPORTS - 11 - VERIFIED ============
+// SPORTS - 11 - 1 THEEK KIYA: Skipping Rope - BAQI SAME
 P("Football","Sports",1299,1999,"https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=500",["White","Black"]),
 P("Cricket Bat Kashmir Willow","Sports",1899,2799,"https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/649d4c55d3731c63c5ba834f/51dwvjqftwl.jpg",["Wooden"]),
 P("Gym Gloves","Sports",799,1199,"https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=500",["Black","Red","Blue"]),
@@ -226,7 +249,7 @@ P("Cricket Tennis Ball 3 Pcs","Sports",299,499,"https://images.unsplash.com/phot
 P("Badminton Racket Set","Sports",1999,2999,"https://images.unsplash.com/photo-1626224583764-f87db24ac4a?w=500",["Red","Blue","Black"]),
 P("Sports Water Bottle 1L","Sports",699,999,"https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=500",["Blue","Black","Green"]),
 P("Cricket Helmet","Sports",2499,3499,"https://images-static.nykaa.com/media/catalog/product/4/3/43c4f55STARSTEEL-ROYALBLUE_3.jpg",["Blue","Black","Green"]),
-P("Skipping Rope","Sports",499,799,"https://ae01.alicdn.com/kf/S28f580457b164b45bd8c594eef2c3e3cA.jpg",["Black","Pink","Blue"]),
+P("Skipping Rope","Sports",499,799,"https://m.media-amazon.com/images/I/41SCUw-AUaL._SL500_.jpg",["Black","Pink","Blue"]),
 P("Resistance Bands Set","Sports",999,1499,"https://mynecessities.com/cdn/shop/files/20250925_1225_ResistanceBandsDisplay_remix_01k60tzd11f478gr1rpvsck45q.png?v=1759258459&width=600",["Multicolor"])
 ];
 let currentCat='All'; let cart=[]; let searchText=''; let wishlist=JSON.parse(localStorage.getItem('um_wish')||'[]');
