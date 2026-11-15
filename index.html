@@ -103,7 +103,7 @@ let selColor={};
 const P=(name,cat,price,old,img,colors)=>({name,cat,price,old,img,colors});
 const FALLBACK="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=500";
 const products=[
-// FASHION - 12 - VERIFIED
+// FASHION - 12 - VIDEO SE VERIFIED
 P("Men White T-Shirt","Fashion",999,1499,"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500",["White","Black","Grey"]),
 P("Men Denim Jeans","Fashion",1599,2299,"https://images.unsplash.com/photo-1542272604-787c3835535d?w=500",["Blue","Black","Light Blue"]),
 P("Men Black Hoodie","Fashion",1799,2599,"https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500",["Black","Grey","Navy"]),
@@ -112,11 +112,11 @@ P("Women Floral Kurti","Fashion",1299,1999,"https://images.unsplash.com/photo-15
 P("Women Handbag","Fashion",1599,2499,"https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500",["Brown","Black","Beige"]),
 P("Men Leather Wallet","Fashion",899,1399,"https://images.unsplash.com/photo-1627123424574-724758594e93?w=500",["Brown","Black","Tan"]),
 P("Black Sunglasses","Fashion",999,1599,"https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500",["Black","Brown"]),
-P("Men Shalwar Kameez","Fashion",1999,2999,"https://images.unsplash.com/photo-1597983073493-88cd35cf93b0?w=500",["White","Black","Off White"]),
-P("Women Lawn Suit 3PC","Fashion",2499,3499,"https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500",["Pink","Blue","Yellow","Green"]),
+P("Men Shalwar Kameez","Fashion",1999,2999,"https://images.unsplash.com/photo-1610652492500-ded49ceeb378?w=500",["White","Black","Off White"]),
+P("Women Lawn Suit 3PC","Fashion",2499,3499,"https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=500",["Pink","Blue","Yellow","Green"]),
 P("Men Check Shirt","Fashion",1299,1899,"https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=500",["Red Check","Blue Check","Green Check"]),
-P("Women Abaya","Fashion",2199,3299,"https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=500",["Black","Navy","Brown"]),
-// SHOES - 11 - VERIFIED
+P("Women Abaya","Fashion",2199,3299,"https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=500",["Black","Navy","Brown"]),
+// SHOES - 11 - VIDEO SE VERIFIED SAHI
 P("White Sneakers","Shoes",2199,3299,"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500",["White","Black","Red"]),
 P("Running Joggers Shoes","Shoes",2499,3599,"https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500",["Black","White","Blue"]),
 P("Peshawari Chappal","Shoes",1499,2199,"https://images.unsplash.com/photo-1603487742131-4160ec999306?w=500",["Brown","Black","Mustard"]),
@@ -128,16 +128,16 @@ P("Sports Shoes Men","Shoes",2299,3299,"https://images.unsplash.com/photo-160823
 P("Slippers Comfort","Shoes",699,999,"https://images.unsplash.com/photo-1560343090-f0409e92791a?w=500",["Black","White","Blue"]),
 P("Leather Boots","Shoes",3499,4999,"https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=500",["Brown","Black"]),
 P("Kids Sneakers","Shoes",1399,1999,"https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=500",["Red","Blue","Pink"]),
-// WATCHES - 10 - ALAG ALAG PICS
+// WATCHES - 10 - FIXED
 P("Luxury Men Watch","Watches",3499,5999,"https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500",["Gold","Silver","Black"]),
 P("Smart Watch Black","Watches",2999,4999,"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",["Black","White","Blue"]),
 P("Couple Watches Set","Watches",3999,6499,"https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=500",["Gold","Silver"]),
 P("Smart Watch Ultra","Watches",3999,5999,"https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=500",["Black","Orange","White"]),
 P("Women Elegant Watch","Watches",2499,3999,"https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=500",["Rose Gold","Silver","Gold"]),
-P("Sports Digital Watch","Watches",1999,2999,"https://images.unsplash.com/photo-1508057198894-247b23fe5ade?w=500",["Black","Green","Blue"]),
+P("Sports Digital Watch","Watches",1999,2999,"https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?w=500",["Black","Green","Blue"]),
 P("Leather Strap Watch","Watches",2799,4299,"https://images.unsplash.com/photo-1526045431048-f857369baa09?w=500",["Brown","Black"]),
 P("Chronograph Watch","Watches",3299,4999,"https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=500",["Black","Silver","Blue"]),
-P("Kids Digital Watch","Watches",999,1499,"https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?w=500",["Blue","Pink","Green"]),
+P("Kids Digital Watch","Watches",999,1499,"https://images.unsplash.com/photo-1594534475808-b18fc33b045e?w=500",["Blue","Pink","Green"]),
 P("Smart Watch Series 8","Watches",4499,6999,"https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?w=500",["Black","White"]),
 // ELECTRONICS - 10 - FIXED
 P("Wireless Earbuds","Electronics",1799,2999,"https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500",["Black","White","Blue"]),
@@ -150,18 +150,18 @@ P("USB Type-C Cable","Electronics",499,799,"https://images.unsplash.com/photo-15
 P("Laptop Stand Metal","Electronics",1499,2299,"https://images.unsplash.com/photo-1593642702749-b7d2a768a4a1?w=500",["Silver","Black"]),
 P("HD Webcam","Electronics",2999,4499,"https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=500",["Black"]),
 P("Smart TV Remote","Electronics",799,1299,"https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=500",["Black"]),
-// MOBILE - 10 - 100% FIXED - LIVE SITE WALA MASLA KHATAM
+// MOBILE - 10 - FIXED
 P("Power Bank 20000mAh","Mobile",2299,3499,"https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=500",["Black","White","Blue"]),
 P("Fast Mobile Charger 25W","Mobile",899,1499,"https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=500",["White","Black"]),
 P("Mobile Cover Premium","Mobile",499,799,"https://images.unsplash.com/photo-1601593346740-925612772716?w=500",["Black","Transparent","Blue","Pink"]),
 P("Tripod Stand For Mobile","Mobile",1199,1899,"https://images.unsplash.com/photo-1471341971476-ae15ff5dd4ea?w=500",["Black"]),
 P("AirPods Pro Cover Case","Mobile",499,799,"https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=500",["Black","White","Pink","Blue"]),
-P("Mobile Holder For Bike","Mobile",799,1299,"https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=500",["Black"]),
+P("Mobile Holder For Bike","Mobile",799,1299,"https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?w=500",["Black"]),
 P("Tempered Glass Protector","Mobile",399,699,"https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=500",["Clear","Black"]),
 P("Wired Earphone","Mobile",699,999,"https://images.unsplash.com/photo-1484704849700-f032a568e944?w=500",["White","Black"]),
 P("Selfie Stick With Tripod","Mobile",999,1599,"https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=500",["Black","White"]),
 P("Mobile Stand Desktop Holder","Mobile",699,1099,"https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=500",["Black","Silver"]),
-// BEAUTY - 10 - ALAG PICS
+// BEAUTY - 10 - FIXED
 P("Face Wash Glow","Beauty",699,999,"https://images.unsplash.com/photo-1556228720-195a672e8a03?w=500",["White"]),
 P("Makeup Kit Professional","Beauty",1999,2999,"https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=500",["Pink","Nude","Brown"]),
 P("Oud Perfume 100ml","Beauty",1499,2299,"https://images.unsplash.com/photo-1541643600914-78b084683601?w=500",["Oud","Rose","Jasmine"]),
@@ -170,7 +170,7 @@ P("Hair Dryer 2000W","Beauty",1599,2499,"https://images.unsplash.com/photo-15223
 P("Herbal Hair Oil","Beauty",799,1199,"https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=500",["Herbal"]),
 P("Nail Polish Set","Beauty",799,1299,"https://images.unsplash.com/photo-1604654894610-df63bc536371?w=500",["Red","Pink","Nude","Purple"]),
 P("Face Serum Vitamin C","Beauty",999,1599,"https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=500",["Vitamin C"]),
-P("Hair Straightener","Beauty",2199,3299,"https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=500",["Black","Pink"]),
+P("Hair Straightener","Beauty",2199,3299,"https://images.unsplash.com/photo-1522338140262-f46f5913618a?w=500",["Black","Pink"]),
 P("Body Lotion","Beauty",899,1399,"https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500",["Rose","Aloe Vera","Coconut"]),
 // HOME - 10
 P("Double Bedsheet Cotton","Home",1299,1999,"https://images.unsplash.com/photo-1522770179533-24471fcdba45?w=500",["Blue","Pink","Grey","Green"]),
@@ -183,15 +183,15 @@ P("Curtains Pair","Home",1499,2299,"https://images.unsplash.com/photo-1513694203
 P("Cushion Covers 5 Pcs","Home",999,1599,"https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=500",["Multicolor","Grey","Blue"]),
 P("Dinner Set 24 Pcs","Home",4999,7999,"https://images.unsplash.com/photo-1603199506016-b9a594b593c0?w=500",["White","Blue","Floral"]),
 P("Storage Box Large","Home",899,1399,"https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=500",["Grey","Blue","Beige"]),
-// GROCERY - 10
+// GROCERY - 10 - FIXED
 P("Basmati Rice 5KG","Grocery",1499,1999,"https://images.unsplash.com/photo-1586201375761-83865001e31c?w=500",["5KG","10KG"]),
 P("Cooking Oil 5 Litre","Grocery",2499,2999,"https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=500",["5L","3L"]),
 P("Fresh Dates Khajoor 1KG","Grocery",999,1499,"https://images.unsplash.com/photo-1593904308074-e1d8f0f0e3e3?w=500",["1KG","500g"]),
 P("Pure Honey 1KG","Grocery",1299,1799,"https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=500",["1KG","500g"]),
 P("Tea Chai Patti 900g","Grocery",1199,1599,"https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=500",["900g","450g"]),
-P("Desi Ghee 1KG","Grocery",1899,2499,"https://images.unsplash.com/photo-1608744882201-52a7f7f3dd60?w=500",["1KG","500g"]),
+P("Desi Ghee 1KG","Grocery",1899,2499,"https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=500",["1KG","500g"]),
 P("Dry Fruits Mix 1KG","Grocery",1999,2999,"https://images.unsplash.com/photo-1596591606975-97ee5cef3a1e?w=500",["1KG","500g"]),
-P("Rooh Afza 3L","Grocery",899,1199,"https://images.unsplash.com/photo-1554866585-cd94860890b7?w=500",["3L","1.5L"]),
+P("Rooh Afza 3L","Grocery",899,1199,"https://images.unsplash.com/photo-1626200419199-391ae4be7a41?w=500",["3L","1.5L"]),
 P("Pasta Spaghetti 500g","Grocery",499,699,"https://images.unsplash.com/photo-1556761223-4c4282c73f77?w=500",["500g"]),
 P("Pink Himalayan Salt 1KG","Grocery",599,899,"https://images.unsplash.com/photo-1518110925495-5fe2fda0442c?w=500",["1KG","500g"]),
 // KIDS - 10
@@ -205,7 +205,7 @@ P("Baby Feeder Bottle","Kids",699,999,"https://images.unsplash.com/photo-1584839
 P("Kids Cap","Kids",399,599,"https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=500",["Red","Blue","Black"]),
 P("Kids Winter Jacket","Kids",1499,2299,"https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500",["Red","Blue","Green"]),
 P("Baby Blanket Soft","Kids",899,1399,"https://images.unsplash.com/photo-1522771930-78848d9293e8?w=500",["Pink","Blue","Yellow"]),
-// TOYS - 10 - ALAG ALAG
+// TOYS - 10
 P("Remote Control Toy Car","Toys",1499,2299,"https://images.unsplash.com/photo-1558060370-d644479cb6f7?w=500",["Red","Blue","Black"]),
 P("Teddy Bear Soft Toy","Toys",999,1499,"https://images.unsplash.com/photo-1559454403-b8fb88521f11?w=500",["Brown","Pink","White"]),
 P("Building Blocks 100 Pcs","Toys",1299,1999,"https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=500",["Multicolor"]),
@@ -216,7 +216,7 @@ P("Kids Drum Set","Toys",999,1499,"https://images.unsplash.com/photo-14932254571
 P("Water Gun","Toys",799,1199,"https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=500",["Blue","Green","Yellow"]),
 P("Board Game Ludo","Toys",599,899,"https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?w=500",["Multicolor"]),
 P("Toy Train Set","Toys",1399,1999,"https://images.unsplash.com/photo-1558060370-d644479cb6f7?w=500",["Red","Blue"]),
-// SPORTS - 11 - ALAG ALAG
+// SPORTS - 11 - FIXED
 P("Football","Sports",1299,1999,"https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=500",["White","Black"]),
 P("Cricket Bat Kashmir Willow","Sports",1899,2799,"https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=500",["Wooden"]),
 P("Gym Gloves","Sports",799,1199,"https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=500",["Black","Red","Blue"]),
@@ -226,7 +226,7 @@ P("Cricket Tennis Ball 3 Pcs","Sports",299,499,"https://images.unsplash.com/phot
 P("Badminton Racket Set","Sports",1999,2999,"https://images.unsplash.com/photo-1626224583764-f87db24ac4a?w=500",["Red","Blue","Black"]),
 P("Sports Water Bottle 1L","Sports",699,999,"https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=500",["Blue","Black","Green"]),
 P("Cricket Helmet","Sports",2499,3499,"https://images.unsplash.com/photo-1624526270207-2e5b1e1e2e2e?w=500",["Blue","Black","Green"]),
-P("Skipping Rope","Sports",499,799,"https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500",["Black","Pink","Blue"]),
+P("Skipping Rope","Sports",499,799,"https://images.unsplash.com/photo-1518611012118-696072aa579a?w=500",["Black","Pink","Blue"]),
 P("Resistance Bands Set","Sports",999,1499,"https://images.unsplash.com/photo-1598289431512-b97b0917affc?w=500",["Multicolor"])
 ];
 let currentCat='All'; let cart=[]; let searchText=''; let wishlist=JSON.parse(localStorage.getItem('um_wish')||'[]');
