@@ -10,21 +10,49 @@ body{background:#f8f9fa;background-image:radial-gradient(#e9ecef 1px, transparen
 .topbar{background:linear-gradient(90deg,#ff3b30,#ff6a00,#ff3b30);background-size:200% 100%;animation:shine 4s linear infinite;color:#fff;text-align:center;padding:10px;font-size:13px;font-weight:bold}
 @keyframes shine{0%{background-position:0% 50%}100%{background-position:200% 50%}}
 .topbar span{background:#fff;color:#111;padding:2px 10px;border-radius:20px;font-size:12px}
-header{background:rgba(255,255,255,.95);backdrop-filter:blur(10px);padding:14px 15px;position:sticky;top:0;z-index:100;box-shadow:0 4px 20px rgba(0,0,0,.08);border-bottom:1px solid #eee}
-.head-top{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:auto;flex-wrap:wrap;gap:10px}
-.logo{font-size:30px;font-weight:900;cursor:pointer}.logo span{background:linear-gradient(90deg,#ff3b30,#ff6a00);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.search-box{flex:1;max-width:420px;display:flex;background:#f1f3f5;border-radius:30px;overflow:hidden;border:2px solid #e9ecef}
-.search-box input{flex:1;padding:13px 16px;border:none;outline:none;background:transparent;font-size:14px}
-.search-box button{background:#111;color:#fff;border:none;padding:0 22px;font-weight:bold;cursor:pointer}
-.top-btns{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.cart-btn{background:#111;color:#fff;border:none;padding:12px 20px;border-radius:30px;font-weight:bold;cursor:pointer}
-.login-btn{background:#fff;color:#111;border:2px solid #111;padding:10px 20px;border-radius:30px;font-weight:bold;cursor:pointer}
-.dash-btn{background:linear-gradient(90deg,#ff3b30,#ff6a00);color:#fff;border:none;padding:11px 18px;border-radius:30px;font-weight:bold;cursor:pointer}
-.wish-btn{background:#fff;border:2px solid #ff3b30;color:#ff3b30;padding:10px 14px;border-radius:50%;cursor:pointer;font-size:16px}
-nav{background:#111;display:flex;justify-content:center;gap:6px;flex-wrap:wrap;padding:12px 10px;position:sticky;top:72px;z-index:99;box-shadow:0 5px 20px rgba(0,0,0,.15);border-bottom:3px solid #ff3b30}
-nav button{background:#222;color:#ddd;border:1px solid #333;padding:9px 16px;border-radius:25px;cursor:pointer;font-weight:600;font-size:13px}
-nav button:hover{background:#333;color:#fff}nav button.active{background:linear-gradient(90deg,#ff3b30,#ff6a00);color:#fff}
-.hero{background:linear-gradient(135deg,#0f0f0f,#1a1a2e,#16213e);color:#fff;text-align:center;padding:55px 15px}
+header{background:rgba(255,255,255,.98);padding:12px 15px;position:sticky;top:0;z-index:200;box-shadow:0 4px 20px rgba(0,0,0,.08);border-bottom:1px solid #eee}
+.head-top{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:auto;gap:10px;flex-wrap:wrap}
+.logo{font-size:28px;font-weight:900;cursor:pointer;white-space:nowrap}.logo span{background:linear-gradient(90deg,#ff3b30,#ff6a00);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hamburger{display:none;background:#111;color:#fff;border:none;width:42px;height:42px;border-radius:10px;font-size:20px;cursor:pointer}
+.search-box{flex:1;max-width:420px;display:flex;background:#f1f3f5;border-radius:30px;overflow:hidden;border:2px solid #e9ecef;min-width:180px}
+.search-box input{flex:1;padding:12px 14px;border:none;outline:none;background:transparent;font-size:14px;min-width:0}
+.search-box button{background:#111;color:#fff;border:none;padding:0 18px;font-weight:bold;cursor:pointer;white-space:nowrap}
+.top-btns{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.cart-btn{background:#111;color:#fff;border:none;padding:11px 16px;border-radius:30px;font-weight:bold;cursor:pointer;font-size:13px}
+.login-btn{background:#fff;color:#111;border:2px solid #111;padding:9px 14px;border-radius:30px;font-weight:bold;cursor:pointer;font-size:13px}
+.dash-btn{background:linear-gradient(90deg,#ff3b30,#ff6a00);color:#fff;border:none;padding:10px 14px;border-radius:30px;font-weight:bold;cursor:pointer;font-size:13px}
+.wish-btn{background:#fff;border:2px solid #ff3b30;color:#ff3b30;padding:9px 12px;border-radius:50%;cursor:pointer;font-size:15px}
+.nav-wrap{background:#111;position:sticky;top:66px;z-index:190;box-shadow:0 5px 20px rgba(0,0,0,.15);border-bottom:3px solid #ff3b30}
+nav{max-width:1200px;margin:auto;display:flex;gap:6px;padding:10px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+nav::-webkit-scrollbar{display:none}
+nav button{background:#222;color:#ddd;border:1px solid #333;padding:9px 15px;border-radius:25px;cursor:pointer;font-weight:600;font-size:13px;white-space:nowrap;flex-shrink:0}
+nav button:hover{background:#333;color:#fff}nav button.active{background:linear-gradient(90deg,#ff3b30,#ff6a00);color:#fff;border-color:transparent}
+.nav-quick{display:flex;gap:6px;align-items:center;padding:0 10px 10px;max-width:1200px;margin:auto;overflow-x:auto;scrollbar-width:none}
+.nav-quick::-webkit-scrollbar{display:none}
+.nav-quick button{background:#222;color:#fff;border:1px solid #444;padding:8px 14px;border-radius:20px;cursor:pointer;font-size:12px;font-weight:bold;white-space:nowrap;flex-shrink:0}
+.nav-quick button.hl{background:linear-gradient(90deg,#ff3b30,#ff6a00);border-color:transparent}
+/* PRODUCTS MEGA MENU IN NAVBAR */
+.prod-menu{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;z-index:500;padding:12px;align-items:flex-start;justify-content:center}
+.prod-menu.show{display:flex}
+.prod-box{background:#fff;width:920px;max-width:100%;border-radius:18px;overflow:hidden;max-height:92vh;display:flex;flex-direction:column}
+.prod-head{background:#111;color:#fff;padding:14px 16px;display:flex;gap:10px;align-items:center}
+.prod-head h3{flex:1;font-size:17px}
+.prod-head input{flex:2;padding:10px 12px;border-radius:20px;border:none;outline:none;font-size:13px;min-width:0}
+.prod-head button{background:#ff3b30;color:#fff;border:none;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:16px;flex-shrink:0}
+.prod-cats{display:flex;gap:6px;overflow-x:auto;padding:10px 12px;background:#f8f9fa;border-bottom:1px solid #eee;scrollbar-width:none}
+.prod-cats::-webkit-scrollbar{display:none}
+.prod-cats button{padding:7px 13px;border:1px solid #ddd;background:#fff;border-radius:20px;cursor:pointer;font-size:12px;font-weight:bold;white-space:nowrap;flex-shrink:0}
+.prod-cats button.active{background:#111;color:#fff}
+.prod-list{overflow:auto;padding:12px}
+.prod-group{margin-bottom:14px}
+.prod-group h4{background:#fff3f0;color:#ff3b30;padding:7px 10px;border-radius:8px;font-size:14px;border-left:4px solid #ff3b30}
+.prod-row{display:flex;gap:10px;align-items:center;padding:9px 8px;border-bottom:1px solid #f1f1f1;cursor:pointer}
+.prod-row:hover{background:#f8f9fa}
+.prod-row img{width:48px;height:48px;object-fit:cover;border-radius:10px;flex-shrink:0}
+.prod-row b{font-size:13px;flex:1}
+.prod-row span{font-weight:900;font-size:13px;color:#111;white-space:nowrap}
+.prod-row button{background:#111;color:#fff;border:none;padding:7px 12px;border-radius:20px;cursor:pointer;font-size:12px;font-weight:bold;white-space:nowrap}
+.hero{background:linear-gradient(135deg,#0f0f0f,#1a1a2e,#16213e);color:#fff;text-align:center;padding:50px 15px}
 .hero h1{font-size:42px;line-height:1.2}.hero h1 span{background:linear-gradient(90deg,#ffcc00,#ff6a00);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .hero p{margin:14px 0;color:#bbb}.hero button{background:linear-gradient(90deg,#ff3b30,#ff6a00);color:#fff;border:none;padding:15px 35px;border-radius:30px;font-weight:bold;font-size:16px;cursor:pointer}
 .badges{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;padding:18px 15px}
@@ -59,7 +87,7 @@ nav button:hover{background:#333;color:#fff}nav button.active{background:linear-
 .foot-bottom{border-top:1px solid #222;max-width:1200px;margin:auto;padding:16px 18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px;color:#888}
 .pay-box span{background:#fff;color:#111;padding:5px 10px;border-radius:6px;font-weight:bold;font-size:11px;margin-left:5px}
 .wa{position:fixed;bottom:18px;right:18px;background:#25D366;color:#fff;padding:14px 22px;border-radius:50px;text-decoration:none;font-weight:bold;z-index:200;box-shadow:0 8px 20px rgba(37,211,102,.4)}
-#cartDrawer{position:fixed;top:0;right:-100%;width:400px;max-width:92%;height:100%;background:#fff;z-index:300;transition:.3s;display:flex;flex-direction:column}
+#cartDrawer{position:fixed;top:0;right:-100%;width:400px;max-width:92%;height:100%;background:#fff;z-index:600;transition:.3s;display:flex;flex-direction:column}
 #cartDrawer.open{right:0}.cart-head{background:#111;color:#fff;padding:16px;display:flex;justify-content:space-between}
 .cart-head button{background:#ff3b30;color:#fff;border:none;padding:6px 12px;border-radius:10px;cursor:pointer}
 #cartItems{flex:1;overflow:auto;padding:12px}.cart-item{display:flex;gap:10px;align-items:center;border-bottom:1px solid #eee;padding:10px 0}
@@ -84,19 +112,65 @@ nav button:hover{background:#333;color:#fff}nav button.active{background:linear-
 .stat{background:linear-gradient(135deg,#111,#333);color:#fff;border-radius:14px;padding:14px;text-align:center}
 .stat:nth-child(2){background:linear-gradient(135deg,#ff3b30,#ff6a00)}.stat:nth-child(3){background:linear-gradient(135deg,#25D366,#128C7E)}
 .stat h3{font-size:22px}.stat p{font-size:12px;color:#ddd}
-@media(max-width:700px){.hero h1{font-size:28px}.search-box{max-width:100%;order:3}nav{top:118px}.prof-footer .foot-wrap{grid-template-columns:1fr 1fr}}
-@media(max-width:450px){.prof-footer .foot-wrap{grid-template-columns:1fr}}
+@media(max-width:820px){
+.hamburger{display:block}
+.search-box{order:3;max-width:100%;flex-basis:100%}
+.nav-wrap{top:132px}
+.top-btns{flex-wrap:nowrap}
+.cart-btn{padding:10px 12px}
+.login-btn,.dash-btn{padding:9px 10px;font-size:12px}
+.hero h1{font-size:28px}
+.prof-footer .foot-wrap{grid-template-columns:1fr 1fr}
+.prod-head{flex-wrap:wrap}.prod-head h3{flex-basis:100%}.prod-head input{flex-basis:100%}
+}
+@media(max-width:520px){
+.logo{font-size:22px}
+.topbar{font-size:11px}
+.nav-wrap{top:138px}
+.products{grid-template-columns:repeat(2,1fr);gap:10px;padding:10px}
+.card img{height:150px}
+.card h3{font-size:13px;min-height:32px}
+.price{font-size:15px}
+.prof-footer .foot-wrap{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
 <div class="topbar">🔥 URBAN MART MEGA SALE - UP TO 60% OFF | <span>FREE DELIVERY VEHARI Rs.1500+ Par</span> 🔥</div>
-<header><div class="head-top"><div class="logo" onclick="location.reload()">URBAN <span>MART</span> 🛍️</div>
+<header>
+<div class="head-top">
+<button class="hamburger" onclick="toggleNav()">☰</button>
+<div class="logo" onclick="location.reload()">URBAN <span>MART</span> 🛍️</div>
 <div class="search-box"><input id="searchInput" placeholder="Search - T-Shirt, Shoes, Watch..." onkeyup="filterProducts()"><button onclick="filterProducts()">Search</button></div>
-<div class="top-btns"><button class="wish-btn" onclick="showWishlist()">❤️ <span id="wishCount">0</span></button><span id="userArea"><button class="login-btn" onclick="openAuth()">👤 Login / Register</button></span><button class="cart-btn" onclick="openCart()">🛒 Cart (<span id="cartCount">0</span>) - Rs.<span id="cartTotalTop">0</span></button></div></div></header>
-<nav>
+<div class="top-btns"><button class="wish-btn" onclick="showWishlist()">❤️ <span id="wishCount">0</span></button><span id="userArea"><button class="login-btn" onclick="openAuth()">👤 Login</button></span><button class="cart-btn" onclick="openCart()">🛒 Cart (<span id="cartCount">0</span>) - Rs.<span id="cartTotalTop">0</span></button></div>
+</div>
+</header>
+<div class="nav-wrap" id="navWrap">
+<nav id="mainNav">
+<button onclick="openProductsMenu()" style="background:linear-gradient(90deg,#ff3b30,#ff6a00);color:#fff;border-color:transparent">🛍️ Products ▾</button>
 <button class="active" onclick="setCat('All',this)">🏠 All</button>
 <button onclick="setCat('Fashion',this)">👕 Fashion</button><button onclick="setCat('Shoes',this)">👟 Shoes</button><button onclick="setCat('Watches',this)">⌚ Watches</button><button onclick="setCat('Electronics',this)">🎧 Electronics</button><button onclick="setCat('Mobile',this)">📱 Mobile</button><button onclick="setCat('Beauty',this)">💄 Beauty</button><button onclick="setCat('Home',this)">🏠 Home</button><button onclick="setCat('Grocery',this)">🛒 Grocery</button><button onclick="setCat('Kids',this)">👶 Kids</button><button onclick="setCat('Toys',this)">🧸 Toys</button><button onclick="setCat('Sports',this)">⚽ Sports</button>
 </nav>
+<div class="nav-quick">
+<button class="hl" onclick="openProductsMenu()">🛍️ All Products (<span id="prodCountNav">114</span>)</button>
+<button class="hl" onclick="handleDash()">📊 Dashboard</button>
+<button onclick="showWishlist()">❤️ Wishlist (<span id="wishCount2">0</span>)</button>
+<button onclick="openCart()">🛒 My Cart</button>
+<button onclick="openAuth()">👤 Login / Register</button>
+<button onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">🔥 Best Selling</button>
+<button onclick="window.open('https://wa.me/923341765911','_blank')">💬 WhatsApp Order</button>
+<button onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">📞 Contact</button>
+</div>
+</div>
+<!-- PRODUCTS MENU - NAVBAR SE -->
+<div class="prod-menu" id="prodMenu" onclick="if(event.target===this)closeProductsMenu()">
+<div class="prod-box">
+<div class="prod-head"><h3>🛍️ All Products - URBAN MART</h3><input id="prodSearch" placeholder="🔍 Product search karo - Watch, Shoes, Honey..." onkeyup="renderProductsMenu()"><button onclick="closeProductsMenu()">✕</button></div>
+<div class="prod-cats" id="prodCats"></div>
+<div class="prod-list" id="prodList"></div>
+<div style="padding:10px 14px;background:#f8f9fa;font-size:12px;color:#666;text-align:center">Kisi bhi product pe click karo → wo neeche shop me khul jayega • Add dabao → seedha Cart me jayega</div>
+</div>
+</div>
 <div class="hero"><h1>URBAN MART <span>VEHARI</span><br>Ab 114+ Products - Sab Kuch Ek Jagah</h1><p>Vehari Ka Apna Trusted Store | Cash On Delivery | 7 Days Return | Best Price Guarantee</p><button onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">Shop Now 👇</button></div>
 <div class="badges"><div>✅ Cash On Delivery</div><div>🚀 Same Day Vehari</div><div>🔄 7 Days Return</div><div>🎨 Color Options</div><div>👤 Login & Dashboard</div><div>⭐ 2000+ Happy Customers</div></div>
 <h2 class="section-title">🔥 Best Selling - <span id="showCat">All</span> (<span id="countShow">0</span> items)</h2>
@@ -118,11 +192,10 @@ nav button:hover{background:#333;color:#fff}nav button.active{background:linear-
 <div class="overlay" id="overlay" onclick="closeCart()"></div>
 <div id="cartDrawer"><div class="cart-head"><b>🛒 Your Bag - URBAN MART</b><button onclick="closeCart()">X Close</button></div><div id="cartItems"><p style="text-align:center;color:#888;padding:30px">Bag khali hai.</p></div><div class="cart-foot"><b>Total: Rs. <span id="cartTotal">0</span></b><p style="font-size:12px;color:#888">Delivery: Rs. 200 (Free over Rs.1500) - Vehari</p><input id="custName" placeholder="Apna Naam *"><input id="custPhone" placeholder="Mobile Number *"><input id="custAddress" placeholder="Full Address - Vehari *"><select id="payMethod"><option>Cash On Delivery</option><option>JazzCash</option><option>Easypaisa</option><option>Bank Transfer</option></select><button class="checkout" onclick="checkout()">✅ WhatsApp Par Order Karein</button></div></div>
 <script>
-let selColor={};
+let selColor={}; let prodMenuCat='All';
 const P=(name,cat,price,old,img,colors)=>({name,cat,price,old,img,colors});
 const FALLBACK="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=500";
 const products=[
-// FASHION - 12
 P("Men White T-Shirt","Fashion",999,1499,"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500",["White","Black","Grey"]),
 P("Men Denim Jeans","Fashion",1599,2299,"https://images.unsplash.com/photo-1542272604-787c3835535d?w=500",["Blue","Black","Light Blue"]),
 P("Men Black Hoodie","Fashion",1799,2599,"https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500",["Black","Grey","Navy"]),
@@ -135,7 +208,6 @@ P("Men Shalwar Kameez","Fashion",1999,2999,"https://fancyfashions.co.uk/cdn/shop
 P("Women Lawn Suit 3PC","Fashion",2499,3499,"https://cdn.ecommercedns.uk/files/8/216208/5/56157805/5-8-5227ad23-6a04-4822-9900-7c9d639aa937.png",["Pink","Blue","Yellow","Green"]),
 P("Men Check Shirt","Fashion",1299,1899,"https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=500",["Red Check","Blue Check","Green Check"]),
 P("Women Abaya","Fashion",2199,3299,"https://i.pinimg.com/736x/8b/b4/80/8bb480fe8a295b9e1c4fb894ba3c783b.jpg",["Black","Navy","Brown"]),
-// SHOES - 11
 P("White Sneakers","Shoes",2199,3299,"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500",["White","Black","Red"]),
 P("Running Joggers Shoes","Shoes",2499,3599,"https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500",["Black","White","Blue"]),
 P("Peshawari Chappal","Shoes",1499,2199,"https://images.unsplash.com/photo-1603487742131-4160ec999306?w=500",["Brown","Black","Mustard"]),
@@ -147,7 +219,6 @@ P("Sports Shoes Men","Shoes",2299,3299,"https://images.unsplash.com/photo-160823
 P("Slippers Comfort","Shoes",699,999,"https://rukmini1.flixcart.com/image/1500/1500/kt4ozgw0/slipper-flip-flop/f/i/c/6-749-blk-731-gry-752-blk-fabbmate-multicolor-original-imag6jn7hzhhy7f9.jpeg",["Black","White","Blue"]),
 P("Leather Boots","Shoes",3499,4999,"https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=500",["Brown","Black"]),
 P("Kids Sneakers","Shoes",1399,1999,"https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=500",["Red","Blue","Pink"]),
-// WATCHES - 10
 P("Luxury Men Watch","Watches",3499,5999,"https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500",["Gold","Silver","Black"]),
 P("Smart Watch Black","Watches",2999,4999,"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",["Black","White","Blue"]),
 P("Couple Watches Set","Watches",3999,6499,"https://m.media-amazon.com/images/I/61x08XEN7gL._AC_SL1000_.jpg",["Gold","Silver"]),
@@ -158,7 +229,6 @@ P("Leather Strap Watch","Watches",2799,4299,"https://fossil.scene7.com/is/image/
 P("Chronograph Watch","Watches",3299,4999,"https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=500",["Black","Silver","Blue"]),
 P("Kids Digital Watch","Watches",999,1499,"https://sg-test-11.slatic.net/p/915e72b08f1af673e04f78fff1fbaa70.jpg",["Blue","Pink","Green"]),
 P("Smart Watch Series 8","Watches",4499,6999,"https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?w=500",["Black","White"]),
-// ELECTRONICS - 10
 P("Wireless Earbuds","Electronics",1799,2999,"https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500",["Black","White","Blue"]),
 P("Bluetooth Headphones","Electronics",2499,3999,"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500",["Black","White","Blue"]),
 P("Bluetooth Speaker","Electronics",1999,2999,"https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500",["Black","Blue","Red"]),
@@ -169,7 +239,6 @@ P("USB Type-C Cable","Electronics",499,799,"https://images.unsplash.com/photo-15
 P("Laptop Stand Metal","Electronics",1499,2299,"https://www.xmediasat.com/bilder/big/webp/ht17.webp",["Silver","Black"]),
 P("HD Webcam","Electronics",2999,4499,"https://vn-live-03.slatic.net/p/edd5f84625895d583bef1dda053b568f.jpg",["Black"]),
 P("Smart TV Remote","Electronics",799,1299,"https://i.ebayimg.com/00/s/MTYwMFgxNjAw/z/Up4AAOSwHkNjkYQA/$_57.JPG?set_id=880000500F",["Black"]),
-// MOBILE - 10
 P("Power Bank 20000mAh","Mobile",2299,3499,"https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=500",["Black","White","Blue"]),
 P("Fast Mobile Charger 25W","Mobile",899,1499,"https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=500",["White","Black"]),
 P("Mobile Cover Premium","Mobile",499,799,"https://images.unsplash.com/photo-1601593346740-925612772716?w=500",["Black","Transparent","Blue","Pink"]),
@@ -180,7 +249,6 @@ P("Tempered Glass Protector","Mobile",399,699,"https://images.unsplash.com/photo
 P("Wired Earphone","Mobile",699,999,"https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=500",["White","Black"]),
 P("Selfie Stick With Tripod","Mobile",999,1599,"https://m.media-amazon.com/images/I/61GZzMcZxVL.jpg_BO30,255,255,255_UF900,850_SR1910,1000,0,C_QL100_.jpg",["Black","White"]),
 P("Mobile Stand Desktop Holder","Mobile",699,1099,"https://m.media-amazon.com/images/I/61Zbuc0Ey8L.jpg",["Black","Silver"]),
-// BEAUTY - 10
 P("Face Wash Glow","Beauty",699,999,"https://images.unsplash.com/photo-1556228720-195a672e8a03?w=500",["White"]),
 P("Makeup Kit Professional","Beauty",1999,2999,"https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=500",["Pink","Nude","Brown"]),
 P("Oud Perfume 100ml","Beauty",1499,2299,"https://images.unsplash.com/photo-1541643600914-78b084683601?w=500",["Oud","Rose","Jasmine"]),
@@ -191,18 +259,16 @@ P("Nail Polish Set","Beauty",799,1299,"https://images.unsplash.com/photo-1604654
 P("Face Serum Vitamin C","Beauty",999,1599,"https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=500",["Vitamin C"]),
 P("Hair Straightener","Beauty",2199,3299,"https://i.pinimg.com/originals/d7/8b/9f/d78b9f835a7362ae1d8d506d2058afd1.jpg",["Black","Pink"]),
 P("Body Lotion","Beauty",899,1399,"https://www.medoget.com/cdn/shop/files/downloadcopy_535d815d-6b1f-448b-8e37-ac6257151eb2_1024x.png?v=1697705271",["Rose","Aloe Vera","Coconut"]),
-// HOME - 10
 P("Double Bedsheet Cotton","Home",1299,1999,"https://i.ebayimg.com/images/g/Ix0AAOSw6jllGm2t/s-l1200.webp",["Blue","Pink","Grey","Green"]),
 P("LED Table Lamp","Home",999,1599,"https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500",["White","Black","Gold"]),
 P("Wall Clock Round","Home",899,1399,"https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?w=500",["Black","White","Wooden"]),
 P("Steel Water Bottle 1L","Home",799,1199,"https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=500",["Silver","Black","Blue","Pink"]),
-P("Non-Stick Cookware Set","Home",3499,5499,"https://cartnear.s3.us-east-2.amazonaws.com/products/029d530b26087d23cfc3d8c29115d6e0.jpg",["Black","Grey","Red"]),
+P("Non-Stick Cookware Set","Home",3499,5499,"https://m.media-amazon.com/images/I/619LoOxstWL.jpg",["Black","Grey","Red"]),
 P("Electric Kettle 1.7L","Home",1999,2999,"https://images.unsplash.com/photo-1594213114663-d94db9b17125?w=500",["Black","White","Steel"]),
 P("Curtains Pair","Home",1499,2299,"https://images.unsplash.com/photo-1513694203232-719a280e022f?w=500",["Beige","Grey","Brown","Blue"]),
 P("Cushion Covers 5 Pcs","Home",999,1599,"https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=500",["Multicolor","Grey","Blue"]),
 P("Dinner Set 24 Pcs","Home",4999,7999,"https://images.unsplash.com/photo-1603199506016-b9a594b593c0?w=500",["White","Blue","Floral"]),
 P("Storage Box Large","Home",899,1399,"https://id.plasticscmould.com/uploads/41957/plastic-storage-box71776.jpg",["Grey","Blue","Beige"]),
-// GROCERY - 10
 P("Basmati Rice 5KG","Grocery",1499,1999,"https://images.unsplash.com/photo-1586201375761-83865001e31c?w=500",["5KG","10KG"]),
 P("Cooking Oil 5 Litre","Grocery",2499,2999,"https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=500",["5L","3L"]),
 P("Fresh Dates Khajoor 1KG","Grocery",999,1499,"https://dukaan.b-cdn.net/1000x1000/webp/950990/b95252ec-00f9-4aed-a718-95cdd3f272ad.png",["1KG","500g"]),
@@ -213,18 +279,16 @@ P("Dry Fruits Mix 1KG","Grocery",1999,2999,"https://rukminim2.flixcart.com/image
 P("Rooh Afza 3L","Grocery",899,1199,"https://alfatah.pk/cdn/shop/files/8964000122105.jpg?v=1703105077&width=1426",["3L","1.5L"]),
 P("Pasta Spaghetti 500g","Grocery",499,699,"https://images.unsplash.com/photo-1556761223-4c4282c73f77?w=500",["500g"]),
 P("Pink Himalayan Salt 1KG","Grocery",599,899,"https://cdn.shopify.com/s/files/1/0756/6082/0646/files/6a17d95309d4d88fa239d48452aac444.jpg",["1KG","500g"]),
-// KIDS - 10
 P("Kids T-Shirt","Kids",599,899,"https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?w=500",["Red","Blue","Yellow","Pink"]),
 P("Kids Sneakers","Kids",1199,1799,"https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=500",["Red","Blue","Pink"]),
 P("Baby Romper","Kids",799,1199,"https://images.unsplash.com/photo-1522771930-78848d9293e8?w=500",["Pink","Blue","Yellow","White"]),
 P("Kids School Bag","Kids",1399,1999,"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500",["Blue","Pink","Red","Black"]),
 P("Kids Frock","Kids",999,1499,"https://rukminim2.flixcart.com/image/1600/2130/xif0q/kids-dress/y/e/g/18-24-months-plane-frock-155-lm-fashion-original-imahdwhcz7f5yzdg.jpeg?q=80",["Pink","Red","Purple"]),
-P("Kids Jeans","Kids",899,1399,"https://images.unsplash.com/photo-1542272604-787c3835535d?w=500",["Blue","Black"]),
+P("Kids Jeans","Kids",899,1399,"https://blessingbusiness.ca/cdn/shop/files/445742383690.jpg?v=1742482425",["Blue","Black"]),
 P("Baby Feeder Bottle","Kids",699,999,"https://m.media-amazon.com/images/I/51e2Bu8aqQS.jpg",["Blue","Pink","White"]),
 P("Kids Cap","Kids",399,599,"https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=500",["Red","Blue","Black"]),
 P("Kids Winter Jacket","Kids",1499,2299,"https://bd-live-21.slatic.net/kf/S93ba1cb2f76548359056ff6a5ea23f94M.jpg",["Red","Blue","Green"]),
 P("Baby Blanket Soft","Kids",899,1399,"https://s3.ap-southeast-1.amazonaws.com/auito-upload-sls-prd-document/66a30e0495181df4fd7379eb/83012bea-9e78-48fe-b280-6eee7f1f2439_Gemini_Generated_Image_5j1ums5j1ums5j1u.original.jpg",["Pink","Blue","Yellow"]),
-// TOYS - 10
 P("Remote Control Toy Car","Toys",1499,2299,"https://cdn.zeptonow.com/production/ik-seo/tr:w-1000,ar-1500-1500,pr-true,f-avif,q-40,dpr-2/cms/product_variant/ea5168b4-16d3-4cd4-ba43-4c83328752fb/ea5168b4-16d3-4cd4-ba43-4c83328752fb-jpg.jpg",["Red","Blue","Black"]),
 P("Teddy Bear Soft Toy","Toys",999,1499,"https://images.unsplash.com/photo-1559454403-b8fb88521f11?w=500",["Brown","Pink","White"]),
 P("Building Blocks 100 Pcs","Toys",1299,1999,"https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=500",["Multicolor"]),
@@ -235,24 +299,38 @@ P("Kids Drum Set","Toys",999,1499,"https://i5.walmartimages.com/seo/Kids-Drum-Se
 P("Water Gun","Toys",799,1199,"https://m.media-amazon.com/images/I/81mYjmE0oJL._AC_SL2048_.jpg",["Blue","Green","Yellow"]),
 P("Board Game Ludo","Toys",599,899,"https://m.media-amazon.com/images/I/81d-on04EnL.jpg_BO30,255,255,255_UF750,750_SR1910,1000,0,C_QL100_.jpg",["Multicolor"]),
 P("Toy Train Set","Toys",1399,1999,"https://i.pinimg.com/originals/27/22/57/2722573a7888c0e1781e67dbe3e48a1f.jpg",["Red","Blue"]),
-// SPORTS - 11
 P("Football","Sports",1299,1999,"https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=500",["White","Black"]),
 P("Cricket Bat Kashmir Willow","Sports",1899,2799,"https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/649d4c55d3731c63c5ba834f/51dwvjqftwl.jpg",["Wooden"]),
 P("Gym Gloves","Sports",799,1199,"https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=500",["Black","Red","Blue"]),
 P("Yoga Mat","Sports",1199,1799,"https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=500",["Pink","Blue","Black","Purple"]),
 P("Dumbbell Set 10KG","Sports",2999,4499,"https://images.unsplash.com/photo-1638536532686-d610adfc8e5c?w=500",["Black"]),
 P("Cricket Tennis Ball 3 Pcs","Sports",299,499,"https://images.unsplash.com/photo-1593341646782-e0b495cff86d?w=500",["Yellow","Green"]),
-P("Badminton Racket Set","Sports",1999,2999,"https://images.unsplash.com/photo-1626224583764-f87db24ac4a?w=500",["Red","Blue","Black"]),
+P("Badminton Racket Set","Sports",1999,2999,"https://storage.ghost.io/c/fe/a0/fea04a31-7a98-482e-a644-455ba808386b/content/images/2022/11/Zalava-Badminton-Racquets-Set-1.png",["Red","Blue","Black"]),
 P("Sports Water Bottle 1L","Sports",699,999,"https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=500",["Blue","Black","Green"]),
 P("Cricket Helmet","Sports",2499,3499,"https://images-static.nykaa.com/media/catalog/product/4/3/43c4f55STARSTEEL-ROYALBLUE_3.jpg",["Blue","Black","Green"]),
 P("Skipping Rope","Sports",499,799,"https://m.media-amazon.com/images/I/41SCUw-AUaL._SL500_.jpg",["Black","Pink","Blue"]),
 P("Resistance Bands Set","Sports",999,1499,"https://mynecessities.com/cdn/shop/files/20250925_1225_ResistanceBandsDisplay_remix_01k60tzd11f478gr1rpvsck45q.png?v=1759258459&width=600",["Multicolor"])
 ];
 let currentCat='All'; let cart=[]; let searchText=''; let wishlist=JSON.parse(localStorage.getItem('um_wish')||'[]');
+function toggleNav(){let n=document.getElementById('navWrap');n.style.display=(n.style.display==='none')?'block':'none';}
+function handleDash(){let u=getUser();if(!u){openAuth();return;}openDashboard();}
+function openProductsMenu(){document.getElementById('prodMenu').classList.add('show');renderProductsMenu();}
+function closeProductsMenu(){document.getElementById('prodMenu').classList.remove('show');}
+function setProdMenuCat(c){prodMenuCat=c;renderProductsMenu();}
+function renderProductsMenu(){
+  let cats=['All','Fashion','Shoes','Watches','Electronics','Mobile','Beauty','Home','Grocery','Kids','Toys','Sports'];
+  document.getElementById('prodCats').innerHTML=cats.map(c=>`<button class="${prodMenuCat===c?'active':''}" onclick="setProdMenuCat('${c}')">${c==='All'?'⭐ All':c}</button>`).join('');
+  let q=(document.getElementById('prodSearch')?.value||'').toLowerCase();
+  let f=products.filter(p=>(prodMenuCat==='All'||p.cat===prodMenuCat)&&p.name.toLowerCase().includes(q));
+  if(!f.length){document.getElementById('prodList').innerHTML='<p style="text-align:center;padding:25px;color:#888">Koi product nahi mila.</p>';return;}
+  let groups={};f.forEach(p=>{if(!groups[p.cat])groups[p.cat]=[];groups[p.cat].push(p);});
+  document.getElementById('prodList').innerHTML=Object.keys(groups).map(cat=>`<div class="prod-group"><h4>${cat} (${groups[cat].length})</h4>`+groups[cat].map(p=>{let idx=products.indexOf(p);return `<div class="prod-row" onclick="goToProduct(${idx})"><img src="${p.img}" onerror="this.onerror=null;this.src='${FALLBACK}'"><b>${p.name}</b><span>Rs.${p.price.toLocaleString()}</span><button onclick="event.stopPropagation();addToCart(${idx});closeProductsMenu()">Add 🛒</button></div>`}).join('')+`</div>`).join('');
+}
+function goToProduct(idx){let p=products[idx];closeProductsMenu();currentCat=p.cat;searchText='';document.getElementById('searchInput').value='';document.querySelectorAll('#mainNav button').forEach(x=>x.classList.remove('active'));renderProducts();document.getElementById('shop').scrollIntoView({behavior:'smooth'});alert('👉 '+p.name+' - Rs.'+p.price+' - Neeche shop me khul gaya! Add to Cart dabao.');}
 function getUser(){return JSON.parse(localStorage.getItem('um_user')||'null')}
 function getOrders(){return JSON.parse(localStorage.getItem('um_orders')||'[]')}
 function saveOrders(o){localStorage.setItem('um_orders',JSON.stringify(o))}
-function updateUserArea(){let u=getUser();document.getElementById('userArea').innerHTML=u?`<button class="dash-btn" onclick="openDashboard()">👤 ${u.name.split(' ')[0]} • Dashboard</button>`:`<button class="login-btn" onclick="openAuth()">👤 Login / Register</button>`; if(u){document.getElementById('custName').value=u.name;document.getElementById('custPhone').value=u.phone;document.getElementById('custAddress').value=u.address||'';}}
+function updateUserArea(){let u=getUser();document.getElementById('userArea').innerHTML=u?`<button class="dash-btn" onclick="openDashboard()">👤 ${u.name.split(' ')[0]} • Dashboard</button>`:`<button class="login-btn" onclick="openAuth()">👤 Login</button>`; if(u){document.getElementById('custName').value=u.name;document.getElementById('custPhone').value=u.phone;document.getElementById('custAddress').value=u.address||'';}}
 function openAuth(){document.getElementById('authModal').classList.add('show')}
 function closeModal(id){document.getElementById(id).classList.remove('show')}
 function switchTab(t){document.getElementById('tabLogin').classList.toggle('active',t==='login');document.getElementById('tabReg').classList.toggle('active',t==='register');document.getElementById('loginBox').style.display=t==='login'?'block':'none';document.getElementById('registerBox').style.display=t==='register'?'block':'none';}
@@ -262,7 +340,7 @@ function doLogout(){localStorage.removeItem('um_user');closeModal('dashModal');u
 function editProfile(){let u=getUser();let nn=prompt('New Name:',u.name);if(nn){u.name=nn;let users=JSON.parse(localStorage.getItem('um_users')||'[]');let idx=users.findIndex(x=>x.phone===u.phone);if(idx>-1){users[idx]=u;localStorage.setItem('um_users',JSON.stringify(users));}localStorage.setItem('um_user',JSON.stringify(u));updateUserArea();openDashboard();}}
 function openDashboard(){let u=getUser();if(!u){openAuth();return;}let orders=getOrders().filter(o=>o.phone===u.phone);let spent=orders.reduce((s,o)=>s+o.total,0);document.getElementById('dashWelcome').innerText=`Welcome, ${u.name}! 👋`;document.getElementById('statOrders').innerText=orders.length;document.getElementById('statSpent').innerText='Rs.'+spent.toLocaleString();document.getElementById('statWish').innerText=wishlist.length;document.getElementById('dashProfile').innerHTML=`👤 <b>${u.name}</b><br>📞 ${u.phone}<br>📍 ${u.city||'Vehari'}<br>🗓️ Joined: ${u.joined||'Today'}`;document.getElementById('dashAddress').innerText=u.address||'No address saved';document.getElementById('dashOrders').innerHTML=orders.length?orders.map(o=>`<div class="order-item"><b>${o.id}</b> - ${o.date} <span style="background:#e6ffe6;padding:2px 8px;border-radius:10px;font-size:11px">✅ ${o.status}</span><br>${o.items} • <b>Rs.${o.total.toLocaleString()}</b><br>💳 ${o.pay}</div>`).join(''):`<p>Abhi koi order nahi. Pehla order karo! 🛒</p>`;document.getElementById('dashWish').innerHTML=wishlist.length?wishlist.map(id=>{let p=products[id];return p?`<div style="display:flex;gap:8px;align-items:center;margin:5px 0"><img src="${p.img}" onerror="this.onerror=null;this.src='${FALLBACK}'" style="width:40px;height:40px;border-radius:8px;object-fit:cover"><span style="flex:1;font-size:13px">${p.name} - Rs.${p.price}</span><button onclick="addToCart(${id});closeModal('dashModal')" style="background:#111;color:#fff;border:none;padding:6px 12px;border-radius:15px;cursor:pointer">Add</button></div>`:''}).join(''):`<p>Wishlist khali hai. ❤️ dabao!</p>`;document.getElementById('dashModal').classList.add('show');}
 function toggleWish(idx){let i=wishlist.indexOf(idx);if(i>-1)wishlist.splice(i,1);else wishlist.push(idx);localStorage.setItem('um_wish',JSON.stringify(wishlist));updateWishUI();renderProducts();}
-function updateWishUI(){document.getElementById('wishCount').innerText=wishlist.length;}
+function updateWishUI(){document.getElementById('wishCount').innerText=wishlist.length;let w2=document.getElementById('wishCount2');if(w2)w2.innerText=wishlist.length;let pc=document.getElementById('prodCountNav');if(pc)pc.innerText=products.length;}
 function showWishlist(){let list=wishlist.map(id=>products[id]).filter(Boolean);document.getElementById('wishListBox').innerHTML=list.length?list.map((p)=>{let realIdx=products.indexOf(p);return `<div style="display:flex;gap:10px;align-items:center;border-bottom:1px solid #eee;padding:10px 0"><img src="${p.img}" onerror="this.onerror=null;this.src='${FALLBACK}'" style="width:55px;height:55px;border-radius:10px;object-fit:cover"><div style="flex:1"><b style="font-size:14px">${p.name}</b><br>Rs.${p.price.toLocaleString()}</div><button onclick="addToCart(${realIdx});closeModal('wishModal')" style="background:#111;color:#fff;border:none;padding:8px 14px;border-radius:20px;cursor:pointer">Add 🛒</button><button onclick="toggleWish(${realIdx});showWishlist()" style="background:none;border:none;font-size:18px;cursor:pointer">❌</button></div>`}).join(''):`<p style="text-align:center;padding:20px">Wishlist khali hai. Kisi product pe ❤️ dabao!</p>`;document.getElementById('wishModal').classList.add('show');}
 function setColor(idx,color,btn){ selColor[idx]=color; let p=btn.parentElement.querySelectorAll('button'); p.forEach(b=>b.classList.remove('sel')); btn.classList.add('sel'); }
 function renderProducts(){
@@ -277,7 +355,7 @@ function renderProducts(){
     return `<div class="card"><span class="badge-off">-${off}% OFF</span><img src="${p.img}" onerror="this.onerror=null;this.src='${FALLBACK}'" alt="${p.name}"><h3>${p.name}</h3><p>${p.cat} • ⭐ 4.8 • URBAN MART</p><div class="colors">${colorBtns}</div><div class="price">Rs. ${p.price.toLocaleString()} <s>Rs. ${p.old.toLocaleString()}</s> <b>SAVE Rs.${(p.old-p.price).toLocaleString()}</b></div><div class="card-actions"><button class="add" onclick="addToCart(${realIdx})">Add to Cart 🛒</button><button class="heart ${isWish?'active':''}" onclick="toggleWish(${realIdx})">${isWish?'❤️':'🤍'}</button></div></div>`;
   }).join('')||'<p style="text-align:center;padding:30px">Koi product nahi mila.</p>';
 }
-function setCat(c,b){currentCat=c;document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));if(b)b.classList.add('active');renderProducts();}
+function setCat(c,b){currentCat=c;document.querySelectorAll('#mainNav button').forEach(x=>x.classList.remove('active'));if(b)b.classList.add('active');renderProducts();if(window.innerWidth<820){document.getElementById('navWrap').style.display='none';}document.getElementById('shop').scrollIntoView({behavior:'smooth'});}
 function filterProducts(){searchText=document.getElementById('searchInput').value;renderProducts();}
 function addToCart(idx){let p=products[idx];let col=selColor[idx]||p.colors[0];let key=p.name+'|'+col;let f=cart.find(x=>x.key===key);if(f)f.qty++;else cart.push({key,name:p.name,price:p.price,img:p.img,qty:1,color:col});updateCart();openCart();}
 function updateCart(){let t=cart.reduce((s,x)=>s+x.price*x.qty,0);let c=cart.reduce((s,x)=>s+x.qty,0);document.getElementById('cartCount').innerText=c;document.getElementById('cartTotal').innerText=t.toLocaleString();document.getElementById('cartTotalTop').innerText=t.toLocaleString();if(cart.length===0){document.getElementById('cartItems').innerHTML='<p style="text-align:center;color:#888;padding:30px">Bag khali hai.</p>';return;}document.getElementById('cartItems').innerHTML=cart.map((x,i)=>`<div class="cart-item"><img src="${x.img}" onerror="this.onerror=null;this.src='${FALLBACK}'"><div style="flex:1"><b style="font-size:14px">${x.name}</b><br><span style="font-size:12px;background:#eee;padding:2px 8px;border-radius:10px">🎨 ${x.color}</span><br><span>Rs. ${x.price.toLocaleString()}</span><div class="qty" style="margin-top:5px"><button onclick="changeQty(${i},-1)">-</button> ${x.qty} <button onclick="changeQty(${i},1)">+</button> <button onclick="removeItem(${i})" style="color:red;border:none;background:none;cursor:pointer">🗑️</button></div></div><b>Rs. ${(x.price*x.qty).toLocaleString()}</b></div>`).join('');}
