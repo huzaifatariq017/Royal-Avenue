@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>URBAN MART V2 - Vehari Ka No.1 Store | 48 Products</title>
+<title>URBAN MART - Vehari Ka No.1 Online Store | 60+ Products</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
 body{background:#f4f4f5}
-.topbar{background:#111;color:#fff;text-align:center;padding:8px;font-size:13px;font-weight:bold}
+.topbar{background:#111;color:#fff;text-align:center;padding:9px;font-size:13px;font-weight:bold}
 .topbar span{color:#ffcc00}
 header{background:#fff;padding:14px 15px;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.08)}
 .head-top{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:auto;flex-wrap:wrap;gap:10px}
@@ -18,7 +18,7 @@ header{background:#fff;padding:14px 15px;position:sticky;top:0;z-index:100;box-s
 .search-box button{background:#111;color:#fff;border:none;padding:0 22px;font-weight:bold;cursor:pointer}
 .cart-btn{background:#ff3b30;color:#fff;border:none;padding:12px 22px;border-radius:25px;font-weight:bold;cursor:pointer}
 nav{background:#111;display:flex;justify-content:center;gap:5px;flex-wrap:wrap;padding:10px}
-nav button{background:transparent;color:#fff;border:none;padding:9px 15px;border-radius:20px;cursor:pointer;font-weight:600}
+nav button{background:transparent;color:#fff;border:none;padding:8px 13px;border-radius:20px;cursor:pointer;font-weight:600;font-size:13px}
 nav button.active,nav button:hover{background:#ff3b30}
 .hero{background:linear-gradient(135deg,#111,#3a3a3a);color:#fff;text-align:center;padding:50px 15px}
 .hero h1{font-size:40px;line-height:1.2}
@@ -61,10 +61,10 @@ footer p{color:#bbb;font-size:14px;margin:6px 0;line-height:1.6}
 </style>
 </head>
 <body>
-<div class="topbar">🔥 MEGA SALE V2 - UP TO 60% OFF | <span>FREE DELIVERY VEHARI Rs.1500+ Par</span> 🔥</div>
+<div class="topbar">🔥 URBAN MART MEGA SALE - UP TO 60% OFF | <span>FREE DELIVERY VEHARI Rs.1500+ Par</span> 🔥</div>
 <header><div class="head-top">
 <div class="logo">URBAN <span>MART</span> 🛍️</div>
-<div class="search-box"><input id="searchInput" placeholder="Search - T-Shirt, Shoes, Watch..." onkeyup="filterProducts()"><button onclick="filterProducts()">Search</button></div>
+<div class="search-box"><input id="searchInput" placeholder="Search - T-Shirt, Shoes, Watch, Grocery..." onkeyup="filterProducts()"><button onclick="filterProducts()">Search</button></div>
 <button class="cart-btn" onclick="openCart()">🛒 Cart (<span id="cartCount">0</span>) - Rs.<span id="cartTotalTop">0</span></button>
 </div></header>
 <nav>
@@ -73,17 +73,106 @@ footer p{color:#bbb;font-size:14px;margin:6px 0;line-height:1.6}
 <button onclick="setCat('Shoes',this)">👟 Shoes</button>
 <button onclick="setCat('Watches',this)">⌚ Watches</button>
 <button onclick="setCat('Electronics',this)">🎧 Electronics</button>
+<button onclick="setCat('Mobile',this)">📱 Mobile</button>
 <button onclick="setCat('Beauty',this)">💄 Beauty</button>
-<button onclick="setCat('Home',this)">🏠 Home</button>
+<button onclick="setCat('Home',this)">🏠 Home & Kitchen</button>
+<button onclick="setCat('Grocery',this)">🛒 Grocery</button>
 <button onclick="setCat('Kids',this)">👶 Kids</button>
+<button onclick="setCat('Toys',this)">🧸 Toys</button>
 <button onclick="setCat('Sports',this)">⚽ Sports</button>
 </nav>
-<div class="hero"><h1>URBAN MART <span>VEHARI</span><br>Ab 48+ Products - Sab Kuch Ek Jagah</h1><p>Vehari, Punjab, Pakistan Ka Apna Trusted Store | Cash On Delivery | 7 Days Return</p><button onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">Shop Now 👇</button></div>
+<div class="hero"><h1>URBAN MART <span>VEHARI</span><br>Ab 60+ Products - Sab Kuch Ek Jagah</h1><p>Vehari, Punjab, Pakistan Ka Apna Trusted Store | Cash On Delivery | 7 Days Return</p><button onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">Shop Now 👇</button></div>
 <div class="badges"><div>✅ Cash On Delivery</div><div>🚀 Same Day Vehari</div><div>🔄 7 Days Return</div><div>⭐ 2000+ Happy Customers</div><div>📍 Vehari, Punjab</div></div>
 <h2 class="section-title">🔥 Best Selling - <span id="showCat">All</span> (<span id="countShow">0</span> items)</h2>
 <div class="products" id="shop"></div>
-<div style="text-align:center;padding:25px;background:#fff;max-width:1200px;margin:20px auto;border-radius:15px"><h2>Why Urban Mart V2?</h2><p style="color:#666;margin-top:8px;line-height:1.7">Ab aur zyada products, aur sasti prices. Order karo, ghar bethay Cash On Delivery par payment karo.<br><b>📍 Main Bazaar, Vehari, Punjab, Pakistan | 📞 WhatsApp: 03341765911 | ⏰ 9 AM - 11 PM Daily</b></p></div>
-<footer><h2>URBAN <span>MART</span> 🛍️</h2><p>Pakistan Ka Apna Online Store - Best Quality, Best Price, Fast Delivery</p><p>📍 Main Bazaar, Vehari, Punjab, Pakistan<br>📞 WhatsApp: 03341765911 | 📧 urbanmartvehari@gmail.com</p><p>© 2026 Urban Mart Vehari - Made by Huzaifa Tariq</p></footer>
-<a class="wa" href="https://wa.me/923341765911?text=Assalam-o-Alaikum%20Urban%20Mart%20Mujhe%20Order%20Karna%20Hai" target="_blank">WhatsApp Order 💬</a>
+<div style="text-align:center;padding:25px;background:#fff;max-width:1200px;margin:20px auto;border-radius:15px"><h2>Why URBAN MART?</h2><p style="color:#666;margin-top:8px;line-height:1.7">Ab aur zyada products, aur sasti prices. Order karo, ghar bethay Cash On Delivery par payment karo.<br><b>📍 Main Bazaar, Vehari, Punjab, Pakistan | 📞 WhatsApp: 03341765911 | ⏰ 9 AM - 11 PM Daily</b></p></div>
+<footer><h2>URBAN <span>MART</span> 🛍️</h2><p>Pakistan Ka Apna Online Store - Best Quality, Best Price, Fast Delivery</p><p>📍 Main Bazaar, Vehari, Punjab, Pakistan<br>📞 WhatsApp: 03341765911 | 📧 urbanmartvehari@gmail.com</p><p>© 2026 URBAN MART Vehari - Made by Huzaifa Tariq</p></footer>
+<a class="wa" href="https://wa.me/923341765911?text=Assalam-o-Alaikum%20URBAN%20MART%20Mujhe%20Order%20Karna%20Hai" target="_blank">WhatsApp Order 💬</a>
 <div class="overlay" id="overlay" onclick="closeCart()"></div>
-<div id="cartDrawer"><div class="cart-head"><b>🛒 Your Bag</b><button onclick="closeCart()">X Close</button></div><div id="cartItems"><p style="text-align:center;color:#888;padding:30px">Bag khali hai.</p></div><div class="cart-foot"><b>Total: Rs. <span id="cartTotal">0</span></b><p style="font-size:12px;color:#888">Delivery: Rs. 200 (Free over Rs.1500) - Vehari</p><input id="custName" placeholder="Apna Naam"><input id="custPhone" placeholder="Mobile Number"><input id="custAddress" placeholder="Full Address - Vehari, Punjab"><button class="checkout" onclick="checkout()">✅ WhatsApp Par Order Karein</button></div></div>
+<div id="cartDrawer"><div class="cart-head"><b>🛒 Your Bag - URBAN MART</b><button onclick="closeCart()">X Close</button></div><div id="cartItems"><p style="text-align:center;color:#888;padding:30px">Bag khali hai.</p></div><div class="cart-foot"><b>Total: Rs. <span id="cartTotal">0</span></b><p style="font-size:12px;color:#888">Delivery: Rs. 200 (Free over Rs.1500) - Vehari</p><input id="custName" placeholder="Apna Naam"><input id="custPhone" placeholder="Mobile Number"><input id="custAddress" placeholder="Full Address - Vehari, Punjab"><button class="checkout" onclick="checkout()">✅ WhatsApp Par Order Karein</button></div></div>
+<script>
+const products=[
+{name:"Men White T-Shirt",cat:"Fashion",price:999,old:1499,img:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500"},
+{name:"Men Denim Jeans Blue",cat:"Fashion",price:1599,old:2299,img:"https://images.unsplash.com/photo-1542272604-787c3835535d?w=500"},
+{name:"Men Black Hoodie",cat:"Fashion",price:1799,old:2599,img:"https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500"},
+{name:"Men Formal White Shirt",cat:"Fashion",price:1199,old:1799,img:"https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=500"},
+{name:"Women Floral Kurti",cat:"Fashion",price:1299,old:1999,img:"https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500"},
+{name:"Women Handbag Brown",cat:"Fashion",price:1599,old:2499,img:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500"},
+{name:"Men Leather Wallet",cat:"Fashion",price:899,old:1399,img:"https://images.unsplash.com/photo-1627123424574-724758594e93?w=500"},
+{name:"Black Sunglasses",cat:"Fashion",price:999,old:1599,img:"https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500"},
+{name:"White Sneakers",cat:"Shoes",price:2199,old:3299,img:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500"},
+{name:"Running Joggers Shoes",cat:"Shoes",price:2499,old:3599,img:"https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500"},
+{name:"Peshawari Chappal",cat:"Shoes",price:1499,old:2199,img:"https://images.unsplash.com/photo-1603487742131-4160ec999306?w=500"},
+{name:"Women High Heels",cat:"Shoes",price:1899,old:2799,img:"https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500"},
+{name:"Women Sandals",cat:"Shoes",price:1299,old:1899,img:"https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=500"},
+{name:"Luxury Men Watch",cat:"Watches",price:3499,old:5999,img:"https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500"},
+{name:"Smart Watch Black",cat:"Watches",price:2999,old:4999,img:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500"},
+{name:"Couple Watches Set",cat:"Watches",price:3999,old:6499,img:"https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=500"},
+{name:"Smart Watch Ultra",cat:"Watches",price:3999,old:5999,img:"https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=500"},
+{name:"Wireless Earbuds",cat:"Electronics",price:1799,old:2999,img:"https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500"},
+{name:"Bluetooth Headphones",cat:"Electronics",price:2499,old:3999,img:"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500"},
+{name:"Bluetooth Speaker",cat:"Electronics",price:1999,old:2999,img:"https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500"},
+{name:"Power Bank 20000mAh",cat:"Mobile",price:2299,old:3499,img:"https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=500"},
+{name:"Fast Mobile Charger",cat:"Mobile",price:899,old:1499,img:"https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=500"},
+{name:"Mobile Cover Premium",cat:"Mobile",price:499,old:799,img:"https://images.unsplash.com/photo-1601593346740-925612772716?w=500"},
+{name:"Tripod Stand For Mobile",cat:"Mobile",price:1199,old:1899,img:"https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=500"},
+{name:"Face Wash Glow",cat:"Beauty",price:699,old:999,img:"https://images.unsplash.com/photo-1556228720-195a672e8a03?w=500"},
+{name:"Makeup Kit Professional",cat:"Beauty",price:1999,old:2999,img:"https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=500"},
+{name:"Oud Perfume",cat:"Beauty",price:1499,old:2299,img:"https://images.unsplash.com/photo-1541643600914-78b084683601?w=500"},
+{name:"Lipstick Set 6 Pcs",cat:"Beauty",price:899,old:1399,img:"https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=500"},
+{name:"Hair Dryer",cat:"Beauty",price:1599,old:2499,img:"https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=500"},
+{name:"Herbal Hair Oil",cat:"Beauty",price:799,old:1199,img:"https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=500"},
+{name:"Double Bedsheet",cat:"Home",price:1299,old:1999,img:"https://images.unsplash.com/photo-1522770179533-24471fcdba45?w=500"},
+{name:"LED Table Lamp",cat:"Home",price:999,old:1599,img:"https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500"},
+{name:"Wall Clock Round",cat:"Home",price:899,old:1399,img:"https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?w=500"},
+{name:"Steel Water Bottle",cat:"Home",price:799,old:1199,img:"https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=500"},
+{name:"Non-Stick Cookware Set",cat:"Home",price:3499,old:5499,img:"https://images.unsplash.com/photo-1584990347449-a2d4c2c6d4e8?w=500"},
+{name:"Basmati Rice 5KG",cat:"Grocery",price:1499,old:1999,img:"https://images.unsplash.com/photo-1586201375761-83865001e31c?w=500"},
+{name:"Cooking Oil 5 Litre",cat:"Grocery",price:2499,old:2999,img:"https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=500"},
+{name:"Fresh Dates Khajoor 1KG",cat:"Grocery",price:999,old:1499,img:"https://images.unsplash.com/photo-1593904308074-e1d8f0f0e3e3?w=500"},
+{name:"Honey Pure 1KG",cat:"Grocery",price:1299,old:1799,img:"https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=500"},
+{name:"Tea - Chai Patti 900g",cat:"Grocery",price:1199,old:1599,img:"https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=500"},
+{name:"Kids T-Shirt",cat:"Kids",price:599,old:899,img:"https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?w=500"},
+{name:"Kids Shoes",cat:"Kids",price:1199,old:1799,img:"https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=500"},
+{name:"Baby Romper",cat:"Kids",price:799,old:1199,img:"https://images.unsplash.com/photo-1522771930-78848d9293e8?w=500"},
+{name:"Kids School Bag",cat:"Kids",price:1399,old:1999,img:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500"},
+{name:"Remote Control Toy Car",cat:"Toys",price:1499,old:2299,img:"https://images.unsplash.com/photo-1558060370-d644479cb6f7?w=500"},
+{name:"Teddy Bear Soft Toy",cat:"Toys",price:999,old:1499,img:"https://images.unsplash.com/photo-1559454403-b8fb88521f11?w=500"},
+{name:"Lego Building Blocks",cat:"Toys",price:1299,old:1999,img:"https://images.unsplash.com/photo-1558060370-d644479cb6f7?w=500"},
+{name:"Kids Puzzle Game",cat:"Toys",price:699,old:999,img:"https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=500"},
+{name:"Football",cat:"Sports",price:1299,old:1999,img:"https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=500"},
+{name:"Cricket Bat Kashmir Willow",cat:"Sports",price:1899,old:2799,img:"https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=500"},
+{name:"Gym Gloves",cat:"Sports",price:799,old:1199,img:"https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=500"},
+{name:"Yoga Mat",cat:"Sports",price:1199,old:1799,img:"https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=500"},
+{name:"Dumbbell Set 10KG",cat:"Sports",price:2999,old:4499,img:"https://images.unsplash.com/photo-1638536532686-d610adfc8e5c?w=500"},
+{name:"Cricket Ball Tennis",cat:"Sports",price:299,old:499,img:"https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=500"},
+{name:"Badminton Racket Set",cat:"Sports",price:1999,old:2999,img:"https://images.unsplash.com/photo-1626224583764-f87db24ac4a?w=500"},
+{name:"Water Bottle Sports",cat:"Sports",price:699,old:999,img:"https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=500"},
+{name:"Men Shalwar Kameez",cat:"Fashion",price:1999,old:2999,img:"https://images.unsplash.com/photo-1622122201714-77da0ca8e5d2?w=500"},
+{name:"Women Lawn Suit 3PC",cat:"Fashion",price:2499,old:3499,img:"https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500"},
+{name:"School Bag",cat:"Home",price:1399,old:1999,img:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500"},
+{name:"Electric Kettle",cat:"Home",price:1999,old:2999,img:"https://images.unsplash.com/photo-1594213114663-d94db9b17125?w=500"}
+];
+let currentCat='All'; let cart=[]; let searchText='';
+function renderProducts(){
+  let f=products.filter(p=>(currentCat==='All'||p.cat===currentCat)&&p.name.toLowerCase().includes(searchText.toLowerCase()));
+  document.getElementById('countShow').innerText=f.length;
+  document.getElementById('showCat').innerText=currentCat;
+  document.getElementById('shop').innerHTML=f.map(p=>{
+    let off=Math.round((1-p.price/p.old)*100);
+    return `<div class="card"><span class="badge-off">-${off}% OFF</span><img src="${p.img}" alt="${p.name}"><h3>${p.name}</h3><p>${p.cat} • ⭐ 4.8 • URBAN MART Vehari</p><div class="price">Rs. ${p.price.toLocaleString()} <s>Rs. ${p.old.toLocaleString()}</s> <b>SAVE Rs.${(p.old-p.price).toLocaleString()}</b></div><button class="add" onclick="addToCart('${p.name.replace(/'/g,"")}',${p.price},'${p.img}')">Add to Cart 🛒</button></div>`;
+  }).join('')||'<p style="text-align:center;padding:30px">Koi product nahi mila.</p>';
+}
+function setCat(c,b){currentCat=c;document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));if(b)b.classList.add('active');renderProducts();}
+function filterProducts(){searchText=document.getElementById('searchInput').value;renderProducts();}
+function addToCart(n,p,i){let f=cart.find(x=>x.name===n);if(f)f.qty++;else cart.push({name:n,price:p,img:i,qty:1});updateCart();openCart();}
+function updateCart(){let t=cart.reduce((s,x)=>s+x.price*x.qty,0);let c=cart.reduce((s,x)=>s+x.qty,0);document.getElementById('cartCount').innerText=c;document.getElementById('cartTotal').innerText=t.toLocaleString();document.getElementById('cartTotalTop').innerText=t.toLocaleString();if(cart.length===0){document.getElementById('cartItems').innerHTML='<p style="text-align:center;color:#888;padding:30px">Bag khali hai.</p>';return;}document.getElementById('cartItems').innerHTML=cart.map((x,i)=>`<div class="cart-item"><img src="${x.img}"><div style="flex:1"><b style="font-size:14px">${x.name}</b><br><span>Rs. ${x.price.toLocaleString()}</span><div class="qty" style="margin-top:5px"><button onclick="changeQty(${i},-1)">-</button> ${x.qty} <button onclick="changeQty(${i},1)">+</button> <button onclick="removeItem(${i})" style="color:red;border:none;background:none;cursor:pointer">🗑️</button></div></div><b>Rs. ${(x.price*x.qty).toLocaleString()}</b></div>`).join('');}
+function changeQty(i,d){cart[i].qty+=d;if(cart[i].qty<=0)cart.splice(i,1);updateCart();}
+function removeItem(i){cart.splice(i,1);updateCart();}
+function openCart(){document.getElementById('cartDrawer').classList.add('open');document.getElementById('overlay').classList.add('show');}
+function closeCart(){document.getElementById('cartDrawer').classList.remove('open');document.getElementById('overlay').classList.remove('show');}
+function checkout(){if(cart.length===0){alert('Pehle koi product add karo!');return;}let n=document.getElementById('custName').value.trim();let ph=document.getElementById('custPhone').value.trim();let ad=document.getElementById('custAddress').value.trim();if(!n||!ph||!ad){alert('Please Naam, Mobile aur Address likho!');return;}let t=cart.reduce((s,x)=>s+x.price*x.qty,0);let d=t>=1500?0:200;let m=`Assalam-o-Alaikum URBAN MART! Mujhe Order Karna Hai:%0A%0A`;cart.forEach(x=>{m+=`• ${x.name} x ${x.qty} = Rs.${x.price*x.qty}%0A`;});m+=`%0A--------------------%0ASubtotal: Rs.${t}%0ADelivery: Rs.${d} ${d===0?'(FREE)':''}%0AGrand Total: Rs.${t+d}%0A%0AName: ${n}%0APhone: ${ph}%0AAddress: ${ad}, Vehari%0A%0APlease Confirm My Order. Thank You!`;window.open(`https://wa.me/923341765911?text=${m}`,'_blank');}
+renderProducts();
+</script>
+</body>
+</html>
