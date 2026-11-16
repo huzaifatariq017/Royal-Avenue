@@ -3,345 +3,301 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>URBAN MART - Shop Smart Live Better</title>
+<title>URBAN MART - Login</title>
 <style>
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Arial, sans-serif; }
-body { background:#fff7f0; color:#111; }
-header { background:#fff; position:sticky; top:0; z-index:99; box-shadow:0 2px 10px rgba(0,0,0,.08); padding:14px 20px; display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
-.logo { font-size:28px; font-weight:900; line-height:1; cursor:pointer; }
-.logo span { color:#ff3d00; }
-.logo small { font-size:9px; letter-spacing:3px; color:#666; display:block; }
-.search-box { flex:1; min-width:220px; display:flex; background:#f1f1f1; border-radius:50px; overflow:hidden; border:2px solid transparent; }
-.search-box:focus-within { border-color:#ff3d00; }
-.search-box input { flex:1; padding:12px 16px; border:0; outline:0; background:transparent; font-size:15px; }
-.search-box button { background:#111; color:#fff; padding:0 24px; border:0; cursor:pointer; font-weight:700; }
-.nav-btns { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
-.nav-btns button { padding:10px 16px; border-radius:50px; border:1px solid #eee; background:#fff; cursor:pointer; font-weight:600; font-size:14px; }
-.nav-btns button:hover { background:#111; color:#fff; }
-.nav-btns .black { background:#111; color:#fff; }
-.cart-count { background:#ff3d00; color:#fff; border-radius:50%; padding:2px 7px; font-size:12px; }
-.hero { margin:16px 20px; border-radius:20px; overflow:hidden; background:#111; color:#fff; display:flex; min-height:360px; }
-.hero-text { padding:38px; flex:1; }
-.hero-text h1 { font-size:50px; line-height:.95; }
-.hero-text h1 i { color:#ffb400; font-style:normal; }
-.hero-text p { margin:16px 0; color:#ddd; font-size:16px; line-height:1.6; }
-.hero-img { flex:1; background:url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=900') center/cover; }
-.hero-btns { display:flex; gap:10px; flex-wrap:wrap; }
-.btn-white { background:#fff; padding:13px 24px; border-radius:50px; border:0; font-weight:700; cursor:pointer; }
-.btn-orange { background:#ff6a00; color:#fff; padding:13px 24px; border-radius:50px; border:0; font-weight:700; cursor:pointer; }
-.badges { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; padding:14px; }
-.badges span { background:#fff; border:1px solid #eee; padding:9px 15px; border-radius:50px; font-size:13px; }
-.cats { display:flex; gap:8px; overflow-x:auto; padding:6px 20px; }
-.cat { white-space:nowrap; padding:11px 20px; border-radius:50px; border:1px solid #eee; background:#fff; cursor:pointer; font-weight:600; }
-.cat.active { background:#111; color:#fff; }
-.toolbar { padding:10px 20px; display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
-.toolbar input, .toolbar select { padding:11px; border-radius:10px; border:1px solid #ddd; }
-.section { padding:10px 20px; }
-.section h2 { font-size:28px; }
-.section p { color:#666; margin:6px 0 16px 0; }
-.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:16px; }
-.card { background:#fff; border-radius:18px; overflow:hidden; border:1px solid #eee; }
-.card:hover { transform:translateY(-3px); box-shadow:0 10px 25px rgba(0,0,0,.1); }
-.card img { width:100%; height:250px; object-fit:cover; display:block; }
-.card-body { padding:15px; }
-.card-body small { color:#ff6a00; font-weight:700; letter-spacing:1px; }
-.card-body h3 { font-size:16px; margin:7px 0; min-height:42px; }
-.stars { color:#ffb400; font-size:14px; }
-.price { font-size:20px; font-weight:800; }
-.old { color:#999; text-decoration:line-through; font-size:14px; font-weight:400; }
-.off { color:#ff3d00; font-size:13px; font-weight:700; }
-.add { width:100%; background:#111; color:#fff; padding:12px; border:0; border-radius:50px; margin-top:11px; cursor:pointer; font-weight:700; }
-.buy { width:100%; background:#fff; color:#ff3d00; border:1.5px solid #ff6a00; padding:11px; border-radius:50px; margin-top:8px; cursor:pointer; font-weight:700; }
-.daraz { display:block; text-align:center; background:#ff6a00; color:#fff; padding:12px; border-radius:50px; margin-top:8px; text-decoration:none; font-weight:700; }
-.daraz:hover { background:#e65a00; }
-#cartDrawer { position:fixed; right:-400px; top:0; width:380px; max-width:92vw; height:100%; background:#fff; z-index:999; box-shadow:-5px 0 20px rgba(0,0,0,.2); padding:22px; transition:.3s; overflow-y:auto; }
-#cartDrawer.open { right:0; }
-.cart-item { display:flex; gap:10px; margin:12px 0; align-items:center; }
-.cart-item img { width:60px; height:60px; object-fit:cover; border-radius:10px; }
-footer { background:#111; color:#ddd; margin-top:35px; }
-.foot-top { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:22px; padding:32px 20px; }
-.foot-top h3 { color:#fff; margin-bottom:12px; }
-.foot-top a { display:block; color:#bbb; text-decoration:none; margin:7px 0; font-size:14px; }
-.foot-top a:hover { color:#ff6a00; }
-.newsletter { display:flex; margin-top:12px; }
-.newsletter input { flex:1; padding:11px; border:0; border-radius:8px 0 0 8px; }
-.newsletter button { background:#ff3d00; color:#fff; border:0; padding:11px 16px; border-radius:0 8px 8px 0; cursor:pointer; }
-.foot-bottom { text-align:center; padding:16px; border-top:1px solid #333; font-size:13px; }
-@media(max-width:700px){ .hero-text h1{font-size:32px} .hero-img{display:none} }
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+body{background:#fdf2f5;color:#1a1a1a}
+/* ===== LOGIN / REGISTER ===== */
+#authScreen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;background:linear-gradient(135deg,#111 0%,#3a1a2e 50%,#ff3d00 100%)}
+.auth-box{background:#fff;width:100%;max-width:420px;border-radius:24px;padding:32px;box-shadow:0 20px 50px rgba(0,0,0,.3);text-align:center}
+.auth-box h1{font-size:34px}.auth-box h1 span{color:#ff3d00}
+.auth-box p{color:#888;font-size:14px;margin:8px 0 18px}
+.tabs{display:flex;background:#f5f0f2;border-radius:50px;padding:4px;margin-bottom:18px}.tabs button{flex:1;padding:11px;border:0;border-radius:50px;cursor:pointer;font-weight:700;background:transparent}.tabs button.active{background:#111;color:#fff}
+.auth-box input{width:100%;padding:13px 15px;border:1.5px solid #eee;border-radius:12px;margin-bottom:12px;outline:0;font-size:15px}.auth-box input:focus{border-color:#ff3d00}
+.auth-btn{width:100%;background:linear-gradient(90deg,#ff6a00,#ff3d00);color:#fff;padding:14px;border:0;border-radius:50px;font-weight:800;cursor:pointer;font-size:16px}
+.auth-btn:hover{opacity:.9}
+.demo{background:#fff7e8;border:1px dashed #ffb400;padding:12px;border-radius:12px;margin-top:14px;font-size:13px;text-align:left;line-height:1.7}
+.demo b{color:#111}
+.error{color:red;font-size:13px;margin-bottom:10px;min-height:16px}
+/* ===== MAIN SITE ===== */
+#mainSite{display:none}
+header{background:rgba(255,255,255,.95);position:sticky;top:0;z-index:99;padding:14px 22px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.logo{font-size:26px;font-weight:900;cursor:pointer}.logo span{color:#ff3d00}.logo small{font-size:9px;letter-spacing:3px;color:#888;display:block}
+.search-box{flex:1;min-width:200px;display:flex;background:#f6f1f3;border-radius:50px;overflow:hidden}.search-box input{flex:1;padding:12px 16px;border:0;outline:0;background:transparent}.search-box button{background:#111;color:#fff;padding:0 20px;border:0;cursor:pointer;font-weight:700}
+.nav-btns{display:flex;gap:8px;flex-wrap:wrap}.nav-btns button{padding:10px 14px;border-radius:50px;border:1px solid #eee;background:#fff;cursor:pointer;font-weight:600}.nav-btns .black{background:#111;color:#fff}.nav-btns .adminBtn{background:#ffb400;border-color:#ffb400;font-weight:800}
+.welcome{background:#111;color:#fff;margin:14px 20px;border-radius:18px;padding:16px 20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;align-items:center}
+.hero{margin:14px 20px;border-radius:22px;background:linear-gradient(135deg,#111,#3a1a2e 50%,#ff3d00);color:#fff;padding:32px}.hero h1{font-size:48px;line-height:.95}.hero h1 i{color:#ffb400;font-style:normal}.hero p{color:#ddd;margin:12px 0}
+.cats{display:flex;gap:10px;padding:8px 20px;overflow-x:auto}.cat{padding:11px 20px;border-radius:50px;border:1.5px solid #eee;background:#fff;cursor:pointer;font-weight:700;white-space:nowrap}.cat.active{background:#111;color:#fff}
+.toolbar{padding:8px 20px;display:flex;gap:8px;flex-wrap:wrap}.toolbar input,.toolbar select{padding:11px;border-radius:12px;border:1px solid #e8d5dd;background:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;padding:12px 20px}
+.card{background:#fff;border-radius:22px;overflow:hidden;border:1px solid #f5e6ec;box-shadow:0 4px 16px rgba(0,0,0,.04);position:relative}.card:hover{transform:translateY(-5px);box-shadow:0 16px 30px rgba(255,61,0,.15)}
+.img-box{position:relative;overflow:hidden;height:250px}.img-box img{width:100%;height:100%;object-fit:cover}.badge{position:absolute;top:12px;left:12px;padding:6px 12px;border-radius:50px;font-size:11px;font-weight:800;color:#fff}.badge.hot{background:#ff3d00}.badge.new{background:#00c853}.badge.best{background:#ffb400;color:#111}
+.card-body{padding:16px}.card-body small{color:#ff3d00;font-weight:800;font-size:11px}.card-body h3{font-size:16px;margin:7px 0;min-height:42px}
+.price{font-size:21px;font-weight:900}.old{color:#aaa;text-decoration:line-through;font-size:14px}.off{background:#ffe8e0;color:#ff3d00;padding:3px 8px;border-radius:50px;font-size:12px;font-weight:800}
+.add{width:100%;background:#111;color:#fff;padding:12px;border:0;border-radius:50px;margin-top:12px;cursor:pointer;font-weight:700}.buy{width:100%;background:#fff;color:#ff3d00;border:1.5px solid #ff6a00;padding:11px;border-radius:50px;margin-top:8px;cursor:pointer;font-weight:700}.daraz{display:block;text-align:center;background:linear-gradient(90deg,#ff6a00,#ff3d00);color:#fff;padding:12px;border-radius:50px;margin-top:8px;text-decoration:none;font-weight:800}
+footer{background:#111;color:#ddd;margin-top:30px;padding:20px;text-align:center}
+#cartDrawer{position:fixed;right:-400px;top:0;width:380px;max-width:92vw;height:100%;background:#fff;z-index:999;padding:22px;transition:.3s;overflow-y:auto}#cartDrawer.open{right:0}.cart-item{display:flex;gap:10px;margin:12px 0}.cart-item img{width:60px;height:60px;object-fit:cover;border-radius:12px}
+/* ===== DASHBOARD ===== */
+#dashboard{position:fixed;inset:0;background:#f7f2f5;z-index:1000;display:none;overflow-y:auto;padding:22px}
+.dash-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;align-items:center;background:#111;color:#fff;padding:20px;border-radius:18px}
+.dash-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:16px 0}
+.dash-card{background:#fff;border-radius:16px;padding:18px;box-shadow:0 4px 14px rgba(0,0,0,.05)}.dash-card h2{font-size:28px}.dash-card p{color:#888}
+.dash-box{background:#fff;border-radius:16px;padding:18px;margin-bottom:14px}
+.dash-box table{width:100%;border-collapse:collapse;font-size:14px}.dash-box th,.dash-box td{padding:10px;border-bottom:1px solid #eee;text-align:left}
+.closeDash{background:#ff3d00;color:#fff;border:0;padding:11px 18px;border-radius:50px;cursor:pointer;font-weight:700}
+@media(max-width:700px){.hero h1{font-size:32px}}
 </style>
 </head>
 <body>
 
-<!-- ===== HEADER / NAV BAR ===== -->
+<!-- ============ 1. LOGIN / REGISTER - SAB SE PEHLE YE AAYEGA ============ -->
+<div id="authScreen">
+  <div class="auth-box">
+    <h1>URBAN <span>MART</span> 🛍️</h1>
+    <p>Shop Smart • Live Better<br>Vehari ki apni premium Mart</p>
+    <div class="tabs">
+      <button id="tabLogin" class="active" onclick="switchTab('login')">Login</button>
+      <button id="tabRegister" onclick="switchTab('register')">Register</button>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <div id="loginForm">
+      <input id="loginEmail" type="email" placeholder="📧 Email - admin@urbanmart.pk">
+      <input id="loginPass" type="password" placeholder="🔒 Password">
+      <div class="error" id="loginError"></div>
+      <button class="auth-btn" onclick="doLogin()">Login →</button>
+      <p style="margin-top:14px;font-size:13px">New ho? <b style="color:#ff3d00;cursor:pointer" onclick="switchTab('register')">Register karo</b></p>
+    </div>
+
+    <!-- REGISTER FORM -->
+    <div id="registerForm" style="display:none">
+      <input id="regName" placeholder="👤 Full Name">
+      <input id="regEmail" type="email" placeholder="📧 Email">
+      <input id="regPass" type="password" placeholder="🔒 Password (min 4)">
+      <input id="regPhone" placeholder="📞 Phone - 0300-1234567">
+      <div class="error" id="regError"></div>
+      <button class="auth-btn" onclick="doRegister()">Create Account ✨</button>
+      <p style="margin-top:14px;font-size:13px">Pehle se account hai? <b style="color:#ff3d00;cursor:pointer" onclick="switchTab('login')">Login karo</b></p>
+    </div>
+
+    <div class="demo">
+      <b>🔑 Admin Login (Sirf Tumhare Liye):</b><br>
+      Email: <b>admin@urbanmart.pk</b><br>
+      Password: <b>admin123</b><br>
+      <span style="color:#888">Admin ko hi Dashboard dikhega. Customer ko Dashboard nahi dikhega.</span><br><br>
+      <b>👤 Customer ke liye:</b> Register pe click karke apna account banao.
+    </div>
+  </div>
+</div>
+
+<!-- ============ 2. MAIN WEBSITE - LOGIN KE BAAD ============ -->
+<div id="mainSite">
 <header>
   <div class="logo" onclick="goHome()">URBAN <span>MART</span><small>SHOP SMART • LIVE BETTER</small></div>
-  <div class="search-box">
-    <input id="searchInput" placeholder="Search on Urban Mart - Hoodie, Watch, Serum...">
-    <button onclick="doSearch()">Search</button>
-  </div>
+  <div class="search-box"><input id="searchInput" placeholder="✨ Search - Hoodie, Serum, Earbuds..."><button onclick="doSearch()">Search</button></div>
   <div class="nav-btns">
     <button onclick="goHome()">🏠 Home</button>
     <button onclick="filterCat('Fashion')">👗 Fashion</button>
     <button onclick="filterCat('Beauty')">💄 Beauty</button>
     <button onclick="filterCat('Tech')">📱 Tech</button>
+    <button id="dashBtn" class="adminBtn" onclick="openDashboard()" style="display:none">📊 Dashboard</button>
     <button onclick="showOrders()">📦 My Orders</button>
-    <button class="black" onclick="toggleCart()">🛒 Cart <span class="cart-count" id="cartCount">0</span></button>
+    <button class="black" onclick="toggleCart()">🛒 Cart <span id="cartCount">0</span></button>
+    <button onclick="doLogout()">🚪 Logout</button>
   </div>
 </header>
 
-<!-- ===== HERO ===== -->
-<div class="hero">
-  <div class="hero-text">
-    <h1>Shop Smart.<br><i>Live Better.</i></h1>
-    <p>Vehari ki apni premium Mart. 45 best deals - 100% Original, Cash on Delivery. Daraz se verified products.</p>
-    <div class="hero-btns">
-      <button class="btn-white" onclick="filterCat('All')">Shop Now →</button>
-      <button class="btn-orange" onclick="filterCat('Fashion')">❄ Winter Deals</button>
-    </div>
-    <p style="margin-top:18px">⭐ 4.9 Rated | 1000+ Happy Customers | 📍 Vehari | 🛒 Daraz Partner</p>
-  </div>
-  <div class="hero-img"></div>
+<div class="welcome">
+  <div><b id="welcomeText">Welcome 👋</b><br><span style="font-size:13px;color:#bbb" id="welcomeSub">Cash on Delivery • All Pakistan</span></div>
+  <div id="welcomeBadge"></div>
 </div>
 
-<div class="badges">
-  <span>✅ 100% Original</span>
-  <span>🚚 Fast Delivery 2-4 Days</span>
-  <span>🔄 7-Day Return</span>
-  <span>💵 Cash on Delivery</span>
-  <span>🛡 Secure Shopping</span>
-  <span>🛒 Daraz Partner</span>
-</div>
+<div class="hero"><span style="background:#ffb400;color:#111;padding:6px 14px;border-radius:50px;font-size:12px;font-weight:800">✨ NEW WINTER COLLECTION 2026</span><h1 style="margin-top:12px">Shop Smart.<br><i>Live Better.</i></h1><p>Vehari ki apni premium Mart 💖 45 beautiful deals - 100% Original, Cash on Delivery. Daraz se verified.</p><button style="background:#fff;padding:13px 24px;border-radius:50px;border:0;font-weight:800;cursor:pointer" onclick="filterCat('All')">Shop Now →</button></div>
 
-<!-- ===== CATEGORIES - SIRF 3 ===== -->
 <div class="cats" id="cats"></div>
+<div class="toolbar"><input id="minP" type="number" placeholder="Min Price" oninput="render()"><input id="maxP" type="number" placeholder="Max Price" oninput="render()"><select id="sort" onchange="render()"><option value="low">Low to High</option><option value="high">High to Low</option><option value="pop">Popular</option></select><b id="countLabel"></b><button onclick="clearFilter()" style="padding:11px 16px;border-radius:12px;cursor:pointer;background:#ff3d00;color:#fff;border:0;font-weight:700">Filter Clear</button></div>
 
-<!-- ===== FILTER / SORT ===== -->
-<div class="toolbar">
-  <input id="minP" type="number" placeholder="Min Price" oninput="render()">
-  <input id="maxP" type="number" placeholder="Max Price" oninput="render()">
-  <select id="sort" onchange="render()">
-    <option value="low">Price Low to High</option>
-    <option value="high">Price High to Low</option>
-    <option value="pop">Most Popular</option>
-  </select>
-  <b id="countLabel"></b>
+<div style="padding:0 20px"><h2 id="secTitle">✨ All Collections • 45 Beautiful Products</h2><p style="color:#888">Best quality, best price - Beautiful products for beautiful you 💖</p></div>
+<div class="grid" id="grid"></div>
+<p id="debug" style="color:green;padding:12px 20px;font-weight:700"></p>
+
+<div id="cartDrawer"><h2>🛒 Your Cart <button style="float:right" onclick="toggleCart()">X</button></h2><div id="cartItems"></div><h3 id="cartTotal">Total: Rs 0</h3><button class="add" onclick="checkout()">Checkout - Cash on Delivery 💵</button></div>
+<footer>© 2026 URBAN MART ✨ | Made with 💖 in Vehari | Daraz Partner | Sirf 3 Categories: Fashion | Beauty | Tech</footer>
 </div>
 
-<!-- ===== PRODUCTS GRID ===== -->
-<div class="section">
-  <h2 id="secTitle">All Collections • 45 Products</h2>
-  <p>Best quality, best price - Cash on Delivery all over Pakistan | Daraz se linked</p>
-  <div class="grid" id="grid"></div>
-  <p id="debug" style="color:green; padding:12px; font-weight:700;"></p>
-</div>
-
-<!-- ===== CART DRAWER ===== -->
-<div id="cartDrawer">
-  <h2>🛒 Your Cart <button style="float:right; padding:6px 12px; cursor:pointer;" onclick="toggleCart()">X</button></h2>
-  <div id="cartItems"></div>
-  <h3 id="cartTotal" style="margin-top:16px;">Total: Rs 0</h3>
-  <button class="add" onclick="checkout()">Checkout - Cash on Delivery</button>
-  <p style="font-size:13px; color:#666; margin-top:12px;">Delivery 2-4 Days • 7-Day Easy Return • 100% Original</p>
-  <p id="orderMsg" style="font-size:13px; color:green; margin-top:10px;"></p>
-</div>
-
-<!-- ===== FOOTER ===== -->
-<footer>
-  <div class="foot-top">
-    <div>
-      <h3>URBAN MART</h3>
-      <p style="font-size:14px; line-height:1.7;">Vehari ki apni premium online mart. Fashion, Beauty, Tech - sab kuch ek jagah, best price par. Daraz Partner Store.</p>
-      <div class="newsletter"><input placeholder="Your Email"><button onclick="alert('Subscribed!')">Join</button></div>
-    </div>
-    <div>
-      <h3>Shop</h3>
-      <a href="#" onclick="filterCat('Fashion');return false">Fashion</a>
-      <a href="#" onclick="filterCat('Beauty');return false">Beauty</a>
-      <a href="#" onclick="filterCat('Tech');return false">Tech</a>
-      <a href="#" onclick="filterCat('All');return false">All Products</a>
-    </div>
-    <div>
-      <h3>Help</h3>
-      <a href="#" onclick="showOrders();return false">Track Order</a>
-      <a href="#" onclick="alert('Delivery 2-4 Days All Pakistan');return false">Delivery Info</a>
-      <a href="#" onclick="alert('7-Day Easy Return');return false">Return & Refund</a>
-      <a href="#" onclick="alert('Contact: 0300-1234567');return false">Contact Us</a>
-      <a href="#" onclick="alert('FAQs - Cash on Delivery Available');return false">FAQs</a>
-    </div>
-    <div>
-      <h3>Contact</h3>
-      <p style="font-size:14px; line-height:1.8;">📍 Vehari, Punjab, Pakistan<br>📞 0300-1234567<br>✉️ support@urbanmart.pk<br>🕒 9AM - 11PM Daily</p>
-      <p style="margin-top:10px; font-size:14px;">💵 Cash on Delivery<br>🚚 All Pakistan Delivery<br>🛒 Powered by Daraz Affiliate</p>
-    </div>
+<!-- ============ 3. DASHBOARD - SIRF ADMIN KO ============ -->
+<div id="dashboard">
+  <div class="dash-head">
+    <div><h2>📊 URBAN MART - Admin Dashboard</h2><p id="dashWelcome" style="color:#bbb">Welcome Admin</p></div>
+    <button class="closeDash" onclick="closeDashboard()">← Back to Website</button>
   </div>
-  <div class="foot-bottom">© 2026 URBAN MART - Shop Smart Live Better | Made in Vehari, Pakistan | Daraz Affiliate Partner | Privacy Policy • Terms • Sitemap</div>
-</footer>
+  <div class="dash-cards">
+    <div class="dash-card"><p>Total Products</p><h2>45</h2><span>✅ All Active</span></div>
+    <div class="dash-card"><p>Total Orders</p><h2 id="dashOrders">0</h2><span>📦 My Orders se</span></div>
+    <div class="dash-card"><p>Cart Items</p><h2 id="dashCart">0</h2><span>🛒 Abhi Cart me</span></div>
+    <div class="dash-card"><p>Total Revenue</p><h2 id="dashRevenue">Rs 0</h2><span>💵 Cash on Delivery</span></div>
+  </div>
+  <div class="dash-box"><h3>📦 Recent Orders</h3><div id="dashOrdersList"><p style="color:#888;margin-top:8px">Abhi koi order nahi hai. Customer jab Buy Now karega to yahan aayega.</p></div></div>
+  <div class="dash-box"><h3>🏆 Top Categories</h3><table><tr><th>Category</th><th>Products</th><th>Status</th></tr><tr><td>👗 Fashion</td><td>15</td><td>✅ Active</td></tr><tr><td>💄 Beauty</td><td>15</td><td>✅ Active</td></tr><tr><td>📱 Tech</td><td>15</td><td>✅ Active</td></tr></table></div>
+  <div class="dash-box"><h3>⚙️ Admin Controls</h3><p style="font-size:14px;color:#666;margin:8px 0">Sirf Admin ko ye sab dikhega. Customer ko Dashboard ka button hi nahi dikhega.</p><button class="closeDash" onclick="alert('Products 45 - Sab OK Hain')">Check Products</button> <button class="closeDash" style="background:#111" onclick="alert('Orders: '+myOrders.length)">View Orders</button> <button class="closeDash" style="background:#00c853" onclick="clearFilter();closeDashboard();alert('Filter Clear - Website Refresh Ho Gayi')">Clear Filter</button></div>
+</div>
 
 <script>
-// ================= PRODUCTS DATA - 45 PRODUCTS, HAR PIC ALAG =================
-var cats = ["All", "Fashion", "Beauty", "Tech"];
-var curCat = "All";
-var cart = [];
-var myOrders = [];
-
-var data = [
-  // ---- FASHION - 15 Products ----
-  ["Fashion","Winter Hoodie Black Warm Unisex",1999,3299,"https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600"],
-  ["Fashion","Winter Hoodie Oversized Grey",2199,3499,"https://images.unsplash.com/photo-1509942774463-acf339cf87d5?w=600"],
-  ["Fashion","Leather Jacket Premium Black",4999,8999,"https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600"],
-  ["Fashion","Denim Jacket Classic Blue",3499,5999,"https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=600"],
-  ["Fashion","Ladies Kurti Embroidered",1899,2999,"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600"],
-  ["Fashion","Ladies Shawl Pashmina Warm",1499,2499,"https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=600"],
-  ["Fashion","Men T-Shirt Cotton White",999,1799,"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600"],
-  ["Fashion","Men Sweater Woolen Brown",2799,4499,"https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=600"],
-  ["Fashion","Jeans Pants Slim Fit",2299,3999,"https://images.unsplash.com/photo-1542272604-787c3835535d?w=600"],
-  ["Fashion","Sneakers Running Shoes",3299,5499,"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600"],
-  ["Fashion","Ladies Handbag Premium",2499,4199,"https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600"],
-  ["Fashion","Ladies Long Coat",3999,6999,"https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=600"],
-  ["Fashion","Formal Shirt Men",1799,2999,"https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600"],
-  ["Fashion","Luxury Watch Gold",5999,9999,"https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=600"],
-  ["Fashion","Gold Necklace Set",2999,4999,"https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600"],
-
-  // ---- BEAUTY - 15 Products ----
-  ["Beauty","Vitamin C Serum Glow",1299,2199,"https://images.unsplash.com/photo-1620916566398-39f1143a93f7?w=600"],
-  ["Beauty","Hyaluronic Acid Serum",1499,2499,"https://images.unsplash.com/photo-1620756236308-65c3ef5d25f9?w=600"],
-  ["Beauty","Makeup Kit 12 Pcs",2999,4999,"https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=600"],
-  ["Beauty","Lipstick Matte Set 6",1199,1999,"https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=600"],
-  ["Beauty","Face Wash Neem & Aloe",799,1299,"https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600"],
-  ["Beauty","Hair Oil Argan Repair",1099,1899,"https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=600"],
-  ["Beauty","Night Cream Whitening",1399,2299,"https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600"],
-  ["Beauty","Foundation Full Coverage",1699,2799,"https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?w=600"],
-  ["Beauty","Hair Dryer Professional",2499,3999,"https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=600"],
-  ["Beauty","Perfume Oud Premium",2799,4499,"https://images.unsplash.com/photo-1541643600914-78b084683601?w=600"],
-  ["Beauty","Eye Shadow Palette",1899,2999,"https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=600&sat=-100"],
-  ["Beauty","Face Mask Pack 5",999,1699,"https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600&sat=-50"],
-  ["Beauty","Nail Polish Set",899,1499,"https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600"],
-  ["Beauty","Beard Oil Men",899,1499,"https://images.unsplash.com/photo-1621605815971-fbc98d53b06d?w=600"],
-  ["Beauty","Sunscreen SPF 50",1199,1999,"https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&sat=50"],
-
-  // ---- TECH - 15 Products ----
-  ["Tech","Wireless Earbuds Pro",1999,3499,"https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600"],
-  ["Tech","Smart Watch Ultra",3999,6999,"https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=600"],
-  ["Tech","Bluetooth Speaker Mini",2499,4199,"https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600"],
-  ["Tech","Power Bank 20000mAh",2999,4999,"https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=600"],
-  ["Tech","Mobile Cover Premium",499,999,"https://images.unsplash.com/photo-1601593346740-925612772716?w=600"],
-  ["Tech","Wireless Charger Fast",1499,2499,"https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=600"],
-  ["Tech","Gaming Headphones RGB",3499,5999,"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600"],
-  ["Tech","Smart Watch Fitness",2999,4999,"https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=600"],
-  ["Tech","Air Purifier Home",5999,9999,"https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600"],
-  ["Tech","Drone Camera 4K",12999,19999,"https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600"],
-  ["Tech","Smart Watch Black",3499,5999,"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600"],
-  ["Tech","Earbuds Air Pro 2",1799,2999,"https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=600"],
-  ["Tech","Home Speaker Bass",4499,7499,"https://images.unsplash.com/photo-1545454675-3531b543be5d?w=600"],
-  ["Tech","PS5 Controller",7999,11999,"https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=600"],
-  ["Tech","Gaming Mouse RGB",1999,3499,"https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=600"]
+// ===== AUTH LOGIC =====
+var currentUser = null;
+var isAdmin = false;
+var cats=["All","Fashion","Beauty","Tech"];
+var curCat="All", cart=[], myOrders=[];
+var data=[
+["Fashion","Winter Hoodie Black Warm Unisex",1999,3299,"https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600","hoodie1","HOT"],
+["Fashion","Leather Jacket Premium Black",4999,8999,"https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600","jacket2","BEST"],
+["Fashion","Denim Jacket Classic Blue",3499,5999,"https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=600","denim3","NEW"],
+["Fashion","Men T-Shirt Cotton White",999,1799,"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600","tshirt4","HOT"],
+["Fashion","Jeans Pants Slim Fit",2299,3999,"https://images.unsplash.com/photo-1542272604-787c3835535d?w=600","jeans5",""],
+["Fashion","Sneakers Running Shoes",3299,5499,"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600","sneakers6","BEST"],
+["Fashion","Ladies Handbag Premium",2499,4199,"https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600","handbag7","NEW"],
+["Fashion","Ladies Long Coat",3999,6999,"https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=600","coat8","HOT"],
+["Fashion","Formal Shirt Men",1799,2999,"https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600","shirt9",""],
+["Fashion","Winter Cap Warm",899,1499,"https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=600","cap10",""],
+["Fashion","Luxury Watch Gold",5999,9999,"https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=600","watch11","BEST"],
+["Fashion","Gold Necklace Set",2999,4999,"https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600","necklace12","NEW"],
+["Fashion","Ladies Kurti Embroidered",1899,2999,"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600","kurti13","HOT"],
+["Fashion","Men Sweater Woolen Brown",2799,4499,"https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=600&sat=-30","sweater14",""],
+["Fashion","Ladies Shawl Pashmina Warm",1499,2499,"https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=600","shawl15",""],
+["Beauty","Vitamin C Serum Glow",1299,2199,"https://images.unsplash.com/photo-1620916566398-39f1143a93f7?w=600","serum16","BEST"],
+["Beauty","Hyaluronic Acid Serum",1499,2499,"https://images.unsplash.com/photo-1620756236308-65c3ef5d25f9?w=600","serum17","NEW"],
+["Beauty","Makeup Kit 12 Pcs",2999,4999,"https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=600","makeup18","HOT"],
+["Beauty","Lipstick Matte Set 6",1199,1999,"https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=600","lipstick19","BEST"],
+["Beauty","Face Wash Neem & Aloe",799,1299,"https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600","facewash20",""],
+["Beauty","Hair Oil Argan Repair",1099,1899,"https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=600","hairoil21","NEW"],
+["Beauty","Night Cream Whitening",1399,2299,"https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600","night22","HOT"],
+["Beauty","Foundation Full Coverage",1699,2799,"https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?w=600","found23",""],
+["Beauty","Hair Dryer Professional",2499,3999,"https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=600","dryer24","BEST"],
+["Beauty","Perfume Oud Premium",2799,4499,"https://images.unsplash.com/photo-1541643600914-78b084683601?w=600","perfume25","HOT"],
+["Beauty","Eye Shadow Palette",1899,2999,"https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=600&sat=-100","eye26","NEW"],
+["Beauty","Face Mask Pack 5",999,1699,"https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600&sat=-50","mask27",""],
+["Beauty","Nail Polish Set",899,1499,"https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600","nail28",""],
+["Beauty","Beard Oil Men",899,1499,"https://images.unsplash.com/photo-1621605815971-fbc98d53b06d?w=600","beard29",""],
+["Beauty","Sunscreen SPF 50",1199,1999,"https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&sat=50","sun30","HOT"],
+["Tech","Wireless Earbuds Pro",1999,3499,"https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600","ear31","BEST"],
+["Tech","Smart Watch Ultra",3999,6999,"https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=600","watch32","HOT"],
+["Tech","Bluetooth Speaker Mini",2499,4199,"https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600","spk33","NEW"],
+["Tech","Power Bank 20000mAh",2999,4999,"https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=600","pb34",""],
+["Tech","Mobile Cover Premium",499,999,"https://images.unsplash.com/photo-1601593346740-925612772716?w=600","cover35","HOT"],
+["Tech","Wireless Charger Fast",1499,2499,"https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=600","chg36",""],
+["Tech","Gaming Headphones RGB",3499,5999,"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600","hp37","BEST"],
+["Tech","Smart Watch Fitness",2999,4999,"https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=600","fit38","NEW"],
+["Tech","Air Purifier Home",5999,9999,"https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600","pur39",""],
+["Tech","Drone Camera 4K",12999,19999,"https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600","drone40","HOT"],
+["Tech","Smart Watch Black",3499,5999,"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600","wb41",""],
+["Tech","Earbuds Air Pro 2",1799,2999,"https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=600","ear42","BEST"],
+["Tech","Home Speaker Bass",4499,7499,"https://images.unsplash.com/photo-1545454675-3531b543be5d?w=600","hsp43","NEW"],
+["Tech","PS5 Controller",7999,11999,"https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=600","ps5-44","HOT"],
+["Tech","Gaming Mouse RGB",1999,3499,"https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=600","mouse45",""]
 ];
-
-var products = data.map(function(d, i){
-  return {
-    id: i,
-    cat: d[0],
-    name: d[1],
-    price: d[2],
-    old: d[3],
-    img: d[4],
-    rating: (4.5 + (i % 5) * 0.1).toFixed(1),
-    sold: 120 + i * 18,
-    daraz: "https://www.daraz.pk/catalog/?q=" + encodeURIComponent(d[1])
-  };
-});
-
-function goHome(){
-  curCat = "All";
-  document.getElementById('searchInput').value = "";
-  document.getElementById('secTitle').innerText = "All Collections • 45 Products";
-  renderCats();
-  render();
-  window.scrollTo({top:0, behavior:'smooth'});
+var products=data.map(function(d,i){return {id:i,cat:d[0],name:d[1],price:d[2],old:d[3],img:d[4],fallback:"https://picsum.photos/seed/"+d[5]+"/600/600",badge:d[6],rating:(4.6+(i%4)*0.1).toFixed(1),sold:150+i*18,daraz:"https://www.daraz.pk/catalog/?q="+encodeURIComponent(d[1])};});
+function switchTab(t){
+  document.getElementById('tabLogin').classList.toggle('active',t==='login');
+  document.getElementById('tabRegister').classList.toggle('active',t==='register');
+  document.getElementById('loginForm').style.display=t==='login'?'block':'none';
+  document.getElementById('registerForm').style.display=t==='register'?'block':'none';
 }
-function showOrders(){
-  if(myOrders.length === 0){ alert("Abhi koi order nahi hai. Pehle Buy Now / Checkout karo."); }
-  else { alert("Tumhare Orders:\n" + myOrders.join("\n")); }
+function getUsers(){try{return JSON.parse(localStorage.getItem('um_users')||'[]')}catch(e){return []}}
+function saveUsers(u){localStorage.setItem('um_users',JSON.stringify(u))}
+function doRegister(){
+  var name=document.getElementById('regName').value.trim();
+  var email=document.getElementById('regEmail').value.trim().toLowerCase();
+  var pass=document.getElementById('regPass').value;
+  var phone=document.getElementById('regPhone').value.trim();
+  var err=document.getElementById('regError');
+  if(!name||!email||!pass){err.innerText="Name, Email, Password zaroori hai";return;}
+  if(pass.length<4){err.innerText="Password kam se kam 4 ka ho";return;}
+  var users=getUsers();
+  if(users.find(function(u){return u.email===email})){err.innerText="Ye email pehle se registered hai, Login karo";return;}
+  users.push({name:name,email:email,pass:pass,phone:phone});
+  saveUsers(users);
+  alert("Account ban gaya! Ab Login karo 💖");
+  document.getElementById('loginEmail').value=email;
+  switchTab('login');
 }
-function renderCats(){
-  document.getElementById('cats').innerHTML = cats.map(function(c){
-    return '<button class="cat ' + (c===curCat?'active':'') + '" onclick="filterCat(\''+c+'\')">' + (c==='All' ? '🛍️ All' : c) + '</button>';
-  }).join('');
-}
-function filterCat(c){
-  curCat = c;
-  document.getElementById('secTitle').innerText = c==='All' ? 'All Collections • 45 Products' : c + ' Collection';
-  renderCats();
-  render();
-  window.scrollTo({top:620, behavior:'smooth'});
-}
-function doSearch(){ render(); window.scrollTo({top:620, behavior:'smooth'}); }
-function render(){
-  var q = document.getElementById('searchInput').value.toLowerCase();
-  var min = parseInt(document.getElementById('minP').value) || 0;
-  var max = parseInt(document.getElementById('maxP').value) || 999999;
-  var sort = document.getElementById('sort').value;
-  var list = products.filter(function(p){
-    return (curCat==="All" || p.cat===curCat) && p.name.toLowerCase().indexOf(q)!==-1 && p.price>=min && p.price<=max;
-  });
-  if(sort==="low") list.sort(function(a,b){ return a.price-b.price; });
-  if(sort==="high") list.sort(function(a,b){ return b.price-a.price; });
-  if(sort==="pop") list.sort(function(a,b){ return b.sold-a.sold; });
-  document.getElementById('countLabel').innerText = list.length + " Products Found";
-  if(list.length===0){
-    document.getElementById('grid').innerHTML = "<h3>No product found. Search saaf karke dobara try karo.</h3>";
-    return;
+function doLogin(){
+  var email=document.getElementById('loginEmail').value.trim().toLowerCase();
+  var pass=document.getElementById('loginPass').value;
+  var err=document.getElementById('loginError');
+  // ADMIN CHECK - Sirf Admin
+  if(email==="admin@urbanmart.pk" && pass==="admin123"){
+    currentUser={name:"Admin - Huzaifa",email:email}; isAdmin=true; enterSite(); return;
   }
-  document.getElementById('grid').innerHTML = list.map(function(p){
-    return '<div class="card">'
-      + '<img src="'+p.img+'" onerror="this.onerror=null;this.src=\'https://picsum.photos/600/600?random='+p.id+'\'" loading="lazy">'
-      + '<div class="card-body">'
-      + '<small>'+p.cat.toUpperCase()+'</small>'
-      + '<h3>'+p.name+'</h3>'
-      + '<div class="stars">⭐⭐⭐⭐⭐ '+p.rating+' ('+p.sold+')</div>'
-      + '<div><span class="price">Rs '+p.price.toLocaleString()+'</span> <span class="old">Rs '+p.old.toLocaleString()+'</span> <span class="off">-'+Math.round((1-p.price/p.old)*100)+'%</span></div>'
-      + '<button class="add" onclick="addCart('+p.id+')">Add to Cart 🛒</button>'
-      + '<button class="buy" onclick="buyNow('+p.id+')">Buy Now →</button>'
-      + '<a class="daraz" href="'+p.daraz+'" target="_blank">Buy on Daraz 🛒</a>'
-      + '</div></div>';
+  var users=getUsers();
+  var found=users.find(function(u){return u.email===email && u.pass===pass});
+  if(!found){err.innerText="Galat Email ya Password. Pehle Register karo.";return;}
+  currentUser=found; isAdmin=false; enterSite();
+}
+function enterSite(){
+  document.getElementById('authScreen').style.display="none";
+  document.getElementById('mainSite').style.display="block";
+  document.getElementById('welcomeText').innerText="Welcome, "+currentUser.name+" 👋";
+  document.getElementById('welcomeSub').innerText=currentUser.email+" • "+(isAdmin?"Admin Account - Dashboard Available":"Customer Account");
+  document.getElementById('welcomeBadge').innerHTML=isAdmin?'<span style="background:#ffb400;color:#111;padding:8px 16px;border-radius:50px;font-weight:800;font-size:13px">👑 ADMIN</span>':'<span style="background:#00c853;color:#fff;padding:8px 16px;border-radius:50px;font-weight:800;font-size:13px">💖 CUSTOMER</span>';
+  document.getElementById('dashBtn').style.display=isAdmin?'inline-block':'none';
+  localStorage.setItem('um_session',JSON.stringify(currentUser));
+  renderCats(); render();
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(isAdmin){setTimeout(function(){alert("Welcome Admin 👑 Dashboard button upar aa gaya hai. Wahan se Orders / Revenue dekh sakte ho.");},500);}
+}
+function doLogout(){
+  currentUser=null; isAdmin=false; localStorage.removeItem('um_session');
+  document.getElementById('mainSite').style.display="none";
+  document.getElementById('dashboard').style.display="none";
+  document.getElementById('authScreen').style.display="flex";
+  document.getElementById('loginError').innerText="";
+}
+// Auto-login agar pehle se login tha
+window.onload=function(){
+  try{var s=JSON.parse(localStorage.getItem('um_session')||'null'); if(s){ if(s.email==="admin@urbanmart.pk"){currentUser=s;isAdmin=true;}else{currentUser=s;isAdmin=false;} enterSite(); }}catch(e){}
+  renderCats(); render();
+};
+// ===== DASHBOARD - SIRF ADMIN =====
+function openDashboard(){
+  if(!isAdmin){alert("Dashboard sirf Admin ko dikhega.");return;}
+  document.getElementById('dashWelcome').innerText="Welcome "+currentUser.name+" - Total Products: 45";
+  document.getElementById('dashOrders').innerText=myOrders.length;
+  document.getElementById('dashCart').innerText=cart.length;
+  var total=0; cart.forEach(function(p){total+=p.price});
+  document.getElementById('dashRevenue').innerText="Rs "+total.toLocaleString();
+  document.getElementById('dashOrdersList').innerHTML=myOrders.length?myOrders.map(function(o,i){return "<p>✅ Order "+(i+1)+": "+o+" - Cash on Delivery</p>"}).join(''):"<p style='color:#888'>Abhi koi order nahi hai.</p>";
+  document.getElementById('dashboard').style.display="block";
+  window.scrollTo({top:0});
+}
+function closeDashboard(){document.getElementById('dashboard').style.display="none";}
+// ===== SHOP LOGIC =====
+function goHome(){curCat="All";document.getElementById('searchInput').value="";document.getElementById('minP').value="";document.getElementById('maxP').value="";renderCats();render();window.scrollTo({top:0,behavior:'smooth'});}
+function clearFilter(){document.getElementById('minP').value="";document.getElementById('maxP').value="";document.getElementById('searchInput').value="";curCat="All";renderCats();render();}
+function showOrders(){if(myOrders.length==0)alert("Abhi koi order nahi hai");else alert("Orders:\n"+myOrders.join("\n"));}
+function renderCats(){document.getElementById('cats').innerHTML=cats.map(function(c){return '<button class="cat '+(c===curCat?'active':'')+'" onclick="filterCat(\''+c+'\')">'+(c==='All'?'🛍️ All':c==='Fashion'?'👗 Fashion':c==='Beauty'?'💄 Beauty':'📱 Tech')+'</button>'}).join('');}
+function filterCat(c){curCat=c;document.getElementById('secTitle').innerText=c==="All"?"✨ All Collections • 45 Beautiful Products":"✨ "+c+" Collection";renderCats();render();}
+function doSearch(){render();}
+function render(){
+  var q=document.getElementById('searchInput').value.toLowerCase();
+  var min=parseInt(document.getElementById('minP').value)||0;
+  var max=parseInt(document.getElementById('maxP').value)||999999;
+  var sort=document.getElementById('sort').value;
+  var list=products.filter(function(p){return (curCat==="All"||p.cat===curCat) && p.name.toLowerCase().indexOf(q)!==-1 && p.price>=min && p.price<=max;});
+  if(sort==="low")list.sort(function(a,b){return a.price-b.price}); if(sort==="high")list.sort(function(a,b){return b.price-a.price}); if(sort==="pop")list.sort(function(a,b){return b.sold-a.sold});
+  document.getElementById('countLabel').innerText=list.length+" Products Found ✨";
+  if(list.length==0){document.getElementById('grid').innerHTML="<h3 style='padding:20px'>No product found - Filter Clear dabao</h3>";return;}
+  document.getElementById('grid').innerHTML=list.map(function(p){
+    var badgeHtml=p.badge?'<span class="badge '+(p.badge==='HOT'?'hot':p.badge==='NEW'?'new':'best')+'">'+(p.badge==='HOT'?'🔥 HOT':p.badge==='NEW'?'✨ NEW':'⭐ BEST')+'</span>':'';
+    return '<div class="card"><div class="img-box">'+badgeHtml+'<img src="'+p.img+'" onerror="this.onerror=null;this.src=\''+p.fallback+'\'" loading="lazy"></div><div class="card-body"><small>'+p.cat.toUpperCase()+' • PREMIUM</small><h3>'+p.name+'</h3><div style="font-size:13px;color:#666">⭐ '+p.rating+' ('+p.sold+' sold) 💖</div><div><span class="price">Rs '+p.price.toLocaleString()+'</span> <span class="old">Rs '+p.old.toLocaleString()+'</span> <span class="off">-'+Math.round((1-p.price/p.old)*100)+'%</span></div><button class="add" onclick="addCart('+p.id+')">Add to Cart 🛒</button><button class="buy" onclick="buyNow('+p.id+')">Buy Now →</button><a class="daraz" href="'+p.daraz+'" target="_blank">Buy on Daraz 🛒</a></div></div>';
   }).join('');
 }
-function addCart(id){
-  var p = products.find(function(x){ return x.id===id; });
-  cart.push(p);
-  updateCart();
-  alert('Added to Cart: ' + p.name);
-}
-function buyNow(id){
-  var p = products.find(function(x){ return x.id===id; });
-  cart.push(p);
-  myOrders.push(p.name);
-  updateCart();
-  toggleCart();
-}
-function updateCart(){
-  document.getElementById('cartCount').innerText = cart.length;
-  var total = 0;
-  cart.forEach(function(p){ total += p.price; });
-  document.getElementById('cartTotal').innerText = 'Total: Rs ' + total.toLocaleString();
-  document.getElementById('cartItems').innerHTML = cart.map(function(p,i){
-    return '<div class="cart-item"><img src="'+p.img+'"><div><b>'+p.name+'</b><br>Rs '+p.price+' <button onclick="removeItem('+i+')">Remove</button></div></div>';
-  }).join('') || 'Cart is empty';
-}
-function removeItem(i){ cart.splice(i,1); updateCart(); }
-function toggleCart(){ document.getElementById('cartDrawer').classList.toggle('open'); }
-function checkout(){
-  if(!cart.length) return alert('Cart empty hai');
-  cart.forEach(function(p){ myOrders.push(p.name); });
-  alert('Order Placed! Cash on Delivery. My Orders me dekh sakte ho.');
-  cart = [];
-  updateCart();
-  toggleCart();
-}
-document.getElementById('searchInput').addEventListener('keyup', function(e){ render(); });
-renderCats();
-render();
-document.getElementById('debug').innerText = "✅ Loaded: " + products.length + " Products - Sab OK Hai";
+function addCart(id){var p=products.find(function(x){return x.id===id});cart.push(p);updateCart();alert('Added: '+p.name);}
+function buyNow(id){var p=products.find(function(x){return x.id===id});cart.push(p);myOrders.push(p.name);updateCart();toggleCart();}
+function updateCart(){document.getElementById('cartCount').innerText=cart.length;var total=0;cart.forEach(function(p){total+=p.price});document.getElementById('cartTotal').innerText='Total: Rs '+total.toLocaleString();document.getElementById('cartItems').innerHTML=cart.map(function(p,i){return '<div class="cart-item"><img src="'+p.img+'" onerror="this.src=\''+p.fallback+'\'"><div><b>'+p.name+'</b><br>Rs '+p.price+' <button onclick="removeItem('+i+')">Remove</button></div></div>'}).join('')||'Cart is empty';}
+function removeItem(i){cart.splice(i,1);updateCart();}
+function toggleCart(){document.getElementById('cartDrawer').classList.toggle('open');}
+function checkout(){if(!cart.length)return alert('Cart empty');cart.forEach(function(p){myOrders.push(p.name)});alert('Order Placed! Cash on Delivery 💖');cart=[];updateCart();toggleCart();}
+document.getElementById('searchInput').addEventListener('keyup',function(){render();});
 </script>
 </body>
 </html>
