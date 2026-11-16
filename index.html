@@ -3,381 +3,346 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>URBAN MART - Vehari Ka Apna Online Store</title>
+<title>URBAN MART - Shop Smart. Live Better. | Fashion, Beauty, Watch, Jewelry</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
-body{background:#f8f9fa;background-image:radial-gradient(#e9ecef 1px, transparent 1px);background-size:22px 22px}
-.topbar{background:linear-gradient(90deg,#ff3b30,#ff6a00,#ff3b30);background-size:200% 100%;animation:shine 4s linear infinite;color:#fff;text-align:center;padding:10px;font-size:13px;font-weight:bold}
-@keyframes shine{0%{background-position:0% 50%}100%{background-position:200% 50%}}
-.topbar span{background:#fff;color:#111;padding:2px 10px;border-radius:20px;font-size:12px}
-header{background:rgba(255,255,255,.98);padding:12px 15px;position:sticky;top:0;z-index:200;box-shadow:0 4px 20px rgba(0,0,0,.08);border-bottom:1px solid #eee}
-.head-top{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:auto;gap:10px;flex-wrap:wrap}
-.logo{font-size:28px;font-weight:900;cursor:pointer;white-space:nowrap}.logo span{background:linear-gradient(90deg,#ff3b30,#ff6a00);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hamburger{display:none;background:#111;color:#fff;border:none;width:42px;height:42px;border-radius:10px;font-size:20px;cursor:pointer}
-.search-box{flex:1;max-width:420px;display:flex;background:#f1f3f5;border-radius:30px;overflow:hidden;border:2px solid #e9ecef;min-width:180px}
-.search-box input{flex:1;padding:12px 14px;border:none;outline:none;background:transparent;font-size:14px;min-width:0}
-.search-box button{background:#111;color:#fff;border:none;padding:0 18px;font-weight:bold;cursor:pointer;white-space:nowrap}
-.top-btns{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
-.cart-btn{background:#111;color:#fff;border:none;padding:11px 16px;border-radius:30px;font-weight:bold;cursor:pointer;font-size:13px}
-.login-btn{background:#fff;color:#111;border:2px solid #111;padding:9px 14px;border-radius:30px;font-weight:bold;cursor:pointer;font-size:13px}
-.dash-btn{background:linear-gradient(90deg,#ff3b30,#ff6a00);color:#fff;border:none;padding:10px 14px;border-radius:30px;font-weight:bold;cursor:pointer;font-size:13px}
-.wish-btn{background:#fff;border:2px solid #ff3b30;color:#ff3b30;padding:9px 12px;border-radius:50%;cursor:pointer;font-size:15px}
-.nav-wrap{background:#111;position:sticky;top:66px;z-index:190;box-shadow:0 5px 20px rgba(0,0,0,.15);border-bottom:3px solid #ff3b30}
-nav{max-width:1200px;margin:auto;display:flex;gap:6px;padding:10px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-nav::-webkit-scrollbar{display:none}
-nav button{background:#222;color:#ddd;border:1px solid #333;padding:9px 15px;border-radius:25px;cursor:pointer;font-weight:600;font-size:13px;white-space:nowrap;flex-shrink:0}
-nav button:hover{background:#333;color:#fff}nav button.active{background:linear-gradient(90deg,#ff3b30,#ff6a00);color:#fff;border-color:transparent}
-.nav-quick{display:flex;gap:6px;align-items:center;padding:0 10px 10px;max-width:1200px;margin:auto;overflow-x:auto;scrollbar-width:none}
-.nav-quick::-webkit-scrollbar{display:none}
-.nav-quick button{background:#222;color:#fff;border:1px solid #444;padding:8px 14px;border-radius:20px;cursor:pointer;font-size:12px;font-weight:bold;white-space:nowrap;flex-shrink:0}
-.nav-quick button.hl{background:linear-gradient(90deg,#ff3b30,#ff6a00);border-color:transparent}
-/* PRODUCTS MEGA MENU IN NAVBAR */
-.prod-menu{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;z-index:500;padding:12px;align-items:flex-start;justify-content:center}
-.prod-menu.show{display:flex}
-.prod-box{background:#fff;width:920px;max-width:100%;border-radius:18px;overflow:hidden;max-height:92vh;display:flex;flex-direction:column}
-.prod-head{background:#111;color:#fff;padding:14px 16px;display:flex;gap:10px;align-items:center}
-.prod-head h3{flex:1;font-size:17px}
-.prod-head input{flex:2;padding:10px 12px;border-radius:20px;border:none;outline:none;font-size:13px;min-width:0}
-.prod-head button{background:#ff3b30;color:#fff;border:none;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:16px;flex-shrink:0}
-.prod-cats{display:flex;gap:6px;overflow-x:auto;padding:10px 12px;background:#f8f9fa;border-bottom:1px solid #eee;scrollbar-width:none}
-.prod-cats::-webkit-scrollbar{display:none}
-.prod-cats button{padding:7px 13px;border:1px solid #ddd;background:#fff;border-radius:20px;cursor:pointer;font-size:12px;font-weight:bold;white-space:nowrap;flex-shrink:0}
-.prod-cats button.active{background:#111;color:#fff}
-.prod-list{overflow:auto;padding:12px}
-.prod-group{margin-bottom:14px}
-.prod-group h4{background:#fff3f0;color:#ff3b30;padding:7px 10px;border-radius:8px;font-size:14px;border-left:4px solid #ff3b30}
-.prod-row{display:flex;gap:10px;align-items:center;padding:9px 8px;border-bottom:1px solid #f1f1f1;cursor:pointer}
-.prod-row:hover{background:#f8f9fa}
-.prod-row img{width:48px;height:48px;object-fit:cover;border-radius:10px;flex-shrink:0}
-.prod-row b{font-size:13px;flex:1}
-.prod-row span{font-weight:900;font-size:13px;color:#111;white-space:nowrap}
-.prod-row button{background:#111;color:#fff;border:none;padding:7px 12px;border-radius:20px;cursor:pointer;font-size:12px;font-weight:bold;white-space:nowrap}
-.hero{background:linear-gradient(135deg,#0f0f0f,#1a1a2e,#16213e);color:#fff;text-align:center;padding:50px 15px}
-.hero h1{font-size:42px;line-height:1.2}.hero h1 span{background:linear-gradient(90deg,#ffcc00,#ff6a00);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero p{margin:14px 0;color:#bbb}.hero button{background:linear-gradient(90deg,#ff3b30,#ff6a00);color:#fff;border:none;padding:15px 35px;border-radius:30px;font-weight:bold;font-size:16px;cursor:pointer}
-.badges{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;padding:18px 15px}
-.badges div{background:#fff;padding:11px 18px;border-radius:30px;font-size:13px;font-weight:bold;box-shadow:0 3px 12px rgba(0,0,0,.06);border:1px solid #eee}
-.section-title{max-width:1200px;margin:10px auto;padding:0 15px;font-size:23px;font-weight:900}
-.section-title::after{content:"";display:block;width:60px;height:4px;background:linear-gradient(90deg,#ff3b30,#ff6a00);border-radius:10px;margin-top:6px}
-.products{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px;padding:15px;max-width:1200px;margin:auto}
-.card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.06);text-align:center;padding-bottom:14px;position:relative;border:1px solid #f1f1f1;transition:.3s}
-.card:hover{transform:translateY(-6px);box-shadow:0 15px 30px rgba(0,0,0,.12)}
-.card img{width:100%;height:210px;object-fit:cover}
-.card h3{font-size:15px;margin:10px 8px 3px;min-height:36px}.card p{color:#888;font-size:12px}
-.price{font-weight:900;font-size:18px;margin:7px 0}.price s{color:#aaa;font-size:13px;font-weight:400}.price b{color:#ff3b30;font-size:12px}
-.colors{display:flex;justify-content:center;gap:6px;margin:8px 0;flex-wrap:wrap}
-.colors button{padding:5px 10px;border:1px solid #ddd;background:#fff;border-radius:15px;font-size:11px;cursor:pointer}
-.colors button.sel{background:#111;color:#fff;border-color:#111}
-.card-actions{display:flex;gap:6px;justify-content:center;padding:0 10px}
-.add{background:#111;color:#fff;border:none;padding:12px 18px;border-radius:25px;cursor:pointer;font-weight:bold;flex:1}
-.add:hover{background:linear-gradient(90deg,#ff3b30,#ff6a00)}
-.heart{background:#fff;border:2px solid #eee;padding:10px 12px;border-radius:50%;cursor:pointer;font-size:16px}
-.heart.active{background:#ffe8e8;border-color:#ff3b30}
-.badge-off{position:absolute;top:12px;left:12px;background:linear-gradient(90deg,#ff3b30,#ff6a00);color:#fff;padding:5px 11px;border-radius:20px;font-size:11px;font-weight:bold;z-index:2}
-.prof-footer{background:#0b0b0f;color:#d1d1d1;margin-top:30px;border-top:4px solid #ff3b30}
-.prof-footer .foot-wrap{max-width:1200px;margin:auto;padding:40px 18px 20px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:28px}
-.prof-footer h3{color:#fff;font-size:18px;margin-bottom:12px}
-.prof-footer h2{color:#fff;font-size:28px}
-.prof-footer h2 span{color:#ff3b30}
-.prof-footer p{font-size:13px;line-height:1.8;color:#aaa}
-.prof-footer ul{list-style:none}
-.prof-footer ul li{font-size:13px;padding:5px 0;cursor:pointer}
-.prof-footer ul li:hover{color:#fff}
-.foot-badge{display:inline-block;background:#1a1a1a;border:1px solid #333;padding:6px 12px;border-radius:20px;font-size:12px;margin:4px 4px 0 0;color:#fff}
-.foot-bottom{border-top:1px solid #222;max-width:1200px;margin:auto;padding:16px 18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px;color:#888}
-.pay-box span{background:#fff;color:#111;padding:5px 10px;border-radius:6px;font-weight:bold;font-size:11px;margin-left:5px}
-.wa{position:fixed;bottom:18px;right:18px;background:#25D366;color:#fff;padding:14px 22px;border-radius:50px;text-decoration:none;font-weight:bold;z-index:200;box-shadow:0 8px 20px rgba(37,211,102,.4)}
-#cartDrawer{position:fixed;top:0;right:-100%;width:400px;max-width:92%;height:100%;background:#fff;z-index:600;transition:.3s;display:flex;flex-direction:column}
-#cartDrawer.open{right:0}.cart-head{background:#111;color:#fff;padding:16px;display:flex;justify-content:space-between}
-.cart-head button{background:#ff3b30;color:#fff;border:none;padding:6px 12px;border-radius:10px;cursor:pointer}
-#cartItems{flex:1;overflow:auto;padding:12px}.cart-item{display:flex;gap:10px;align-items:center;border-bottom:1px solid #eee;padding:10px 0}
-.cart-item img{width:60px;height:60px;object-fit:cover;border-radius:10px}
-.qty button{padding:3px 9px;border:1px solid #ddd;background:#fff;border-radius:5px;cursor:pointer;font-weight:bold}
-.cart-foot{padding:15px;border-top:1px solid #eee}.cart-foot input,.cart-foot select{width:100%;padding:11px;border:1px solid #ddd;border-radius:10px;margin:5px 0;outline:none}
-.checkout{background:#25D366;color:#fff;border:none;width:100%;padding:13px;border-radius:10px;font-weight:bold;font-size:16px;cursor:pointer}
-.overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;z-index:250}.overlay.show{display:block}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:400;padding:15px}
-.modal.show{display:flex}.modal-box{background:#fff;width:440px;max-width:100%;border-radius:20px;padding:28px;position:relative;max-height:92vh;overflow:auto}
-.modal-box h2{text-align:center;margin-bottom:6px}.modal-box p{text-align:center;color:#888;font-size:13px;margin-bottom:15px}
-.close-modal{position:absolute;top:12px;right:14px;background:#f1f1f1;border:none;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:16px}
-.tabs{display:flex;background:#f1f1f1;border-radius:25px;padding:4px;margin-bottom:16px}
-.tabs button{flex:1;border:none;padding:10px;border-radius:20px;cursor:pointer;font-weight:bold;background:transparent}
-.tabs button.active{background:#111;color:#fff}
-.modal-box input,.modal-box select{width:100%;padding:12px;border:1.5px solid #e5e7eb;border-radius:12px;margin:6px 0;outline:none;font-size:14px}
-.modal-box button.main{width:100%;background:linear-gradient(90deg,#ff3b30,#ff6a00);color:#fff;border:none;padding:13px;border-radius:12px;font-weight:bold;font-size:16px;cursor:pointer;margin-top:10px}
-.dash-card{background:#f8f9fa;border-radius:15px;padding:16px;margin:10px 0;border:1px solid #eee}
-.dash-card b{font-size:15px}.dash-card p{color:#666;font-size:13px;text-align:left;margin-top:4px}
-.order-item{background:#fff;border:1px solid #eee;border-radius:12px;padding:12px;margin:8px 0;font-size:13px}
-.stat-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:12px 0}
-.stat{background:linear-gradient(135deg,#111,#333);color:#fff;border-radius:14px;padding:14px;text-align:center}
-.stat:nth-child(2){background:linear-gradient(135deg,#ff3b30,#ff6a00)}.stat:nth-child(3){background:linear-gradient(135deg,#25D366,#128C7E)}
-.stat h3{font-size:22px}.stat p{font-size:12px;color:#ddd}
-@media(max-width:820px){
-.hamburger{display:block}
-.search-box{order:3;max-width:100%;flex-basis:100%}
-.nav-wrap{top:132px}
-.top-btns{flex-wrap:nowrap}
-.cart-btn{padding:10px 12px}
-.login-btn,.dash-btn{padding:9px 10px;font-size:12px}
-.hero h1{font-size:28px}
-.prof-footer .foot-wrap{grid-template-columns:1fr 1fr}
-.prod-head{flex-wrap:wrap}.prod-head h3{flex-basis:100%}.prod-head input{flex-basis:100%}
-}
-@media(max-width:520px){
-.logo{font-size:22px}
-.topbar{font-size:11px}
-.nav-wrap{top:138px}
-.products{grid-template-columns:repeat(2,1fr);gap:10px;padding:10px}
-.card img{height:150px}
-.card h3{font-size:13px;min-height:32px}
-.price{font-size:15px}
-.prof-footer .foot-wrap{grid-template-columns:1fr}
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',-apple-system,Segoe UI,Arial,sans-serif}
+body{background:#fff;color:#111} a{text-decoration:none;color:inherit} button{cursor:pointer}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slide{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+.anim{animation:fadeUp .6s ease both}
+.topbar{background:#111;color:#fff;text-align:center;padding:8px 10px;font-size:12px;letter-spacing:.5px}
+.header{position:sticky;top:0;background:#fff;z-index:100;border-bottom:1px solid #eee}
+.nav{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:13px 16px;gap:12px;flex-wrap:wrap}
+.logo{font-size:26px;font-weight:900;letter-spacing:-1px;cursor:pointer} .logo span{font-weight:300;color:#f85606}
+.searchbar{flex:1;max-width:420px;display:flex;background:#f5f5f5;border-radius:30px;overflow:hidden}
+.searchbar input{flex:1;border:none;background:transparent;padding:11px 16px;outline:none;font-size:14px}
+.searchbar button{background:#111;color:#fff;border:none;padding:0 20px;font-weight:700;border-radius:30px}
+.nav-btn{background:#111;color:#fff;border:none;padding:10px 16px;border-radius:30px;font-weight:700;font-size:13px}
+.nav-btn.orange{background:#f85606} .nav-btn.white{background:#fff;color:#111;border:1px solid #ddd}
+.icons{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.cart-badge{background:#f85606;color:#fff;font-size:11px;padding:2px 7px;border-radius:20px;font-weight:800}
+.hero{max-width:1200px;margin:16px auto;padding:0 16px;display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:800px){.hero{grid-template-columns:1.8fr 1fr}}
+.hero-main{background:linear-gradient(135deg,#111,#2d2d2d);color:#fff;border-radius:20px;padding:32px 26px;display:flex;justify-content:space-between;align-items:center;gap:16px;overflow:hidden}
+.hero-main h1{font-size:34px;line-height:1.05;letter-spacing:-1px} .hero-main h1 span{font-weight:300;color:#f85606}
+.hero-main p{color:#bbb;margin:12px 0 18px;font-size:14px;line-height:1.6;max-width:380px}
+.hero-main img{width:230px;height:280px;object-fit:cover;border-radius:16px}
+@media(max-width:600px){.hero-main{flex-direction:column;text-align:center}.hero-main img{width:100%;height:220px}}
+.btn-black{background:#fff;color:#111;padding:12px 22px;border-radius:30px;font-weight:800;font-size:14px;border:none;display:inline-block}
+.btn-orange{background:#f85606;color:#fff;padding:12px 22px;border-radius:30px;font-weight:800;font-size:14px;border:none;display:inline-block}
+.hero-side{display:grid;gap:14px}
+.hero-card{border-radius:20px;padding:20px;color:#fff;min-height:145px;display:flex;flex-direction:column;justify-content:flex-end;background-size:cover;background-position:center}
+.hero-card h3{font-size:19px;line-height:1.2} .hero-card p{font-size:12px;opacity:.9}
+.cat-row{max-width:1200px;margin:18px auto;padding:0 16px;display:flex;gap:10px;overflow:auto;scrollbar-width:none}
+.cat-row button{white-space:nowrap;border:1px solid #eee;background:#fff;padding:10px 18px;border-radius:30px;font-weight:600;cursor:pointer;font-size:13px}
+.cat-row button.active{background:#111;color:#fff}
+.filters{max-width:1200px;margin:auto;padding:0 16px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.filters input,.filters select{padding:9px 12px;border:1px solid #eee;border-radius:20px;outline:none;font-size:13px}
+.filters button{background:#111;color:#fff;border:none;padding:9px 16px;border-radius:20px;font-weight:700}
+.section{max-width:1200px;margin:auto;padding:14px 16px 10px}
+.sec-head{display:flex;justify-content:space-between;align-items:end;margin:6px 0 14px}
+.sec-head h2{font-size:23px;letter-spacing:-.5px} .sec-head p{color:#888;font-size:13px;margin-top:3px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(min-width:700px){.grid{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:1100px){.grid{grid-template-columns:repeat(5,1fr)}}
+.card{background:#fff;border:1px solid #f0f0f0;border-radius:16px;overflow:hidden;transition:.25s;animation:fadeUp .4s both}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.09)}
+.card-img{position:relative;background:#f8f8f8;aspect-ratio:1/1.05;overflow:hidden}
+.card-img img{width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;top:10px;left:10px;background:#111;color:#fff;font-size:11px;padding:5px 9px;border-radius:20px;font-weight:700}
+.tag.o{background:#f85606}
+.card-info{padding:11px 11px 13px}
+.card-info small{color:#888;font-size:11px;text-transform:uppercase;letter-spacing:.6px;font-weight:700}
+.card-info h3{font-size:14px;line-height:1.35;margin:5px 0;font-weight:600;min-height:38px}
+.stars{color:#f59e0b;font-size:12px} .stars span{color:#999}
+.price{font-weight:800;font-size:16px} .old{color:#999;text-decoration:line-through;font-size:12px;margin-left:4px}
+.add{margin-top:9px;width:100%;background:#111;color:#fff;border:none;padding:11px;border-radius:30px;font-weight:700;font-size:13px}
+.add:hover{background:#f85606} .buy-daraz{margin-top:6px;width:100%;background:#f85606;color:#fff;border:none;padding:11px;border-radius:30px;font-weight:800;font-size:13px;display:block;text-align:center}
+.banner{max-width:1200px;margin:18px auto;padding:0 16px}
+.banner-in{background:#111;color:#fff;border-radius:20px;padding:28px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.features{max-width:1200px;margin:8px auto;padding:0 16px 14px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(min-width:700px){.features{grid-template-columns:repeat(4,1fr)}}
+.feat{background:#f8f8f8;border-radius:14px;padding:15px} .feat b{font-size:14px} .feat p{font-size:12px;color:#777;margin-top:4px;line-height:1.5}
+footer{background:#fafafa;border-top:1px solid #eee;margin-top:10px}
+.foot{max-width:1200px;margin:auto;padding:30px 16px;display:grid;grid-template-columns:1fr;gap:22px}
+@media(min-width:700px){.foot{grid-template-columns:1.6fr 1fr 1fr 1.4fr}}
+.foot h4{font-size:13px;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px} .foot p,.foot a{font-size:14px;color:#666;line-height:26px;display:block}
+.foot-bottom{border-top:1px solid #eee;padding:14px;text-align:center;font-size:12px;color:#999}
+.wa{position:fixed;bottom:18px;right:18px;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;z-index:300;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:400;padding:14px}
+.modal.open{display:flex}
+.modal-box{background:#fff;width:100%;max-width:520px;max-height:92vh;overflow:auto;border-radius:18px;padding:22px;animation:slide .3s}
+.modal-box h2{font-size:22px;margin-bottom:4px} .modal-box p{color:#777;font-size:13px;margin-bottom:12px}
+.inp{width:100%;padding:12px 14px;border:1px solid #eee;border-radius:12px;outline:none;margin:6px 0;font-size:14px}
+label{font-size:13px;font-weight:600}
+.page{display:none;max-width:1200px;margin:auto;padding:16px}
+.page.active{display:block;animation:fadeUp .4s}
+.table{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px}
+.table th,.table td{border-bottom:1px solid #eee;padding:10px;text-align:left;vertical-align:top}
+.table th{background:#f8f8f8}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
+@media(min-width:700px){.stat-grid{grid-template-columns:repeat(4,1fr)}}
+.stat{padding:18px;border-radius:14px;color:#fff} .stat b{font-size:13px} .stat h2{font-size:26px;margin-top:6px}
+.order-card{border:1px solid #eee;border-radius:14px;padding:14px;margin:10px 0}
+.track{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap} .track div{flex:1;min-width:70px;text-align:center;font-size:11px;padding:8px;border-radius:10px;background:#f5f5f5}
+.track div.on{background:#dcfce7;font-weight:700}
+.cart-item{display:flex;gap:12px;border:1px solid #eee;padding:12px;border-radius:12px;margin:10px 0;align-items:center}
+.cart-item img{width:80px;height:80px;object-fit:cover;border-radius:10px}
+.qty-btn{border:1px solid #ddd;background:#fff;padding:5px 10px;border-radius:20px;font-weight:800}
 </style>
 </head>
 <body>
-<div class="topbar">🔥 URBAN MART MEGA SALE - UP TO 60% OFF | <span>FREE DELIVERY VEHARI Rs.1500+ Par</span> 🔥</div>
-<header>
-<div class="head-top">
-<button class="hamburger" onclick="toggleNav()">☰</button>
-<div class="logo" onclick="location.reload()">URBAN <span>MART</span> 🛍️</div>
-<div class="search-box"><input id="searchInput" placeholder="Search - T-Shirt, Shoes, Watch..." onkeyup="filterProducts()"><button onclick="filterProducts()">Search</button></div>
-<div class="top-btns"><button class="wish-btn" onclick="showWishlist()">❤️ <span id="wishCount">0</span></button><span id="userArea"><button class="login-btn" onclick="openAuth()">👤 Login</button></span><button class="cart-btn" onclick="openCart()">🛒 Cart (<span id="cartCount">0</span>) - Rs.<span id="cartTotalTop">0</span></button></div>
+<div class="topbar">URBAN MART 🛒 FREE DELIVERY OVER RS. 3000 • CASH ON DELIVERY AVAILABLE • EASY 7-DAY RETURN</div>
+
+<header class="header"><div class="nav">
+<div class="logo" onclick="showPage('home')">URBAN <span>MART 🛒</span></div>
+<div class="searchbar"><input id="searchInput" onkeyup="render()" placeholder="Search on Urban Mart - Serum, Watch, Shoes..."><button onclick="render()">Search</button></div>
+<div class="icons">
+<button class="nav-btn white" onclick="showPage('home')">Home</button>
+<button class="nav-btn white" onclick="showPage('orders')">My Orders</button>
+<button class="nav-btn" onclick="openAdmin()">Admin</button>
+<span id="userLabel" style="font-size:13px;font-weight:700"></span>
+<button class="nav-btn white" id="loginBtn" onclick="openModal('loginModal')">Login / Register</button>
+<button class="nav-btn orange" onclick="showPage('cart')">🛒 Cart <span class="cart-badge" id="cartCount">0</span></button>
 </div>
-</header>
-<div class="nav-wrap" id="navWrap">
-<nav id="mainNav">
-<button onclick="openProductsMenu()" style="background:linear-gradient(90deg,#ff3b30,#ff6a00);color:#fff;border-color:transparent">🛍️ Products ▾</button>
-<button class="active" onclick="setCat('All',this)">🏠 All</button>
-<button onclick="setCat('Fashion',this)">👕 Fashion</button><button onclick="setCat('Shoes',this)">👟 Shoes</button><button onclick="setCat('Watches',this)">⌚ Watches</button><button onclick="setCat('Electronics',this)">🎧 Electronics</button><button onclick="setCat('Mobile',this)">📱 Mobile</button><button onclick="setCat('Beauty',this)">💄 Beauty</button><button onclick="setCat('Home',this)">🏠 Home</button><button onclick="setCat('Grocery',this)">🛒 Grocery</button><button onclick="setCat('Kids',this)">👶 Kids</button><button onclick="setCat('Toys',this)">🧸 Toys</button><button onclick="setCat('Sports',this)">⚽ Sports</button>
-</nav>
-<div class="nav-quick">
-<button class="hl" onclick="openProductsMenu()">🛍️ All Products (<span id="prodCountNav">114</span>)</button>
-<button class="hl" onclick="handleDash()">📊 Dashboard</button>
-<button onclick="showWishlist()">❤️ Wishlist (<span id="wishCount2">0</span>)</button>
-<button onclick="openCart()">🛒 My Cart</button>
-<button onclick="openAuth()">👤 Login / Register</button>
-<button onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">🔥 Best Selling</button>
-<button onclick="window.open('https://wa.me/923341765911','_blank')">💬 WhatsApp Order</button>
-<button onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">📞 Contact</button>
+</div></header>
+
+<div id="page-home" class="page active">
+<div class="hero">
+<div class="hero-main anim">
+<div><span style="background:#fff;color:#111;padding:6px 12px;border-radius:20px;font-size:11px;font-weight:800">URBAN MART - NEW COLLECTION 2026</span>
+<h1 style="margin-top:14px">URBAN MART 🛒<br><span>Shop Smart.</span><br>Live Better.</h1>
+<p>ENGINEERED FOR PERFORMANCE. BUILT FOR YOU.<br>Premium Fashion, Beauty, Watches, Jewelry, Audio & Gaming - Best Deals from Daraz, Vehari ki apni Mart!</p>
+<button class="btn-black" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Shop Now →</button>
+<button class="btn-orange" style="margin-left:8px" onclick="filterCat('beauty')">Beauty Deals</button>
+<p style="font-size:12px;margin-top:14px">⭐ 4.9 | 1000+ Happy Customers | Vehari, Pakistan</p></div>
+<img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80" onerror="this.src='https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&auto=format&fit=crop&q=80'">
 </div>
-</div>
-<!-- PRODUCTS MENU - NAVBAR SE -->
-<div class="prod-menu" id="prodMenu" onclick="if(event.target===this)closeProductsMenu()">
-<div class="prod-box">
-<div class="prod-head"><h3>🛍️ All Products - URBAN MART</h3><input id="prodSearch" placeholder="🔍 Product search karo - Watch, Shoes, Honey..." onkeyup="renderProductsMenu()"><button onclick="closeProductsMenu()">✕</button></div>
-<div class="prod-cats" id="prodCats"></div>
-<div class="prod-list" id="prodList"></div>
-<div style="padding:10px 14px;background:#f8f9fa;font-size:12px;color:#666;text-align:center">Kisi bhi product pe click karo → wo neeche shop me khul jayega • Add dabao → seedha Cart me jayega</div>
+<div class="hero-side">
+<div class="hero-card" style="background-image:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop&q=80')"><h3>Premium Watches<br>Up to 40% Off</h3><p>Smart & Classic Collection</p></div>
+<div class="hero-card" style="background-image:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&auto=format&fit=crop&q=80')"><h3>Beauty Essentials<br>Best Sellers</h3><p>Serum, Lipstick & More</p></div>
 </div>
 </div>
-<div class="hero"><h1>URBAN MART <span>VEHARI</span><br>Ab 114+ Products - Sab Kuch Ek Jagah</h1><p>Vehari Ka Apna Trusted Store | Cash On Delivery | 7 Days Return | Best Price Guarantee</p><button onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">Shop Now 👇</button></div>
-<div class="badges"><div>✅ Cash On Delivery</div><div>🚀 Same Day Vehari</div><div>🔄 7 Days Return</div><div>🎨 Color Options</div><div>👤 Login & Dashboard</div><div>⭐ 2000+ Happy Customers</div></div>
-<h2 class="section-title">🔥 Best Selling - <span id="showCat">All</span> (<span id="countShow">0</span> items)</h2>
-<div class="products" id="shop"></div>
-<div style="text-align:center;padding:25px;background:#fff;max-width:1200px;margin:20px auto;border-radius:15px"><h2>Why URBAN MART?</h2><p style="color:#666;margin-top:8px;line-height:1.7">Login karo, order karo, apna Dashboard me order track karo.<br><b>📍 Main Bazaar, Vehari | 📞 03341765911 | ⏰ 9 AM - 11 PM Daily</b></p><button onclick="openAuth()" style="margin-top:12px;background:#111;color:#fff;border:none;padding:12px 25px;border-radius:25px;font-weight:bold;cursor:pointer">👤 Create Free Account</button></div>
-<footer class="prof-footer">
-<div class="foot-wrap">
-<div><h2>URBAN <span>MART</span> 🛍️</h2><p>Vehari ka apna trusted online store. Best quality, best price, fast delivery. 2000+ happy customers ka bharosa.</p><div style="margin-top:12px"><span class="foot-badge">✅ 100% Original</span><span class="foot-badge">🚚 Fast Delivery</span><span class="foot-badge">🔄 7 Days Return</span></div></div>
-<div><h3>Shop</h3><ul><li onclick="setCat('Fashion',null);window.scrollTo(0,400)">👕 Fashion</li><li onclick="setCat('Shoes',null);window.scrollTo(0,400)">👟 Shoes</li><li onclick="setCat('Watches',null);window.scrollTo(0,400)">⌚ Watches</li><li onclick="setCat('Electronics',null);window.scrollTo(0,400)">🎧 Electronics</li><li onclick="setCat('Grocery',null);window.scrollTo(0,400)">🛒 Grocery</li><li onclick="setCat('Toys',null);window.scrollTo(0,400)">🧸 Toys & Kids</li></ul></div>
-<div><h3>Customer Care</h3><ul><li>📦 Track My Order</li><li>🔄 Return & Exchange</li><li>🚚 Delivery Info - Vehari</li><li>💳 Payment Methods</li><li>❓ FAQs</li><li onclick="openAuth()">👤 My Account / Dashboard</li></ul></div>
-<div><h3>Contact Us</h3><p>📍 Main Bazaar, Vehari,<br>Punjab, Pakistan<br>📞 WhatsApp: 0334 1765911<br>📧 urbanmartvehari@gmail.com<br>⏰ Mon - Sun: 9 AM - 11 PM</p><p style="margin-top:10px;color:#fff;font-weight:bold">We Accept:</p><div class="pay-box"><span>COD</span><span>JazzCash</span><span>Easypaisa</span><span>Bank Transfer</span></div></div>
+
+<div class="cat-row" id="catRow">
+<button class="active" onclick="filterCat('all',this)">All Products</button>
+<button onclick="filterCat('fashion',this)">👕 Fashion</button>
+<button onclick="filterCat('beauty',this)">💄 Beauty</button>
+<button onclick="filterCat('watch',this)">⌚ Watches</button>
+<button onclick="filterCat('jewelry',this)">✨ Jewelry</button>
+<button onclick="filterCat('audio',this)">🎧 Audio</button>
+<button onclick="filterCat('gaming',this)">🎮 Gaming</button>
+<button onclick="filterCat('home',this)">🏠 Home</button>
 </div>
-<div class="foot-bottom"><span>© 2026 URBAN MART Vehari - Made with ❤️ by Huzaifa Tariq | All Rights Reserved</span><span>Privacy Policy • Terms • Refund Policy</span></div>
-</footer>
-<a class="wa" href="https://wa.me/923341765911?text=Assalam-o-Alaikum%20URBAN%20MART%20Mujhe%20Order%20Karna%20Hai" target="_blank">WhatsApp Order 💬</a>
-<div class="modal" id="authModal"><div class="modal-box"><button class="close-modal" onclick="closeModal('authModal')">✕</button><h2>👋 Welcome to URBAN MART</h2><p>Login karo ya Free Account banao</p><div class="tabs"><button id="tabLogin" class="active" onclick="switchTab('login')">Login</button><button id="tabReg" onclick="switchTab('register')">Register</button></div><div id="loginBox"><input id="loginPhone" placeholder="📞 Mobile Number"><input id="loginPass" type="password" placeholder="🔒 Password"><button class="main" onclick="doLogin()">Login Karo →</button><p style="margin-top:12px">Account nahi hai? <b style="color:#ff3b30;cursor:pointer" onclick="switchTab('register')">Register Karo</b></p></div><div id="registerBox" style="display:none"><input id="regName" placeholder="👤 Full Name *"><input id="regPhone" placeholder="📞 Mobile Number *"><input id="regCity" placeholder="📍 City - Vehari"><input id="regAddress" placeholder="🏠 Full Address"><input id="regPass" type="password" placeholder="🔒 Password Banao *"><button class="main" onclick="doRegister()">Create Free Account →</button><p style="margin-top:12px">Pehle se account hai? <b style="color:#ff3b30;cursor:pointer" onclick="switchTab('login')">Login Karo</b></p></div></div></div>
-<div class="modal" id="dashModal"><div class="modal-box" style="width:520px"><button class="close-modal" onclick="closeModal('dashModal')">✕</button><h2>📊 My Dashboard</h2><p id="dashWelcome">Welcome!</p><div class="stat-row"><div class="stat"><h3 id="statOrders">0</h3><p>Total Orders</p></div><div class="stat"><h3 id="statSpent">Rs.0</h3><p>Total Spent</p></div><div class="stat"><h3 id="statWish">0</h3><p>Wishlist</p></div></div><div class="dash-card"><b>👤 My Profile</b><p id="dashProfile">-</p><button onclick="editProfile()" style="margin-top:8px;background:#111;color:#fff;border:none;padding:8px 15px;border-radius:20px;cursor:pointer;font-size:12px">✏️ Edit Profile</button> <button onclick="doLogout()" style="margin-top:8px;background:#ff3b30;color:#fff;border:none;padding:8px 15px;border-radius:20px;cursor:pointer;font-size:12px">🚪 Logout</button></div><div class="dash-card"><b>📦 My Orders</b><div id="dashOrders"></div></div><div class="dash-card"><b>❤️ My Wishlist</b><div id="dashWish"></div></div><div class="dash-card"><b>📍 My Address</b><p id="dashAddress">-</p></div><div class="dash-card"><b>🎁 Offers For You</b><p>🔥 URBAN10 - 10% OFF on Rs.2000+ | 🚚 FREE Delivery Rs.1500+ | 🎉 First Order pe FREE Gift!</p></div></div></div>
-<div class="modal" id="wishModal"><div class="modal-box"><button class="close-modal" onclick="closeModal('wishModal')">✕</button><h2>❤️ My Wishlist</h2><p>Jo products pasand aaye unko save karo</p><div id="wishListBox"></div></div></div>
-<div class="overlay" id="overlay" onclick="closeCart()"></div>
-<div id="cartDrawer"><div class="cart-head"><b>🛒 Your Bag - URBAN MART</b><button onclick="closeCart()">X Close</button></div><div id="cartItems"><p style="text-align:center;color:#888;padding:30px">Bag khali hai.</p></div><div class="cart-foot"><b>Total: Rs. <span id="cartTotal">0</span></b><p style="font-size:12px;color:#888">Delivery: Rs. 200 (Free over Rs.1500) - Vehari</p><input id="custName" placeholder="Apna Naam *"><input id="custPhone" placeholder="Mobile Number *"><input id="custAddress" placeholder="Full Address - Vehari *"><select id="payMethod"><option>Cash On Delivery</option><option>JazzCash</option><option>Easypaisa</option><option>Bank Transfer</option></select><button class="checkout" onclick="checkout()">✅ WhatsApp Par Order Karein</button></div></div>
+
+<div class="filters">
+<input type="number" id="minPrice" placeholder="Min Price" oninput="render()"><input type="number" id="maxPrice" placeholder="Max Price" oninput="render()">
+<select id="sortBy" onchange="render()"><option value="">Sort By</option><option value="low">Price Low to High</option><option value="high">Price High to Low</option><option value="discount">Biggest Discount</option></select>
+<span id="resultCount" style="font-size:13px;color:#777;font-weight:600"></span>
+</div>
+
+<div class="section" id="products">
+<div class="sec-head"><div><h2>Featured Products</h2><p>Handpicked best deals - updated daily</p></div><span style="font-size:13px;font-weight:700">View All →</span></div>
+<div class="grid" id="grid"></div>
+</div>
+
+<div class="banner"><div class="banner-in"><div><h2>Winter Collection is Here ❄️ - URBAN MART</h2><p>Hoodies, Jackets & Warm Essentials - Up to 50% Off</p></div><button class="btn-black" onclick="filterCat('fashion')">Shop Winter →</button></div></div>
+
+<div class="section"><div class="sec-head"><div><h2>Best Sellers This Week 🔥</h2><p>Most loved by our customers</p></div></div><div class="grid" id="grid2"></div></div>
+
+<div class="features">
+<div class="feat"><b>🚚 Fast Delivery</b><p>Daraz fast delivery all over Pakistan in 2-4 days.</p></div>
+<div class="feat"><b>↩️ Easy Return</b><p>7-day easy return & exchange policy.</p></div>
+<div class="feat"><b>🛡️ 100% Original</b><p>All products are 100% original & verified.</p></div>
+<div class="feat"><b>💬 WhatsApp Support</b><p>0334-1765911 - Subah 10 se Raat 10 tak.</p></div>
+</div>
+</div>
+
+<div id="page-cart" class="page">
+<h2>My Cart 🛒 - URBAN MART</h2><p style="color:#777;font-size:13px;margin-top:4px">Cash on Delivery available</p>
+<div id="cartList"></div>
+<div id="cartTotal" style="margin-top:14px"></div>
+<button class="btn-orange" onclick="showPage('home')" style="margin-top:10px">← Continue Shopping</button>
+</div>
+
+<div id="page-checkout" class="page">
+<h2>Checkout - Cash on Delivery ✅ - URBAN MART</h2>
+<div style="max-width:560px;margin-top:14px">
+<input class="inp" id="coName" placeholder="Full Name - e.g. Huzaifa Tariq">
+<input class="inp" id="coPhone" placeholder="Phone - 0334-1765911">
+<input class="inp" id="coAddress" placeholder="Full Address - Main Bazaar, Vehari">
+<input class="inp" id="coCity" placeholder="City" value="Vehari">
+<label><input type="radio" name="pay" value="COD" checked> Cash on Delivery (COD)</label><br>
+<label><input type="radio" name="pay" value="DARAZ"> Buy via Daraz Link</label>
+<div id="checkoutSummary" style="background:#f8f8f8;padding:14px;border-radius:12px;margin-top:12px;font-size:14px"></div>
+<button class="btn-orange" style="width:100%;margin-top:12px;padding:14px" onclick="placeOrder()">Place Order - COD ✅</button>
+</div>
+</div>
+
+<div id="page-orders" class="page">
+<h2>My Orders 📦 - Order Tracking - URBAN MART</h2><p style="color:#777;font-size:13px;margin-top:4px">Apne order ka status yahan dekho</p>
+<div id="ordersList"></div>
+<button class="btn-black" onclick="showPage('home')" style="margin-top:10px">Shop More →</button>
+</div>
+
+<div id="page-admin" class="page">
+<h2>Admin Dashboard 📊 - URBAN MART</h2><p style="color:#777;font-size:13px">Sirf tum - Huzaifa - ke liye</p>
+<div class="stat-grid">
+<div class="stat" style="background:#111"><b>Total Orders</b><h2 id="stOrders">0</h2></div>
+<div class="stat" style="background:#f85606"><b>Total Revenue</b><h2 id="stRevenue">Rs 0</h2></div>
+<div class="stat" style="background:#16a34a"><b>Total Products</b><h2 id="stProducts">0</h2></div>
+<div class="stat" style="background:#2563eb"><b>Total Users</b><h2 id="stUsers">1</h2></div>
+</div>
+<h3 style="margin-top:16px">➕ Add New Product - URBAN MART</h3>
+<div style="background:#f8f8f8;padding:16px;border-radius:14px;margin-top:8px">
+<input class="inp" id="newName" placeholder="Product Name">
+<select class="inp" id="newCat"><option value="fashion">Fashion</option><option value="beauty">Beauty</option><option value="watch">Watches</option><option value="jewelry">Jewelry</option><option value="audio">Audio</option><option value="gaming">Gaming</option><option value="home">Home</option></select>
+<input class="inp" id="newPrice" type="number" placeholder="Price - 899">
+<input class="inp" id="newOld" type="number" placeholder="Old Price - 1499">
+<input class="inp" id="newImg" placeholder="Image Link - https://...">
+<input class="inp" id="newDaraz" placeholder="Daraz Affiliate Link - https://... (agar ho to)">
+<input class="inp" id="newTag" placeholder="Tag - BEST SELLER / NEW">
+<button class="btn-black" onclick="addProduct()">Add Product ✅</button>
+</div>
+<h3 style="margin-top:18px">📦 All Orders - Status Change Karo</h3>
+<div id="adminOrders"></div>
+<h3 style="margin-top:18px">🛍️ All Products - Delete Karo</h3>
+<div id="adminProducts"></div>
+</div>
+
+<footer><div class="foot">
+<div><h3 style="font-size:22px">URBAN MART 🛒</h3><p style="margin-top:8px">Shop Smart. Live Better.<br>Vehari ki trusted Mart. Hum Daraz ke best products dhoond ke laate hain.</p><p style="margin-top:10px">⭐⭐⭐⭐⭐ 4.9 Rating<br>📍 Main Bazaar, Vehari, Punjab<br>📞 0334-1765911</p></div>
+<div><h4>Shop</h4><a href="#" onclick="filterCat('fashion');return false">Fashion</a><a href="#" onclick="filterCat('beauty');return false">Beauty</a><a href="#" onclick="filterCat('watch');return false">Watches</a><a href="#" onclick="filterCat('jewelry');return false">Jewelry</a><a href="#" onclick="filterCat('audio');return false">Audio</a></div>
+<div><h4>Help</h4><a href="#" onclick="showPage('orders');return false">Track Order</a><a href="#">Shipping Info</a><a href="#">Returns</a><a href="#">Contact Us</a></div>
+<div><h4>Stay Updated</h4><p>Get daily best deals on WhatsApp.</p><a href="https://wa.me/923341765911" style="background:#25D366;color:#fff;text-align:center;padding:12px;border-radius:30px;font-weight:800;margin-top:10px">WhatsApp Us 💬</a><p style="font-size:12px;margin-top:12px;color:#999">Made by Huzaifa Tariq - URBAN MART<br>Affiliate: We may earn commission on Daraz links at no extra cost to you.</p></div>
+</div><div class="foot-bottom">© 2026 URBAN MART - Vehari, Pakistan | COD Available | All Rights Reserved</div></footer>
+
+<a class="wa" href="https://wa.me/923341765911?text=Assalam-o-Alaikum%20URBAN%20MART!" target="_blank">💬</a>
+
+<div class="modal" id="loginModal"><div class="modal-box">
+<h2>Login / Register 👋 - URBAN MART</h2><p>Customer Dashboard ke liye login karo. Admin ke liye: admin / 1234</p>
+<input class="inp" id="loginName" placeholder="Apna Naam - e.g. Huzaifa">
+<input class="inp" id="loginPhone" placeholder="Phone - 0334-xxxxxxx">
+<button class="btn-black" style="width:100%;padding:13px" onclick="doLogin()">Login / Register ✅</button>
+<button class="btn-orange" style="width:100%;padding:12px;margin-top:8px;background:#fff;color:#111;border:1px solid #ddd" onclick="closeModal('loginModal')">Close</button>
+<p style="margin-top:10px;font-size:12px">Admin Login: Naam me <b>admin</b> likho, Phone me <b>1234</b> likho</p>
+</div></div>
+
+<div class="modal" id="productModal"><div class="modal-box" style="max-width:620px">
+<div id="productDetail"></div>
+<button class="btn-orange" style="width:100%;padding:12px;margin-top:10px;background:#fff;color:#111;border:1px solid #ddd" onclick="closeModal('productModal')">Close</button>
+</div></div>
+
 <script>
-let selColor={}; let prodMenuCat='All';
-const P=(name,cat,price,old,img,colors)=>({name,cat,price,old,img,colors});
-const FALLBACK="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=500";
-const products=[
-P("Men White T-Shirt","Fashion",999,1499,"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500",["White","Black","Grey"]),
-P("Men Denim Jeans","Fashion",1599,2299,"https://images.unsplash.com/photo-1542272604-787c3835535d?w=500",["Blue","Black","Light Blue"]),
-P("Men Black Hoodie","Fashion",1799,2599,"https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500",["Black","Grey","Navy"]),
-P("Men Formal Shirt","Fashion",1199,1799,"https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=500",["White","Light Blue","Black"]),
-P("Women Floral Kurti","Fashion",1299,1999,"https://d19dlu1w9mnmln.cloudfront.net/b_1786644720178547_c2e7681a1e04",["Pink","Red","Green"]),
-P("Women Handbag","Fashion",1599,2499,"https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500",["Brown","Black","Beige"]),
-P("Men Leather Wallet","Fashion",899,1399,"https://images.unsplash.com/photo-1627123424574-724758594e93?w=500",["Brown","Black","Tan"]),
-P("Black Sunglasses","Fashion",999,1599,"https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500",["Black","Brown"]),
-P("Men Shalwar Kameez","Fashion",1999,2999,"https://fancyfashions.co.uk/cdn/shop/files/white_mens_salwar_kameez_main_940x.png?v=1768761719",["White","Black","Off White"]),
-P("Women Lawn Suit 3PC","Fashion",2499,3499,"https://cdn.ecommercedns.uk/files/8/216208/5/56157805/5-8-5227ad23-6a04-4822-9900-7c9d639aa937.png",["Pink","Blue","Yellow","Green"]),
-P("Men Check Shirt","Fashion",1299,1899,"https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=500",["Red Check","Blue Check","Green Check"]),
-P("Women Abaya","Fashion",2199,3299,"https://i.pinimg.com/736x/8b/b4/80/8bb480fe8a295b9e1c4fb894ba3c783b.jpg",["Black","Navy","Brown"]),
-P("White Sneakers","Shoes",2199,3299,"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500",["White","Black","Red"]),
-P("Running Joggers Shoes","Shoes",2499,3599,"https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500",["Black","White","Blue"]),
-P("Peshawari Chappal","Shoes",1499,2199,"https://images.unsplash.com/photo-1603487742131-4160ec999306?w=500",["Brown","Black","Mustard"]),
-P("Women High Heels","Shoes",1899,2799,"https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500",["Black","Red","Beige"]),
-P("Women Sandals","Shoes",1299,1899,"https://rukminim2.flixcart.com/image/1600/2130/xif0q/sandal/s/6/k/7-sd402-40-0-vendoz-black-original-imahfctfgmxrgsez.jpeg?q=80",["Black","Brown","White"]),
-P("Men Leather Shoes","Shoes",2799,3999,"https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=500",["Black","Brown","Tan"]),
-P("Canvas Shoes","Shoes",1599,2299,"https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=500",["White","Black","Blue"]),
-P("Sports Shoes Men","Shoes",2299,3299,"https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=500",["Grey","Black","Green"]),
-P("Slippers Comfort","Shoes",699,999,"https://rukmini1.flixcart.com/image/1500/1500/kt4ozgw0/slipper-flip-flop/f/i/c/6-749-blk-731-gry-752-blk-fabbmate-multicolor-original-imag6jn7hzhhy7f9.jpeg",["Black","White","Blue"]),
-P("Leather Boots","Shoes",3499,4999,"https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=500",["Brown","Black"]),
-P("Kids Sneakers","Shoes",1399,1999,"https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=500",["Red","Blue","Pink"]),
-P("Luxury Men Watch","Watches",3499,5999,"https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500",["Gold","Silver","Black"]),
-P("Smart Watch Black","Watches",2999,4999,"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",["Black","White","Blue"]),
-P("Couple Watches Set","Watches",3999,6499,"https://m.media-amazon.com/images/I/61x08XEN7gL._AC_SL1000_.jpg",["Gold","Silver"]),
-P("Smart Watch Ultra","Watches",3999,5999,"https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=500",["Black","Orange","White"]),
-P("Women Elegant Watch","Watches",2499,3999,"https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=500",["Rose Gold","Silver","Gold"]),
-P("Sports Digital Watch","Watches",1999,2999,"https://img.kilimall.com/c/obs/seller/9513/goods_image/251010041609_3ab13bccdfd43878ea31b61d53548d9e.jpg",["Black","Green","Blue"]),
-P("Leather Strap Watch","Watches",2799,4299,"https://fossil.scene7.com/is/image/FossilPartners/FS5666_main?$sfcc_fos_hi-res$",["Brown","Black"]),
-P("Chronograph Watch","Watches",3299,4999,"https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=500",["Black","Silver","Blue"]),
-P("Kids Digital Watch","Watches",999,1499,"https://sg-test-11.slatic.net/p/915e72b08f1af673e04f78fff1fbaa70.jpg",["Blue","Pink","Green"]),
-P("Smart Watch Series 8","Watches",4499,6999,"https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?w=500",["Black","White"]),
-P("Wireless Earbuds","Electronics",1799,2999,"https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500",["Black","White","Blue"]),
-P("Bluetooth Headphones","Electronics",2499,3999,"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500",["Black","White","Blue"]),
-P("Bluetooth Speaker","Electronics",1999,2999,"https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500",["Black","Blue","Red"]),
-P("Wireless Mouse","Electronics",899,1499,"https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500",["Black","White"]),
-P("RGB Gaming Keyboard","Electronics",2199,3299,"https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=500",["Black","White"]),
-P("LED Ring Light","Electronics",1299,1999,"https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=500",["Black","White"]),
-P("USB Type-C Cable","Electronics",499,799,"https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=500",["White","Black"]),
-P("Laptop Stand Metal","Electronics",1499,2299,"https://www.xmediasat.com/bilder/big/webp/ht17.webp",["Silver","Black"]),
-P("HD Webcam","Electronics",2999,4499,"https://vn-live-03.slatic.net/p/edd5f84625895d583bef1dda053b568f.jpg",["Black"]),
-P("Smart TV Remote","Electronics",799,1299,"https://i.ebayimg.com/00/s/MTYwMFgxNjAw/z/Up4AAOSwHkNjkYQA/$_57.JPG?set_id=880000500F",["Black"]),
-P("Power Bank 20000mAh","Mobile",2299,3499,"https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=500",["Black","White","Blue"]),
-P("Fast Mobile Charger 25W","Mobile",899,1499,"https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=500",["White","Black"]),
-P("Mobile Cover Premium","Mobile",499,799,"https://images.unsplash.com/photo-1601593346740-925612772716?w=500",["Black","Transparent","Blue","Pink"]),
-P("Tripod Stand For Mobile","Mobile",1199,1899,"https://images.unsplash.com/photo-1471341971476-ae15ff5dd4ea?w=500",["Black"]),
-P("AirPods Pro Cover Case","Mobile",499,799,"https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=500",["Black","White","Pink","Blue"]),
-P("Mobile Holder For Bike","Mobile",799,1299,"https://images.unsplash.com/photo-1591637333184-19aa84b3e01f?w=500",["Black"]),
-P("Tempered Glass Protector","Mobile",399,699,"https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=500",["Clear","Black"]),
-P("Wired Earphone","Mobile",699,999,"https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?w=500",["White","Black"]),
-P("Selfie Stick With Tripod","Mobile",999,1599,"https://m.media-amazon.com/images/I/61GZzMcZxVL.jpg_BO30,255,255,255_UF900,850_SR1910,1000,0,C_QL100_.jpg",["Black","White"]),
-P("Mobile Stand Desktop Holder","Mobile",699,1099,"https://m.media-amazon.com/images/I/61Zbuc0Ey8L.jpg",["Black","Silver"]),
-P("Face Wash Glow","Beauty",699,999,"https://images.unsplash.com/photo-1556228720-195a672e8a03?w=500",["White"]),
-P("Makeup Kit Professional","Beauty",1999,2999,"https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=500",["Pink","Nude","Brown"]),
-P("Oud Perfume 100ml","Beauty",1499,2299,"https://images.unsplash.com/photo-1541643600914-78b084683601?w=500",["Oud","Rose","Jasmine"]),
-P("Lipstick Set 6 Pcs","Beauty",899,1399,"https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=500",["Red","Pink","Nude","Maroon"]),
-P("Hair Dryer 2000W","Beauty",1599,2499,"https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=500",["Black","Pink","White"]),
-P("Herbal Hair Oil","Beauty",799,1199,"https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=500",["Herbal"]),
-P("Nail Polish Set","Beauty",799,1299,"https://images.unsplash.com/photo-1604654894610-df63bc536371?w=500",["Red","Pink","Nude","Purple"]),
-P("Face Serum Vitamin C","Beauty",999,1599,"https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=500",["Vitamin C"]),
-P("Hair Straightener","Beauty",2199,3299,"https://i.pinimg.com/originals/d7/8b/9f/d78b9f835a7362ae1d8d506d2058afd1.jpg",["Black","Pink"]),
-P("Body Lotion","Beauty",899,1399,"https://www.medoget.com/cdn/shop/files/downloadcopy_535d815d-6b1f-448b-8e37-ac6257151eb2_1024x.png?v=1697705271",["Rose","Aloe Vera","Coconut"]),
-P("Double Bedsheet Cotton","Home",1299,1999,"https://i.ebayimg.com/images/g/Ix0AAOSw6jllGm2t/s-l1200.webp",["Blue","Pink","Grey","Green"]),
-P("LED Table Lamp","Home",999,1599,"https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500",["White","Black","Gold"]),
-P("Wall Clock Round","Home",899,1399,"https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?w=500",["Black","White","Wooden"]),
-P("Steel Water Bottle 1L","Home",799,1199,"https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=500",["Silver","Black","Blue","Pink"]),
-P("Non-Stick Cookware Set","Home",3499,5499,"https://m.media-amazon.com/images/I/619LoOxstWL.jpg",["Black","Grey","Red"]),
-P("Electric Kettle 1.7L","Home",1999,2999,"https://images.unsplash.com/photo-1594213114663-d94db9b17125?w=500",["Black","White","Steel"]),
-P("Curtains Pair","Home",1499,2299,"https://images.unsplash.com/photo-1513694203232-719a280e022f?w=500",["Beige","Grey","Brown","Blue"]),
-P("Cushion Covers 5 Pcs","Home",999,1599,"https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=500",["Multicolor","Grey","Blue"]),
-P("Dinner Set 24 Pcs","Home",4999,7999,"https://images.unsplash.com/photo-1603199506016-b9a594b593c0?w=500",["White","Blue","Floral"]),
-P("Storage Box Large","Home",899,1399,"https://id.plasticscmould.com/uploads/41957/plastic-storage-box71776.jpg",["Grey","Blue","Beige"]),
-P("Basmati Rice 5KG","Grocery",1499,1999,"https://images.unsplash.com/photo-1586201375761-83865001e31c?w=500",["5KG","10KG"]),
-P("Cooking Oil 5 Litre","Grocery",2499,2999,"https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=500",["5L","3L"]),
-P("Fresh Dates Khajoor 1KG","Grocery",999,1499,"https://dukaan.b-cdn.net/1000x1000/webp/950990/b95252ec-00f9-4aed-a718-95cdd3f272ad.png",["1KG","500g"]),
-P("Pure Honey 1KG","Grocery",1299,1799,"https://www.yera.com/cdn/shop/files/JH500_2.jpg?v=1771246903&width=1920",["1KG","500g"]),
-P("Tea Chai Patti 900g","Grocery",1199,1599,"https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=500",["900g","450g"]),
-P("Desi Ghee 1KG","Grocery",1899,2499,"https://mastergadgets.com/wp-content/uploads/2021/06/Buy-Desi-Cow-Ghee.jpg",["1KG","500g"]),
-P("Dry Fruits Mix 1KG","Grocery",1999,2999,"https://rukminim2.flixcart.com/image/800/800/xif0q/nut-dry-fruit/e/w/1/1-mix-dry-fruits-healthy-tasty-snack-nutritious-energy-boost-1-original-imahgj4xghzzjzhk.jpeg?q=80",["1KG","500g"]),
-P("Rooh Afza 3L","Grocery",899,1199,"https://alfatah.pk/cdn/shop/files/8964000122105.jpg?v=1703105077&width=1426",["3L","1.5L"]),
-P("Pasta Spaghetti 500g","Grocery",499,699,"https://images.unsplash.com/photo-1556761223-4c4282c73f77?w=500",["500g"]),
-P("Pink Himalayan Salt 1KG","Grocery",599,899,"https://cdn.shopify.com/s/files/1/0756/6082/0646/files/6a17d95309d4d88fa239d48452aac444.jpg",["1KG","500g"]),
-P("Kids T-Shirt","Kids",599,899,"https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?w=500",["Red","Blue","Yellow","Pink"]),
-P("Kids Sneakers","Kids",1199,1799,"https://images.unsplash.com/photo-1514989940723-e8e51635b782?w=500",["Red","Blue","Pink"]),
-P("Baby Romper","Kids",799,1199,"https://images.unsplash.com/photo-1522771930-78848d9293e8?w=500",["Pink","Blue","Yellow","White"]),
-P("Kids School Bag","Kids",1399,1999,"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500",["Blue","Pink","Red","Black"]),
-P("Kids Frock","Kids",999,1499,"https://rukminim2.flixcart.com/image/1600/2130/xif0q/kids-dress/y/e/g/18-24-months-plane-frock-155-lm-fashion-original-imahdwhcz7f5yzdg.jpeg?q=80",["Pink","Red","Purple"]),
-P("Kids Jeans","Kids",899,1399,"https://blessingbusiness.ca/cdn/shop/files/445742383690.jpg?v=1742482425",["Blue","Black"]),
-P("Baby Feeder Bottle","Kids",699,999,"https://m.media-amazon.com/images/I/51e2Bu8aqQS.jpg",["Blue","Pink","White"]),
-P("Kids Cap","Kids",399,599,"https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=500",["Red","Blue","Black"]),
-P("Kids Winter Jacket","Kids",1499,2299,"https://bd-live-21.slatic.net/kf/S93ba1cb2f76548359056ff6a5ea23f94M.jpg",["Red","Blue","Green"]),
-P("Baby Blanket Soft","Kids",899,1399,"https://s3.ap-southeast-1.amazonaws.com/auito-upload-sls-prd-document/66a30e0495181df4fd7379eb/83012bea-9e78-48fe-b280-6eee7f1f2439_Gemini_Generated_Image_5j1ums5j1ums5j1u.original.jpg",["Pink","Blue","Yellow"]),
-P("Remote Control Toy Car","Toys",1499,2299,"https://cdn.zeptonow.com/production/ik-seo/tr:w-1000,ar-1500-1500,pr-true,f-avif,q-40,dpr-2/cms/product_variant/ea5168b4-16d3-4cd4-ba43-4c83328752fb/ea5168b4-16d3-4cd4-ba43-4c83328752fb-jpg.jpg",["Red","Blue","Black"]),
-P("Teddy Bear Soft Toy","Toys",999,1499,"https://images.unsplash.com/photo-1559454403-b8fb88521f11?w=500",["Brown","Pink","White"]),
-P("Building Blocks 100 Pcs","Toys",1299,1999,"https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=500",["Multicolor"]),
-P("Kids Puzzle Game","Toys",699,999,"https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=500",["Multicolor"]),
-P("Doll Barbie","Toys",1199,1799,"https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=500",["Pink","Purple"]),
-P("Toy Helicopter","Toys",1799,2599,"https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=500",["Red","Blue"]),
-P("Kids Drum Set","Toys",999,1499,"https://i5.walmartimages.com/seo/Kids-Drum-Set-for-Toddlers-Musical-Instrument-Toys-Percussion-Beginner-Christmas-Gift-Toys-for-3-4-5-6-Years-Old_9bd2b90f-59be-4398-9c15-9b047222dee6.8d0175b69c9766ac97aabcb224867d83.jpeg",["Red","Blue"]),
-P("Water Gun","Toys",799,1199,"https://m.media-amazon.com/images/I/81mYjmE0oJL._AC_SL2048_.jpg",["Blue","Green","Yellow"]),
-P("Board Game Ludo","Toys",599,899,"https://m.media-amazon.com/images/I/81d-on04EnL.jpg_BO30,255,255,255_UF750,750_SR1910,1000,0,C_QL100_.jpg",["Multicolor"]),
-P("Toy Train Set","Toys",1399,1999,"https://i.pinimg.com/originals/27/22/57/2722573a7888c0e1781e67dbe3e48a1f.jpg",["Red","Blue"]),
-P("Football","Sports",1299,1999,"https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=500",["White","Black"]),
-P("Cricket Bat Kashmir Willow","Sports",1899,2799,"https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/649d4c55d3731c63c5ba834f/51dwvjqftwl.jpg",["Wooden"]),
-P("Gym Gloves","Sports",799,1199,"https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=500",["Black","Red","Blue"]),
-P("Yoga Mat","Sports",1199,1799,"https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=500",["Pink","Blue","Black","Purple"]),
-P("Dumbbell Set 10KG","Sports",2999,4499,"https://images.unsplash.com/photo-1638536532686-d610adfc8e5c?w=500",["Black"]),
-P("Cricket Tennis Ball 3 Pcs","Sports",299,499,"https://images.unsplash.com/photo-1593341646782-e0b495cff86d?w=500",["Yellow","Green"]),
-P("Badminton Racket Set","Sports",1999,2999,"https://storage.ghost.io/c/fe/a0/fea04a31-7a98-482e-a644-455ba808386b/content/images/2022/11/Zalava-Badminton-Racquets-Set-1.png",["Red","Blue","Black"]),
-P("Sports Water Bottle 1L","Sports",699,999,"https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=500",["Blue","Black","Green"]),
-P("Cricket Helmet","Sports",2499,3499,"https://images-static.nykaa.com/media/catalog/product/4/3/43c4f55STARSTEEL-ROYALBLUE_3.jpg",["Blue","Black","Green"]),
-P("Skipping Rope","Sports",499,799,"https://m.media-amazon.com/images/I/41SCUw-AUaL._SL500_.jpg",["Black","Pink","Blue"]),
-P("Resistance Bands Set","Sports",999,1499,"https://mynecessities.com/cdn/shop/files/20250925_1225_ResistanceBandsDisplay_remix_01k60tzd11f478gr1rpvsck45q.png?v=1759258459&width=600",["Multicolor"])
+const DARAZ="PASTE_YOUR_DARAZ_LINK_HERE";
+const FB="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&auto=format&fit=crop&q=80";
+function fix(e){e.onerror=null;e.src=FB}
+let products=[
+{name:"Classic White T-Shirt - Cotton",cat:"fashion",price:899,old:1499,img:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&auto=format&fit=crop&q=80",tag:"BEST SELLER",rate:"4.9 (210)",desc:"100% Cotton, Comfortable, Daily Wear",daraz:DARAZ},
+{name:"Oversized Hoodie - Beige - Unisex",cat:"fashion",price:1999,old:3299,img:"https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600&auto=format&fit=crop&q=80",tag:"-40%",rate:"4.8 (180)",desc:"Winter Warm Hoodie, Unisex",daraz:DARAZ},
+{name:"White Sneakers - Light - Unisex",cat:"fashion",price:2499,old:3999,img:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&auto=format&fit=crop&q=80",tag:"TRENDING",rate:"4.9 (320)",desc:"Light Weight Sneakers",daraz:DARAZ},
+{name:"Denim Jeans - Blue - Men",cat:"fashion",price:1799,old:2999,img:"https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&auto=format&fit=crop&q=80",tag:"-40%",rate:"4.7 (150)",desc:"Denim Jeans, Perfect Fit",daraz:DARAZ},
+{name:"Hand Bag - Stylish - Girls",cat:"fashion",price:1799,old:2999,img:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&auto=format&fit=crop&q=80",tag:"NEW",rate:"4.8 (95)",desc:"Stylish Hand Bag",daraz:DARAZ},
+{name:"Wireless Headphones - Black",cat:"audio",price:2999,old:4999,img:"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80",tag:"BEST SELLER",rate:"4.9 (410)",desc:"Wireless, Bass, Long Battery",daraz:DARAZ},
+{name:"Gaming Controller - Wireless",cat:"gaming",price:4999,old:7999,img:"https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=600&auto=format&fit=crop&q=80",tag:"GAMING",rate:"4.8 (190)",desc:"Wireless Gaming Controller",daraz:DARAZ},
+{name:"Vitamin C Face Serum - Glowing",cat:"beauty",price:899,old:1499,img:"https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&auto=format&fit=crop&q=80",tag:"BEST SELLER",rate:"4.9 (520)",desc:"Vitamin C, Glowing Skin",daraz:DARAZ},
+{name:"Matte Lipstick Set - 6 Pcs",cat:"beauty",price:1299,old:2199,img:"https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=600&auto=format&fit=crop&q=80",tag:"-41%",rate:"4.8 (260)",desc:"Matte, 6 Colors",daraz:DARAZ},
+{name:"Hair Growth Oil - Onion + Argan",cat:"beauty",price:1199,old:1999,img:"https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=600&auto=format&fit=crop&q=80",tag:"TRENDING",rate:"4.8 (190)",desc:"Hair Growth Oil 200ml",daraz:DARAZ},
+{name:"Perfume - Long Lasting - 100ml",cat:"beauty",price:1999,old:3499,img:"https://images.unsplash.com/photo-1541643600914-78b084683601?w=600&auto=format&fit=crop&q=80",tag:"PREMIUM",rate:"4.9 (300)",desc:"Long Lasting Perfume",daraz:DARAZ},
+{name:"Face Wash - Tea Tree - Oil Control",cat:"beauty",price:699,old:1099,img:"https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&auto=format&fit=crop&q=80",tag:"DAILY USE",rate:"4.7 (220)",desc:"Oil Control Face Wash",daraz:DARAZ},
+{name:"Makeup Brush Set - 12 Pcs",cat:"beauty",price:1099,old:1899,img:"https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&auto=format&fit=crop&q=80",tag:"-42%",rate:"4.8 (140)",desc:"Professional Brush Set",daraz:DARAZ},
+{name:"Smart Watch - Black - Fitness",cat:"watch",price:3999,old:6499,img:"https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=600&auto=format&fit=crop&q=80",tag:"BEST SELLER",rate:"4.9 (380)",desc:"Smart Watch, Fitness Tracking",daraz:DARAZ},
+{name:"Minimal White Watch - Unisex",cat:"watch",price:4999,old:7999,img:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=80",tag:"PREMIUM",rate:"4.9 (210)",desc:"Minimal White Watch",daraz:DARAZ},
+{name:"Classic Brown Chronograph Watch",cat:"watch",price:3499,old:5499,img:"https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=600&auto=format&fit=crop&q=80",tag:"-36%",rate:"4.8 (170)",desc:"Brown Leather Watch",daraz:DARAZ},
+{name:"Luxury Gold Watch - Men",cat:"watch",price:5499,old:8999,img:"https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=600&auto=format&fit=crop&q=80",tag:"LUXURY",rate:"4.9 (130)",desc:"Luxury Gold Watch",daraz:DARAZ},
+{name:"Gold Plated Classic Ring",cat:"jewelry",price:1499,old:2499,img:"https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&auto=format&fit=crop&q=80",tag:"BEST SELLER",rate:"4.9 (290)",desc:"Gold Plated Ring",daraz:DARAZ},
+{name:"Pearl Classic Necklace",cat:"jewelry",price:2999,old:4999,img:"https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&auto=format&fit=crop&q=80",tag:"ELEGANT",rate:"4.8 (160)",desc:"Pearl Necklace",daraz:DARAZ},
+{name:"Gold Traditional Jhumka",cat:"jewelry",price:1299,old:1999,img:"https://images.unsplash.com/photo-1630019852942-f89202989a59?w=600&auto=format&fit=crop&q=80",tag:"TRENDING",rate:"4.9 (240)",desc:"Traditional Jhumka",daraz:DARAZ},
+{name:"Complete Bridal Jewelry Set",cat:"jewelry",price:7999,old:12000,img:"https://images.unsplash.com/photo-1610694955371-d4a3e0ce4b52?w=600&auto=format&fit=crop&q=80",tag:"BRIDAL",rate:"4.9 (110)",desc:"Full Bridal Set",daraz:DARAZ},
+{name:"Modern Wooden Chair - Home",cat:"home",price:5999,old:8999,img:"https://images.unsplash.com/photo-1592078615290-033ee584e267?w=600&auto=format&fit=crop&q=80",tag:"HOME",rate:"4.7 (80)",desc:"Wooden Chair",daraz:DARAZ},
+{name:"Ceramic Plant Pot - Minimal",cat:"home",price:999,old:1599,img:"https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=600&auto=format&fit=crop&q=80",tag:"HOME",rate:"4.8 (90)",desc:"Plant Pot",daraz:DARAZ},
+{name:"Table Lamp - Warm Light",cat:"home",price:2499,old:3999,img:"https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=600&auto=format&fit=crop&q=80",tag:"HOME",rate:"4.8 (75)",desc:"Warm Light Lamp",daraz:DARAZ},
+{name:"Sunglasses - Black - UV Protection",cat:"fashion",price:999,old:1799,img:"https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&auto=format&fit=crop&q=80",tag:"-44%",rate:"4.7 (180)",desc:"UV Sunglasses",daraz:DARAZ},
 ];
-let currentCat='All'; let cart=[]; let searchText=''; let wishlist=JSON.parse(localStorage.getItem('um_wish')||'[]');
-function toggleNav(){let n=document.getElementById('navWrap');n.style.display=(n.style.display==='none')?'block':'none';}
-function handleDash(){let u=getUser();if(!u){openAuth();return;}openDashboard();}
-function openProductsMenu(){document.getElementById('prodMenu').classList.add('show');renderProductsMenu();}
-function closeProductsMenu(){document.getElementById('prodMenu').classList.remove('show');}
-function setProdMenuCat(c){prodMenuCat=c;renderProductsMenu();}
-function renderProductsMenu(){
-  let cats=['All','Fashion','Shoes','Watches','Electronics','Mobile','Beauty','Home','Grocery','Kids','Toys','Sports'];
-  document.getElementById('prodCats').innerHTML=cats.map(c=>`<button class="${prodMenuCat===c?'active':''}" onclick="setProdMenuCat('${c}')">${c==='All'?'⭐ All':c}</button>`).join('');
-  let q=(document.getElementById('prodSearch')?.value||'').toLowerCase();
-  let f=products.filter(p=>(prodMenuCat==='All'||p.cat===prodMenuCat)&&p.name.toLowerCase().includes(q));
-  if(!f.length){document.getElementById('prodList').innerHTML='<p style="text-align:center;padding:25px;color:#888">Koi product nahi mila.</p>';return;}
-  let groups={};f.forEach(p=>{if(!groups[p.cat])groups[p.cat]=[];groups[p.cat].push(p);});
-  document.getElementById('prodList').innerHTML=Object.keys(groups).map(cat=>`<div class="prod-group"><h4>${cat} (${groups[cat].length})</h4>`+groups[cat].map(p=>{let idx=products.indexOf(p);return `<div class="prod-row" onclick="goToProduct(${idx})"><img src="${p.img}" onerror="this.onerror=null;this.src='${FALLBACK}'"><b>${p.name}</b><span>Rs.${p.price.toLocaleString()}</span><button onclick="event.stopPropagation();addToCart(${idx});closeProductsMenu()">Add 🛒</button></div>`}).join('')+`</div>`).join('');
+let cur='all';
+let cart=JSON.parse(localStorage.getItem('urban_mart_cart')||'[]');
+let orders=JSON.parse(localStorage.getItem('urban_mart_orders')||'[]');
+let user=JSON.parse(localStorage.getItem('urban_mart_user')||'null');
+function save(){localStorage.setItem('urban_mart_cart',JSON.stringify(cart));localStorage.setItem('urban_mart_orders',JSON.stringify(orders));localStorage.setItem('urban_mart_user',JSON.stringify(user));localStorage.setItem('urban_mart_products',JSON.stringify(products));}
+let savedProds=JSON.parse(localStorage.getItem('urban_mart_products')||'null'); if(savedProds && savedProds.length>0) products=savedProds;
+function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('page-'+id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});if(id=='cart')renderCart();if(id=='orders')renderOrders();if(id=='admin')renderAdmin();}
+function openModal(id){document.getElementById(id).classList.add('open')}
+function closeModal(id){document.getElementById(id).classList.remove('open')}
+function filterCat(c,btn){cur=c;document.querySelectorAll('.cat-row button').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');showPage('home');render();document.getElementById('products').scrollIntoView({behavior:'smooth'})}
+function cardHTML(p,idx){
+let off=Math.round((1-p.price/p.old)*100);
+return `<div class="card"><div class="card-img" onclick="openProduct(${idx})"><span class="tag ${p.tag.includes('BEST')?'o':''}">${p.tag} • -${off}%</span><img src="${p.img}" loading="lazy" onerror="fix(this)"></div><div class="card-info"><small>${p.cat.toUpperCase()}</small><h3>${p.name}</h3><div class="stars">⭐⭐⭐⭐⭐ <span>${p.rate}</span></div><div><span class="price">Rs ${p.price.toLocaleString()}</span><span class="old">Rs ${p.old.toLocaleString()}</span></div><button class="add" onclick="addToCart(${idx})">Add to Cart 🛒</button><a class="buy-daraz" href="${p.daraz||DARAZ}" target="_blank">Buy on Daraz 🛒</a></div></div>`}
+function render(){
+let q=(document.getElementById('searchInput').value||'').toLowerCase();
+let min=parseInt(document.getElementById('minPrice').value)||0;
+let max=parseInt(document.getElementById('maxPrice').value)||999999;
+let sort=document.getElementById('sortBy').value;
+let list=products.map((p,i)=>({...p,idx:i})).filter(p=>(cur=='all'||p.cat==cur)&&(p.name.toLowerCase().includes(q))&&p.price>=min&&p.price<=max);
+if(sort=='low')list.sort((a,b)=>a.price-b.price); if(sort=='high')list.sort((a,b)=>b.price-a.price); if(sort=='discount')list.sort((a,b)=>(1-b.price/b.old)-(1-a.price/a.old));
+document.getElementById('resultCount').innerText=list.length+' Products Found';
+document.getElementById('grid').innerHTML=list.map(p=>cardHTML(p,p.idx)).join('')||'<p style="grid-column:1/-1;text-align:center;padding:30px;color:#999">Koi product nahi mila 😔</p>';
+let best=products.map((p,i)=>({...p,idx:i})).filter(p=>p.tag.includes('BEST')||p.tag.includes('TRENDING')).slice(0,10);
+document.getElementById('grid2').innerHTML=best.map(p=>cardHTML(p,p.idx)).join('');
+updateUserUI(); updateCartCount();
 }
-function goToProduct(idx){let p=products[idx];closeProductsMenu();currentCat=p.cat;searchText='';document.getElementById('searchInput').value='';document.querySelectorAll('#mainNav button').forEach(x=>x.classList.remove('active'));renderProducts();document.getElementById('shop').scrollIntoView({behavior:'smooth'});alert('👉 '+p.name+' - Rs.'+p.price+' - Neeche shop me khul gaya! Add to Cart dabao.');}
-function getUser(){return JSON.parse(localStorage.getItem('um_user')||'null')}
-function getOrders(){return JSON.parse(localStorage.getItem('um_orders')||'[]')}
-function saveOrders(o){localStorage.setItem('um_orders',JSON.stringify(o))}
-function updateUserArea(){let u=getUser();document.getElementById('userArea').innerHTML=u?`<button class="dash-btn" onclick="openDashboard()">👤 ${u.name.split(' ')[0]} • Dashboard</button>`:`<button class="login-btn" onclick="openAuth()">👤 Login</button>`; if(u){document.getElementById('custName').value=u.name;document.getElementById('custPhone').value=u.phone;document.getElementById('custAddress').value=u.address||'';}}
-function openAuth(){document.getElementById('authModal').classList.add('show')}
-function closeModal(id){document.getElementById(id).classList.remove('show')}
-function switchTab(t){document.getElementById('tabLogin').classList.toggle('active',t==='login');document.getElementById('tabReg').classList.toggle('active',t==='register');document.getElementById('loginBox').style.display=t==='login'?'block':'none';document.getElementById('registerBox').style.display=t==='register'?'block':'none';}
-function doRegister(){let name=document.getElementById('regName').value.trim(),phone=document.getElementById('regPhone').value.trim(),city=document.getElementById('regCity').value.trim(),addr=document.getElementById('regAddress').value.trim(),pass=document.getElementById('regPass').value.trim();if(!name||!phone||!pass){alert('Please Naam, Mobile aur Password likho!');return;}let users=JSON.parse(localStorage.getItem('um_users')||'[]');if(users.find(x=>x.phone===phone)){alert('Is number se pehle se account hai! Login karo.');switchTab('login');return;}let u={name,phone,city,address:addr,pass,joined:new Date().toLocaleDateString()};users.push(u);localStorage.setItem('um_users',JSON.stringify(users));localStorage.setItem('um_user',JSON.stringify(u));closeModal('authModal');updateUserArea();updateWishUI();alert('🎉 Mubarak ho '+name+'! Account ban gaya!');openDashboard();}
-function doLogin(){let phone=document.getElementById('loginPhone').value.trim(),pass=document.getElementById('loginPass').value.trim();if(!phone||!pass){alert('Mobile aur Password likho!');return;}let users=JSON.parse(localStorage.getItem('um_users')||'[]');let u=users.find(x=>x.phone===phone&&x.pass===pass);if(!u){alert('Galat Mobile ya Password! Pehle Register karo.');return;}localStorage.setItem('um_user',JSON.stringify(u));closeModal('authModal');updateUserArea();alert('Welcome back '+u.name+'! 👋');openDashboard();}
-function doLogout(){localStorage.removeItem('um_user');closeModal('dashModal');updateUserArea();alert('Logout ho gaya. Phir aana! 👋')}
-function editProfile(){let u=getUser();let nn=prompt('New Name:',u.name);if(nn){u.name=nn;let users=JSON.parse(localStorage.getItem('um_users')||'[]');let idx=users.findIndex(x=>x.phone===u.phone);if(idx>-1){users[idx]=u;localStorage.setItem('um_users',JSON.stringify(users));}localStorage.setItem('um_user',JSON.stringify(u));updateUserArea();openDashboard();}}
-function openDashboard(){let u=getUser();if(!u){openAuth();return;}let orders=getOrders().filter(o=>o.phone===u.phone);let spent=orders.reduce((s,o)=>s+o.total,0);document.getElementById('dashWelcome').innerText=`Welcome, ${u.name}! 👋`;document.getElementById('statOrders').innerText=orders.length;document.getElementById('statSpent').innerText='Rs.'+spent.toLocaleString();document.getElementById('statWish').innerText=wishlist.length;document.getElementById('dashProfile').innerHTML=`👤 <b>${u.name}</b><br>📞 ${u.phone}<br>📍 ${u.city||'Vehari'}<br>🗓️ Joined: ${u.joined||'Today'}`;document.getElementById('dashAddress').innerText=u.address||'No address saved';document.getElementById('dashOrders').innerHTML=orders.length?orders.map(o=>`<div class="order-item"><b>${o.id}</b> - ${o.date} <span style="background:#e6ffe6;padding:2px 8px;border-radius:10px;font-size:11px">✅ ${o.status}</span><br>${o.items} • <b>Rs.${o.total.toLocaleString()}</b><br>💳 ${o.pay}</div>`).join(''):`<p>Abhi koi order nahi. Pehla order karo! 🛒</p>`;document.getElementById('dashWish').innerHTML=wishlist.length?wishlist.map(id=>{let p=products[id];return p?`<div style="display:flex;gap:8px;align-items:center;margin:5px 0"><img src="${p.img}" onerror="this.onerror=null;this.src='${FALLBACK}'" style="width:40px;height:40px;border-radius:8px;object-fit:cover"><span style="flex:1;font-size:13px">${p.name} - Rs.${p.price}</span><button onclick="addToCart(${id});closeModal('dashModal')" style="background:#111;color:#fff;border:none;padding:6px 12px;border-radius:15px;cursor:pointer">Add</button></div>`:''}).join(''):`<p>Wishlist khali hai. ❤️ dabao!</p>`;document.getElementById('dashModal').classList.add('show');}
-function toggleWish(idx){let i=wishlist.indexOf(idx);if(i>-1)wishlist.splice(i,1);else wishlist.push(idx);localStorage.setItem('um_wish',JSON.stringify(wishlist));updateWishUI();renderProducts();}
-function updateWishUI(){document.getElementById('wishCount').innerText=wishlist.length;let w2=document.getElementById('wishCount2');if(w2)w2.innerText=wishlist.length;let pc=document.getElementById('prodCountNav');if(pc)pc.innerText=products.length;}
-function showWishlist(){let list=wishlist.map(id=>products[id]).filter(Boolean);document.getElementById('wishListBox').innerHTML=list.length?list.map((p)=>{let realIdx=products.indexOf(p);return `<div style="display:flex;gap:10px;align-items:center;border-bottom:1px solid #eee;padding:10px 0"><img src="${p.img}" onerror="this.onerror=null;this.src='${FALLBACK}'" style="width:55px;height:55px;border-radius:10px;object-fit:cover"><div style="flex:1"><b style="font-size:14px">${p.name}</b><br>Rs.${p.price.toLocaleString()}</div><button onclick="addToCart(${realIdx});closeModal('wishModal')" style="background:#111;color:#fff;border:none;padding:8px 14px;border-radius:20px;cursor:pointer">Add 🛒</button><button onclick="toggleWish(${realIdx});showWishlist()" style="background:none;border:none;font-size:18px;cursor:pointer">❌</button></div>`}).join(''):`<p style="text-align:center;padding:20px">Wishlist khali hai. Kisi product pe ❤️ dabao!</p>`;document.getElementById('wishModal').classList.add('show');}
-function setColor(idx,color,btn){ selColor[idx]=color; let p=btn.parentElement.querySelectorAll('button'); p.forEach(b=>b.classList.remove('sel')); btn.classList.add('sel'); }
-function renderProducts(){
-  let f=products.filter(p=>(currentCat==='All'||p.cat===currentCat)&&p.name.toLowerCase().includes(searchText.toLowerCase()));
-  document.getElementById('countShow').innerText=f.length;
-  document.getElementById('showCat').innerText=currentCat;
-  document.getElementById('shop').innerHTML=f.map((p)=>{
-    let realIdx=products.indexOf(p); if(!selColor[realIdx]) selColor[realIdx]=p.colors[0];
-    let off=Math.round((1-p.price/p.old)*100);
-    let colorBtns=p.colors.map(c=>`<button class="${selColor[realIdx]===c?'sel':''}" onclick="setColor(${realIdx},'${c}',this)">${c}</button>`).join('');
-    let isWish=wishlist.includes(realIdx);
-    return `<div class="card"><span class="badge-off">-${off}% OFF</span><img src="${p.img}" onerror="this.onerror=null;this.src='${FALLBACK}'" alt="${p.name}"><h3>${p.name}</h3><p>${p.cat} • ⭐ 4.8 • URBAN MART</p><div class="colors">${colorBtns}</div><div class="price">Rs. ${p.price.toLocaleString()} <s>Rs. ${p.old.toLocaleString()}</s> <b>SAVE Rs.${(p.old-p.price).toLocaleString()}</b></div><div class="card-actions"><button class="add" onclick="addToCart(${realIdx})">Add to Cart 🛒</button><button class="heart ${isWish?'active':''}" onclick="toggleWish(${realIdx})">${isWish?'❤️':'🤍'}</button></div></div>`;
-  }).join('')||'<p style="text-align:center;padding:30px">Koi product nahi mila.</p>';
+function openProduct(idx){let p=products[idx];let off=Math.round((1-p.price/p.old)*100);document.getElementById('productDetail').innerHTML=`<img src="${p.img}" onerror="fix(this)" style="width:100%;border-radius:14px;aspect-ratio:1/1;object-fit:cover"><small style="color:#888;font-weight:700">${p.cat.toUpperCase()}</small><h2 style="margin:6px 0">${p.name}</h2><div class="stars">⭐⭐⭐⭐⭐ ${p.rate}</div><h2 style="color:#f85606;margin:8px 0">Rs ${p.price.toLocaleString()} <s style="color:#999;font-size:15px">Rs ${p.old.toLocaleString()}</s> <span style="font-size:12px;background:#ffeded;padding:3px 8px;border-radius:6px">-${off}%</span></h2><p style="color:#555;font-size:14px;line-height:1.6">${p.desc}</p><p style="font-size:13px;color:#666;margin-top:8px">🚚 COD Available • ↩️ 7-Day Return • 🛡️ 100% Original • URBAN MART</p><button class="add" onclick="addToCart(${idx});closeModal('productModal')">Add to Cart 🛒</button><a class="buy-daraz" href="${p.daraz||DARAZ}" target="_blank">Buy on Daraz 🛒</a>`;openModal('productModal')}
+function addToCart(idx){let p=products[idx];let ex=cart.find(c=>c.name==p.name);if(ex)ex.qty++;else cart.push({name:p.name,price:p.price,img:p.img,qty:1,daraz:p.daraz});save();updateCartCount();alert('✅ '+p.name+' Cart me add ho gaya! - URBAN MART')}
+function updateCartCount(){document.getElementById('cartCount').innerText=cart.reduce((s,c)=>s+c.qty,0)}
+function renderCart(){
+if(cart.length==0){document.getElementById('cartList').innerHTML='<p style="padding:20px;text-align:center;color:#999">Cart khali hai 😔</p>';document.getElementById('cartTotal').innerHTML='';return}
+let html='';let sub=0;cart.forEach((c,i)=>{let t=c.price*c.qty;sub+=t;html+=`<div class="cart-item"><img src="${c.img}" onerror="fix(this)"><div style="flex:1"><b>${c.name}</b><p style="font-size:13px;color:#666">Rs ${c.price.toLocaleString()} x ${c.qty} = Rs ${t.toLocaleString()}</p></div><button class="qty-btn" onclick="changeQty(${i},-1)">-</button><b>${c.qty}</b><button class="qty-btn" onclick="changeQty(${i},1)">+</button><button style="border:none;background:#fee;color:#dc2626;padding:8px 12px;border-radius:20px;font-weight:700;margin-left:6px" onclick="removeCart(${i})">Remove</button></div>`});
+document.getElementById('cartList').innerHTML=html;
+let del=sub>3000?0:250;let total=sub+del;
+document.getElementById('cartTotal').innerHTML=`<div style="background:#f8f8f8;padding:14px;border-radius:12px"><p>Subtotal: Rs ${sub.toLocaleString()}</p><p>Delivery: ${del==0?'FREE': 'Rs '+del} ${sub>3000?'(FREE over 3000)':''}</p><h3 style="margin-top:6px">Total: Rs ${total.toLocaleString()}</h3><button class="btn-orange" style="width:100%;padding:14px;margin-top:10px" onclick="goCheckout()">Proceed to Checkout - COD →</button></div>`;
 }
-function setCat(c,b){currentCat=c;document.querySelectorAll('#mainNav button').forEach(x=>x.classList.remove('active'));if(b)b.classList.add('active');renderProducts();if(window.innerWidth<820){document.getElementById('navWrap').style.display='none';}document.getElementById('shop').scrollIntoView({behavior:'smooth'});}
-function filterProducts(){searchText=document.getElementById('searchInput').value;renderProducts();}
-function addToCart(idx){let p=products[idx];let col=selColor[idx]||p.colors[0];let key=p.name+'|'+col;let f=cart.find(x=>x.key===key);if(f)f.qty++;else cart.push({key,name:p.name,price:p.price,img:p.img,qty:1,color:col});updateCart();openCart();}
-function updateCart(){let t=cart.reduce((s,x)=>s+x.price*x.qty,0);let c=cart.reduce((s,x)=>s+x.qty,0);document.getElementById('cartCount').innerText=c;document.getElementById('cartTotal').innerText=t.toLocaleString();document.getElementById('cartTotalTop').innerText=t.toLocaleString();if(cart.length===0){document.getElementById('cartItems').innerHTML='<p style="text-align:center;color:#888;padding:30px">Bag khali hai.</p>';return;}document.getElementById('cartItems').innerHTML=cart.map((x,i)=>`<div class="cart-item"><img src="${x.img}" onerror="this.onerror=null;this.src='${FALLBACK}'"><div style="flex:1"><b style="font-size:14px">${x.name}</b><br><span style="font-size:12px;background:#eee;padding:2px 8px;border-radius:10px">🎨 ${x.color}</span><br><span>Rs. ${x.price.toLocaleString()}</span><div class="qty" style="margin-top:5px"><button onclick="changeQty(${i},-1)">-</button> ${x.qty} <button onclick="changeQty(${i},1)">+</button> <button onclick="removeItem(${i})" style="color:red;border:none;background:none;cursor:pointer">🗑️</button></div></div><b>Rs. ${(x.price*x.qty).toLocaleString()}</b></div>`).join('');}
-function changeQty(i,d){cart[i].qty+=d;if(cart[i].qty<=0)cart.splice(i,1);updateCart();}
-function removeItem(i){cart.splice(i,1);updateCart();}
-function openCart(){document.getElementById('cartDrawer').classList.add('open');document.getElementById('overlay').classList.add('show');}
-function closeCart(){document.getElementById('cartDrawer').classList.remove('open');document.getElementById('overlay').classList.remove('show');}
-function checkout(){
-  if(cart.length===0){alert('Pehle koi product add karo!');return;}
-  let n=document.getElementById('custName').value.trim();let ph=document.getElementById('custPhone').value.trim();let ad=document.getElementById('custAddress').value.trim();let pay=document.getElementById('payMethod').value;
-  if(!n||!ph||!ad){alert('Please Naam, Mobile aur Address likho!');return;}
-  let t=cart.reduce((s,x)=>s+x.price*x.qty,0);let d=t>=1500?0:200;let g=t+d;
-  let orderId='UM-'+Math.floor(1000+Math.random()*9000);
-  let date=new Date().toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric'});
-  let orders=getOrders();orders.unshift({id:orderId,date,phone:ph,items:cart.length+' items',total:g,pay,status:'Pending - Confirming'});saveOrders(orders);
-  let m=`🛍️ *NEW ORDER - URBAN MART* 🛍️%0A%0A━━━━━━━━━━━━━━━━━━%0A🧾 *Order ID:* ${orderId}%0A📅 *Date:* ${date}%0A🕒 *Time:* ${new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'})}%0A━━━━━━━━━━━━━━━━━━%0A%0A*🛒 ORDER DETAILS*%0A%0A`;
-  cart.forEach((x,i)=>{ m+=`${i+1}. *${x.name}*%0A   🎨 Color: ${x.color}%0A   📦 Qty: ${x.qty} x Rs.${x.price.toLocaleString()} = *Rs.${(x.price*x.qty).toLocaleString()}*%0A%0A`; });
-  m+=`━━━━━━━━━━━━━━━━━━%0A💰 Subtotal: Rs.${t.toLocaleString()}%0A🚚 Delivery: ${d===0?'FREE ✅':'Rs.'+d}%0A💳 Payment: ${pay}%0A*🧾 GRAND TOTAL: Rs.${g.toLocaleString()}*%0A━━━━━━━━━━━━━━━━━━%0A%0A*👤 CUSTOMER DETAILS*%0A👤 Name: ${n}%0A📞 Phone: ${ph}%0A📍 Address: ${ad}, Vehari, Punjab%0A%0A✅ Please Confirm My Order. Thank You URBAN MART! 🙏`;
-  window.open(`https://wa.me/923341765911?text=${m}`,'_blank');
-  cart=[];updateCart();closeCart();setTimeout(()=>{if(getUser()) openDashboard();},800);
+function changeQty(i,d){cart[i].qty+=d;if(cart[i].qty<=0)cart.splice(i,1);save();renderCart();updateCartCount()}
+function removeCart(i){cart.splice(i,1);save();renderCart();updateCartCount()}
+function goCheckout(){if(cart.length==0){alert('Cart khali hai');return}if(!user){alert('Pehle Login karo!');openModal('loginModal');return}showPage('checkout');let sub=cart.reduce((s,c)=>s+c.price*c.qty,0);let del=sub>3000?0:250;document.getElementById('checkoutSummary').innerHTML=`Items: ${cart.length} | Subtotal: Rs ${sub.toLocaleString()}<br>Delivery: ${del==0?'FREE':'Rs '+del}<br><b>Total (COD): Rs ${(sub+del).toLocaleString()}</b>`;document.getElementById('coName').value=user.name||'';document.getElementById('coPhone').value=user.phone||''}
+function placeOrder(){
+let name=document.getElementById('coName').value.trim();let phone=document.getElementById('coPhone').value.trim();let addr=document.getElementById('coAddress').value.trim();let city=document.getElementById('coCity').value.trim();
+if(!name||!phone||!addr){alert('Please poora naam, phone aur address likho!');return}
+let sub=cart.reduce((s,c)=>s+c.price*c.qty,0);let del=sub>3000?0:250;let pay=document.querySelector('input[name="pay"]:checked').value;
+let order={no:'UM-'+Math.floor(10000+Math.random()*89999),name,phone,address:addr,city,pay,total:sub+del,status:'Pending',date:new Date().toLocaleDateString(),items:[...cart]};
+orders.unshift(order);cart=[];save();updateCartCount();alert('🎉 URBAN MART - Order Ho Gaya! Order No: '+order.no+'\n'+pay+' - '+city+'\nHum tumhe WhatsApp pe confirm karenge!');showPage('orders');
 }
-renderProducts();updateUserArea();updateWishUI();
+function renderOrders(){
+if(!user){document.getElementById('ordersList').innerHTML='<p style="padding:20px;text-align:center">Pehle Login karo taake apne orders dekho! <button class="btn-black" onclick="openModal(\'loginModal\')">Login</button></p>';return}
+if(orders.length==0){document.getElementById('ordersList').innerHTML='<p style="padding:20px;text-align:center;color:#999">Abhi koi order nahi hai. Pehla order karo! 🛒</p>';return}
+let html='';orders.forEach((o,oi)=>{
+let steps=['Pending','Processing','Shipped','Delivered'];let curIdx=steps.indexOf(o.status);if(curIdx<0)curIdx=0;
+let trackHtml=steps.map((s,si)=>`<div class="${si<=curIdx?'on':''}">${si<curIdx?'✅':si==curIdx?'📦':'⏳'}<br>${s}</div>`).join('');
+html+=`<div class="order-card"><div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px"><b>${o.no} - URBAN MART</b><span style="background:#fef3c7;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:700">${o.status}</span></div><p style="font-size:13px;color:#666;margin-top:6px">${o.date} | ${o.name} | ${o.phone} | ${o.city} | ${o.pay} | Total: Rs ${o.total.toLocaleString()}</p><p style="font-size:13px">${o.items.map(it=>`• ${it.name} x ${it.qty}`).join('<br>')}</p><div class="track">${trackHtml}</div><p style="font-size:12px;color:#888;margin-top:8px">Tracking: ${o.status=='Pending'?'⏳ Order mil gaya, pack ho raha hai':o.status=='Processing'?'📦 Pack ho raha hai':o.status=='Shipped'?'🚚 Raste me hai, kal tak mil jayega':'✅ Delivered - Mil gaya!'}</p></div>`});
+document.getElementById('ordersList').innerHTML=html;
+}
+function doLogin(){
+let name=document.getElementById('loginName').value.trim();let phone=document.getElementById('loginPhone').value.trim();
+if(!name||!phone){alert('Naam aur Phone likho!');return}
+if(name.toLowerCase()=='admin'&&phone=='1234'){user={name:'Admin (Huzaifa) - URBAN MART',phone:'1234',isAdmin:true};save();closeModal('loginModal');alert('Welcome Admin! 👑 URBAN MART');showPage('admin');render();return}
+user={name,phone,isAdmin:false};save();closeModal('loginModal');alert('Welcome '+name+'! 🎉 URBAN MART me - Ab order kar sakte ho.');updateUserUI();
+}
+function updateUserUI(){if(user){document.getElementById('userLabel').innerText='Hi, '+user.name+(user.isAdmin?' 👑':'');document.getElementById('loginBtn').innerText='Logout';document.getElementById('loginBtn').onclick=()=>{user=null;save();updateUserUI();alert('Logout ho gaya');}}else{document.getElementById('userLabel').innerText='';document.getElementById('loginBtn').innerText='Login / Register';document.getElementById('loginBtn').onclick=()=>openModal('loginModal')}}
+function openAdmin(){if(user&&user.isAdmin){showPage('admin');return}alert('Admin Login Karo!\nNaam: admin\nPhone: 1234');openModal('loginModal')}
+function addProduct(){
+let name=document.getElementById('newName').value.trim();let cat=document.getElementById('newCat').value;let price=parseInt(document.getElementById('newPrice').value);let old=parseInt(document.getElementById('newOld').value)||price+500;let img=document.getElementById('newImg').value.trim()||FB;let daraz=document.getElementById('newDaraz').value.trim()||DARAZ;let tag=document.getElementById('newTag').value.trim()||'NEW';
+if(!name||!price){alert('Naam aur Price likho!');return}
+products.unshift({name,cat,price,old,img,tag,rate:'4.9 (10)',desc:'New Product from URBAN MART',daraz});save();render();renderAdmin();alert('✅ Product Add Ho Gaya! - URBAN MART');document.getElementById('newName').value='';document.getElementById('newPrice').value='';document.getElementById('newImg').value='';
+}
+function deleteProduct(idx){if(!confirm('Delete karna hai?'))return;products.splice(idx,1);save();render();renderAdmin()}
+function renderAdmin(){
+let rev=orders.reduce((s,o)=>s+o.total,0);
+document.getElementById('stOrders').innerText=orders.length;document.getElementById('stRevenue').innerText='Rs '+rev.toLocaleString();document.getElementById('stProducts').innerText=products.length;
+let oh='';orders.forEach((o,oi)=>{oh+=`<div class="order-card"><b>${o.no}</b> - ${o.name} - ${o.phone} - Rs ${o.total.toLocaleString()} - ${o.city} - ${o.pay}<br><select onchange="changeStatus(${oi},this.value)" style="padding:8px;border-radius:20px;border:1px solid #eee;margin-top:8px"><option ${o.status=='Pending'?'selected':''}>Pending</option><option ${o.status=='Processing'?'selected':''}>Processing</option><option ${o.status=='Shipped'?'selected':''}>Shipped</option><option ${o.status=='Delivered'?'selected':''}>Delivered</option><option ${o.status=='Cancelled'?'selected':''}>Cancelled</option></select> <span style="font-size:12px;color:#666">${o.items.map(i=>i.name+' x'+i.qty).join(', ')}</span></div>`});
+document.getElementById('adminOrders').innerHTML=oh||'<p style="color:#999">Abhi koi order nahi</p>';
+let ph='<table class="table"><tr><th>Product</th><th>Category</th><th>Price</th><th>Action</th></tr>'+products.map((p,i)=>`<tr><td><img src="${p.img}" onerror="fix(this)" style="width:40px;height:40px;object-fit:cover;border-radius:6px"> ${p.name}</td><td>${p.cat}</td><td>Rs ${p.price}</td><td><button onclick="deleteProduct(${i})" style="background:#fee;color:#dc2626;border:none;padding:6px 12px;border-radius:20px;font-weight:700">Delete</button></td></tr>`).join('')+'</table>';
+document.getElementById('adminProducts').innerHTML=ph;
+}
+function changeStatus(oi,val){orders[oi].status=val;save();renderAdmin();renderOrders();alert('Status '+val+' ho gaya! Customer ko dikhega.')}
+render();
 </script>
 </body>
 </html>
