@@ -3,256 +3,124 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>URBAN MART 🛒 - Shop Smart. Live Better. | Winter & Summer Collections</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<title>URBAN MART - Shop Smart Live Better</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
-body{background:#fff;color:#111} a{text-decoration:none;color:inherit} button{cursor:pointer}
-@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-.topbar{background:#111;color:#fff;text-align:center;padding:9px 10px;font-size:12px;letter-spacing:.4px;font-weight:600}
-.topbar b{color:#ffb800}
-.header{position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);z-index:100;border-bottom:1px solid #eee}
-.nav{max-width:1280px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;gap:14px;flex-wrap:wrap}
-.logo{font-size:28px;font-weight:900;letter-spacing:-1.2px;line-height:1;cursor:pointer} .logo span{color:#f85606;font-weight:900} .logo small{display:block;font-size:9px;letter-spacing:3.5px;color:#888;font-weight:700;margin-top:2px}
-.searchbar{flex:1;max-width:460px;display:flex;background:#f3f3f3;border-radius:100px;overflow:hidden;border:1px solid #eee}
-.searchbar input{flex:1;border:none;background:transparent;padding:12px 18px;outline:none;font-size:14px}
-.searchbar button{background:#111;color:#fff;border:none;padding:0 22px;font-weight:800;border-radius:100px}
-.nav-btn{background:#111;color:#fff;border:none;padding:11px 18px;border-radius:100px;font-weight:700;font-size:13px}
-.nav-btn.orange{background:#f85606} .nav-btn.white{background:#fff;color:#111;border:1px solid #e5e5e5}
-.icons{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.cart-badge{background:#f85606;color:#fff;font-size:11px;padding:2px 7px;border-radius:20px;font-weight:800}
-/* HERO - PROFESSIONAL */
-.hero{max-width:1280px;margin:16px auto;padding:0 16px;display:grid;grid-template-columns:1fr;gap:14px}
-@media(min-width:850px){.hero{grid-template-columns:1.65fr 1fr}}
-.hero-main{border-radius:22px;padding:36px 30px;color:#fff;min-height:380px;display:flex;flex-direction:column;justify-content:flex-end;background-size:cover;background-position:center;position:relative;overflow:hidden}
-.hero-main::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.35) 55%,transparent 100%)}
-.hero-main>div{position:relative;z-index:1;max-width:520px}
-.hero-main .pill{background:#f85606;color:#fff;padding:7px 13px;border-radius:100px;font-size:11px;font-weight:800;letter-spacing:.8px;display:inline-block}
-.hero-main h1{font-size:46px;line-height:.95;letter-spacing:-1.5px;margin:14px 0 10px;font-weight:900} .hero-main h1 i{font-family:'Playfair Display',serif;font-weight:700;color:#ffb800}
-.hero-main p{color:#ddd;font-size:14px;line-height:1.6;margin-bottom:18px}
-.hero-side{display:grid;gap:14px}
-.hero-card{border-radius:22px;padding:22px;color:#fff;min-height:183px;display:flex;flex-direction:column;justify-content:flex-end;background-size:cover;background-position:center;position:relative}
-.hero-card::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75),transparent);border-radius:22px}
-.hero-card>div{position:relative;z-index:1}
-.hero-card h3{font-size:21px;line-height:1.15} .hero-card p{font-size:12px;opacity:.9;margin-top:4px}
-.hero-card span{font-size:11px;background:#fff;color:#111;padding:5px 10px;border-radius:100px;font-weight:800;display:inline-block;margin-top:10px}
-/* TABS */
-.season-tabs{max-width:1280px;margin:18px auto;padding:0 16px;display:flex;gap:10px}
-.season-tabs button{flex:1;padding:15px;border:none;border-radius:14px;font-weight:800;font-size:14px;background:#f5f5f5}
-.season-tabs button.winter{background:#111;color:#fff} .season-tabs button.summer{background:#fff3d6;color:#92400e;border:1px solid #fde68a} .season-tabs button.active{outline:2.5px solid #f85606;background:#fff}
-.cat-row{max-width:1280px;margin:10px auto;padding:0 16px;display:flex;gap:8px;overflow:auto;scrollbar-width:none}
-.cat-row button{white-space:nowrap;border:1px solid #eee;background:#fff;padding:11px 18px;border-radius:100px;font-weight:600;cursor:pointer;font-size:13px}
-.cat-row button.active{background:#111;color:#fff;border-color:#111}
-.filters{max-width:1280px;margin:auto;padding:0 16px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.filters input,.filters select{padding:10px 14px;border:1px solid #e5e5e5;border-radius:100px;outline:none;font-size:13px;background:#fff}
-.section{max-width:1280px;margin:auto;padding:18px 16px 6px}
-.sec-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid #f0f0f0}
-.sec-head h2{font-size:24px;letter-spacing:-.6px;font-weight:900} .sec-head h2 span{color:#f85606} .sec-head p{color:#888;font-size:13px;margin-top:3px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-@media(min-width:700px){.grid{grid-template-columns:repeat(4,1fr)}}
-@media(min-width:1100px){.grid{grid-template-columns:repeat(5,1fr)}}
-.card{background:#fff;border:1px solid #f0f0f0;border-radius:16px;overflow:hidden;transition:.25s;animation:fadeUp .5s both;cursor:pointer}
-.card:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(0,0,0,.10);border-color:#e5e5e5}
-.card-img{position:relative;background:#fafafa;aspect-ratio:1/1.02;overflow:hidden}
-.card-img img{width:100%;height:100%;object-fit:cover;transition:.4s} .card:hover .card-img img{transform:scale(1.05)}
-.tag{position:absolute;top:10px;left:10px;background:#111;color:#fff;font-size:11px;padding:6px 10px;border-radius:100px;font-weight:800;letter-spacing:.3px}
-.tag.o{background:#f85606} .tag.g{background:#16a34a} .tag.y{background:#f59e0b}
-.card-info{padding:12px 12px 14px}
-.card-info small{color:#999;font-size:11px;text-transform:uppercase;letter-spacing:.8px;font-weight:700}
-.card-info h3{font-size:14px;line-height:1.4;margin:5px 0;font-weight:600;min-height:40px;color:#1a1a1a}
-.stars{color:#f59e0b;font-size:12px} .stars span{color:#999}
-.price{font-weight:900;font-size:16px} .old{color:#aaa;text-decoration:line-through;font-size:12px;margin-left:5px;font-weight:400}
-.disc{color:#f85606;font-size:11px;font-weight:800;background:#fff0ed;padding:3px 7px;border-radius:6px;margin-left:5px}
-.add{margin-top:10px;width:100%;background:#111;color:#fff;border:none;padding:11px;border-radius:100px;font-weight:700;font-size:13px;transition:.2s} .add:hover{background:#f85606}
-.buy-daraz{margin-top:7px;width:100%;background:#fff;color:#f85606;border:1.5px solid #f85606;padding:10px;border-radius:100px;font-weight:800;font-size:13px;display:block;text-align:center}
-.wa-order{margin-top:7px;width:100%;background:#25D366;color:#fff;border:none;padding:10px;border-radius:100px;font-weight:800;font-size:13px;display:block;text-align:center}
-.banner{max-width:1280px;margin:18px auto;padding:0 16px}
-.banner-in{background:#111;color:#fff;border-radius:22px;padding:30px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
-.banner-in.orange{background:linear-gradient(90deg,#f85606,#ff7a00)}
-.btn-white{background:#fff;color:#111;padding:12px 22px;border-radius:100px;font-weight:800;font-size:14px;border:none}
-.btn-orange{background:#f85606;color:#fff;padding:12px 22px;border-radius:100px;font-weight:800;font-size:14px;border:none}
-.features{max-width:1280px;margin:10px auto;padding:0 16px 14px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
-@media(min-width:700px){.features{grid-template-columns:repeat(4,1fr)}}
-.feat{background:#fafafa;border:1px solid #f0f0f0;border-radius:16px;padding:18px} .feat b{font-size:14px} .feat p{font-size:12px;color:#777;margin-top:5px;line-height:1.6}
-footer{background:#111;color:#fff;margin-top:10px}
-.foot{max-width:1280px;margin:auto;padding:36px 18px;display:grid;grid-template-columns:1fr;gap:26px}
-@media(min-width:700px){.foot{grid-template-columns:1.6fr 1fr 1fr 1.4fr}}
-.foot h4{font-size:12px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;color:#ffb800} .foot p,.foot a{font-size:14px;color:#bbb;line-height:27px;display:block}
-.foot-bottom{border-top:1px solid #333;padding:16px;text-align:center;font-size:12px;color:#888}
-.wa{position:fixed;bottom:18px;right:18px;background:#25D366;color:#fff;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;z-index:300;box-shadow:0 8px 24px rgba(0,0,0,.25);animation:float 3s infinite}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:400;padding:14px}
-.modal.open{display:flex} .modal-box{background:#fff;width:100%;max-width:520px;max-height:92vh;overflow:auto;border-radius:18px;padding:24px;animation:slide .3s}
-.inp{width:100%;padding:12px 14px;border:1px solid #ddd;border-radius:12px;outline:none;margin:6px 0;font-size:14px}
-.page{display:none;max-width:1280px;margin:auto;padding:14px 16px} .page.active{display:block;animation:fadeUp .4s}
-.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
-@media(min-width:700px){.stat-grid{grid-template-columns:repeat(4,1fr)}}
-.stat{padding:18px;border-radius:14px;color:#fff} .stat h2{font-size:26px;margin-top:6px}
-.order-card{border:1px solid #eee;border-radius:12px;padding:14px;margin:10px 0;background:#fff}
-.track{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap} .track div{flex:1;min-width:70px;text-align:center;font-size:11px;padding:8px;border-radius:8px;background:#f5f5f5} .track div.on{background:#dcfce7;font-weight:700}
-.cart-item{display:flex;gap:12px;background:#fff;border:1px solid #eee;padding:12px;border-radius:12px;margin:10px 0;align-items:center}
-.cart-item img{width:80px;height:80px;object-fit:cover;border-radius:10px}
-.qty-btn{border:1px solid #ddd;background:#fff;padding:5px 10px;border-radius:20px;font-weight:800}
-.table{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px;background:#fff} .table th,.table td{border-bottom:1px solid #eee;padding:10px;text-align:left} .table th{background:#f8f8f8}
-.trust{max-width:1280px;margin:8px auto;padding:0 16px;display:flex;gap:10px;flex-wrap:wrap} .trust span{background:#f8f8f8;border:1px solid #eee;padding:9px 14px;border-radius:100px;font-size:12px;font-weight:700}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+body{background:#fff7f0;color:#111}
+header{background:#fff;position:sticky;top:0;z-index:99;box-shadow:0 2px 10px rgba(0,0,0,.08);padding:12px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.logo{font-size:28px;font-weight:900;line-height:1}.logo span{color:#ff3d00}.logo small{font-size:9px;letter-spacing:3px;color:#666;display:block}
+.search-box{flex:1;min-width:220px;display:flex;background:#f1f1f1;border-radius:50px;overflow:hidden;border:2px solid transparent}
+.search-box:focus-within{border-color:#ff3d00}
+.search-box input{flex:1;padding:12px 16px;border:0;outline:0;background:transparent;font-size:15px}
+.search-box button{background:#111;color:#fff;padding:0 22px;border:0;cursor:pointer;font-weight:700}
+.nav-btns{display:flex;gap:8px;align-items:center}
+.nav-btns button,.nav-btns a{padding:9px 16px;border-radius:50px;border:1px solid #eee;background:#fff;cursor:pointer;text-decoration:none;color:#111;font-weight:600}
+.nav-btns .black{background:#111;color:#fff}
+.cart-count{background:#ff3d00;color:#fff;border-radius:50%;padding:2px 7px;font-size:12px}
+.hero{margin:16px 20px;border-radius:20px;overflow:hidden;background:#111;color:#fff;display:flex;min-height:340px;position:relative}
+.hero-text{padding:36px;flex:1;z-index:2}.hero-text h1{font-size:48px;line-height:.95}.hero-text h1 i{color:#ffb400;font-style:normal}
+.hero-text p{margin:16px 0;color:#ddd}.hero-img{flex:1;background:url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=900') center/cover}
+.hero-btns{display:flex;gap:10px}.btn-white{background:#fff;padding:12px 22px;border-radius:50px;border:0;font-weight:700;cursor:pointer}.btn-orange{background:#ff6a00;color:#fff;padding:12px 22px;border-radius:50px;border:0;font-weight:700;cursor:pointer}
+.badges{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;padding:12px}.badges span{background:#fff;border:1px solid #eee;padding:8px 14px;border-radius:50px;font-size:13px}
+.toolbar{padding:10px 20px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;position:sticky;top:66px;background:#fff7f0;z-index:90}
+.cats{display:flex;gap:8px;overflow-x:auto;padding:4px 20px;scrollbar-width:none}.cats::-webkit-scrollbar{display:none}
+.cat{white-space:nowrap;padding:10px 18px;border-radius:50px;border:1px solid #eee;background:#fff;cursor:pointer;font-weight:600}.cat.active{background:#111;color:#fff}
+.toolbar input,.toolbar select{padding:10px;border-radius:10px;border:1px solid #ddd}
+.section{padding:10px 20px}.section h2{font-size:26px}.section p{color:#666;margin-bottom:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.card{background:#fff;border-radius:18px;overflow:hidden;border:1px solid #eee;transition:.2s}.card:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,.1)}
+.card img{width:100%;height:240px;object-fit:cover}
+.card-body{padding:14px}.card-body small{color:#ff6a00;font-weight:700;letter-spacing:1px}.card-body h3{font-size:16px;margin:6px 0;min-height:40px}
+.stars{color:#ffb400}.price{font-size:20px;font-weight:800}.old{color:#999;text-decoration:line-through;font-size:14px;font-weight:400}.off{color:#ff3d00;font-size:13px}
+.add{width:100%;background:#111;color:#fff;padding:11px;border:0;border-radius:50px;margin-top:10px;cursor:pointer;font-weight:700}
+.buy{width:100%;background:#fff;color:#ff3d00;border:1.5px solid #ff6a00;padding:10px;border-radius:50px;margin-top:8px;cursor:pointer;font-weight:700}
+#cartDrawer{position:fixed;right:-380px;top:0;width:360px;max-width:90vw;height:100%;background:#fff;z-index:999;box-shadow:-5px 0 20px rgba(0,0,0,.2);padding:20px;transition:.3s;overflow-y:auto}
+#cartDrawer.open{right:0}.cart-item{display:flex;gap:10px;margin:12px 0}.cart-item img{width:60px;height:60px;object-fit:cover;border-radius:10px}
+footer{background:#111;color:#ddd;margin-top:30px}.foot-top{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;padding:30px 20px}.foot-top h3{color:#fff;margin-bottom:10px}.foot-top a{display:block;color:#bbb;text-decoration:none;margin:6px 0;font-size:14px}.foot-top a:hover{color:#ff6a00}
+.newsletter{display:flex;margin-top:10px}.newsletter input{flex:1;padding:10px;border:0;border-radius:8px 0 0 8px}.newsletter button{background:#ff3d00;color:#fff;border:0;padding:10px 16px;border-radius:0 8px 8px 0;cursor:pointer}
+.foot-bottom{text-align:center;padding:16px;border-top:1px solid #333;font-size:13px}
+@media(max-width:700px){.hero-text h1{font-size:32px}.hero-img{display:none}}
 </style>
 </head>
 <body>
-<div class="topbar">✨ <b>URBAN MART</b> &nbsp;|&nbsp; FREE DELIVERY OVER RS. 3000 &nbsp;•&nbsp; COD AVAILABLE &nbsp;•&nbsp; 7-DAY EASY RETURN</div>
-<header class="header"><div class="nav">
-<div class="logo" onclick="showPage('home')">URBAN <span>MART</span><small>SHOP SMART • LIVE BETTER</small></div>
-<div class="searchbar"><input id="searchInput" onkeyup="render()" placeholder="Search on Urban Mart - Hoodie, Kurti, Serum..."><button onclick="render()">Search</button></div>
-<div class="icons">
-<button class="nav-btn white" onclick="showPage('home')">Home</button>
-<button class="nav-btn white" onclick="showPage('orders')">My Orders</button>
-<button class="nav-btn" onclick="openAdmin()">Admin</button>
-<span id="userLabel" style="font-size:13px;font-weight:700"></span>
-<button class="nav-btn white" id="loginBtn" onclick="openModal('loginModal')">Login</button>
-<button class="nav-btn orange" onclick="showPage('cart')">🛒 Cart <span class="cart-badge" id="cartCount">0</span></button>
-</div>
-</div></header>
 
-<div id="page-home" class="page active">
+<header>
+<div class="logo">URBAN <span>MART</span><small>SHOP SMART • LIVE BETTER</small></div>
+<div class="search-box"><input id="searchInput" placeholder="Search on Urban Mart - Hoodie, Watch, Serum..."><button onclick="doSearch()">Search</button></div>
+<div class="nav-btns"><a href="#">Home</a><a href="#">My Orders</a><button class="black" onclick="toggleCart()">Cart <span class="cart-count" id="cartCount">0</span></button><button>Hi, Admin</button></div>
+</header>
+
 <div class="hero">
-<div class="hero-main" style="background-image:url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&auto=format&fit=crop&q=80')"><div><span class="pill">✦ NEW COLLECTION 2026 • URBAN MART</span><h1>Shop Smart.<br><i>Live Better.</i></h1><p>Vehari ki apni premium Mart. Winter & Summer ke 80+ best deals - Daraz Verified, 100% Original, Cash on Delivery.</p><button class="btn-white" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Shop Now →</button><button class="btn-orange" style="margin-left:8px" onclick="filterSeason('winter')">❄️ Winter Deals</button><p style="font-size:12px;margin-top:14px;color:#fff">⭐ 4.9 Rated &nbsp;|&nbsp; 1000+ Happy Customers &nbsp;|&nbsp; 📍 Vehari</p></div></div>
-<div class="hero-side">
-<div class="hero-card" style="background-image:url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&auto=format&fit=crop&q=80')"><div><h3>Premium Watches</h3><p>Smart & Classic • Up to 40% Off</p><span>Shop Watches →</span></div></div>
-<div class="hero-card" style="background-image:url('https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&auto=format&fit=crop&q=80')"><div><h3>Beauty Essentials</h3><p>Serum, Lipstick & More • Best Sellers</p><span>Shop Beauty →</span></div></div>
-</div>
+<div class="hero-text"><h1>Shop Smart.<br><i>Live Better.</i></h1><p>Vehari ki apni premium Mart. 45+ best deals - 100% Original, Cash on Delivery.</p><div class="hero-btns"><button class="btn-white" onclick="filterCat('All')">Shop Now →</button><button class="btn-orange" onclick="filterCat('Fashion')">❄ Winter Deals</button></div><p style="margin-top:16px">⭐ 4.9 Rated | 1000+ Happy Customers | 📍 Vehari</p></div>
+<div class="hero-img"></div>
 </div>
 
-<div class="trust"><span>✅ 100% Original</span><span>🚚 Fast Delivery 2-4 Days</span><span>↩️ 7-Day Return</span><span>💵 Cash on Delivery</span><span>🛡️ Secure Shopping</span></div>
+<div class="badges"><span>✅ 100% Original</span><span>🚚 Fast Delivery 2-4 Days</span><span>🔄 7-Day Return</span><span>💵 Cash on Delivery</span><span>🛡 Secure Shopping</span></div>
 
-<div class="season-tabs"><button class="all active" id="tab-all" onclick="filterSeason('all')">🛒 All Collections • 80+</button><button class="winter" id="tab-winter" onclick="filterSeason('winter')">❄️ Winter Only</button><button class="summer" id="tab-summer" onclick="filterSeason('summer')">☀️ Summer Only</button></div>
+<div class="cats" id="cats"></div>
 
-<div class="cat-row"><button class="active" onclick="filterCat('all',this)">All</button><button onclick="filterCat('fashion',this)">👕 Fashion</button><button onclick="filterCat('beauty',this)">💄 Beauty</button><button onclick="filterCat('watch',this)">⌚ Watch</button><button onclick="filterCat('jewelry',this)">✨ Jewelry</button><button onclick="filterCat('audio',this)">🎧 Audio</button><button onclick="filterCat('gaming',this)">🎮 Gaming</button><button onclick="filterCat('home',this)">🏠 Home</button><button onclick="filterCat('kids',this)">👶 Kids</button></div>
-
-<div class="filters"><input type="number" id="minPrice" placeholder="Min Price" oninput="render()"><input type="number" id="maxPrice" placeholder="Max Price" oninput="render()"><select id="sortBy" onchange="render()"><option value="">Sort By</option><option value="low">Price Low to High</option><option value="high">Price High to Low</option><option value="discount">Biggest Discount</option></select><span id="resultCount" style="font-size:13px;color:#555;font-weight:700"></span></div>
-
-<div class="section"><div class="sec-head"><div><h2>❄️ Winter <span>Collection</span></h2><p>Hoodie, Jacket, Sweater, Shawl - Warm & Premium</p></div><span style="color:#f85606;font-weight:800;cursor:pointer" onclick="filterSeason('winter')">View All →</span></div><div class="grid" id="gridWinter"></div></div>
-
-<div class="banner"><div class="banner-in"><div><h2 style="font-size:26px">❄️ Winter Sale - Up To 50% OFF</h2><p style="color:#bbb;margin-top:4px">Limited Stock - Jaldi Order Karo, Warna Khatam!</p></div><button class="btn-white" onclick="filterSeason('winter')">Shop Winter ❄️</button></div></div>
-
-<div class="section"><div class="sec-head"><div><h2>☀️ Summer <span>Collection</span></h2><p>Lawn, T-Shirt, Kurti - Light & Cool</p></div><span style="color:#f85606;font-weight:800;cursor:pointer" onclick="filterSeason('summer')">View All →</span></div><div class="grid" id="gridSummer"></div></div>
-
-<div class="banner"><div class="banner-in orange"><div><h2 style="font-size:26px">☀️ Summer Sale - Up To 45% OFF</h2><p style="color:#ffe0cc;margin-top:4px">Fresh Stock - Lawn Suits, T-Shirts, Slippers</p></div><button class="btn-white" onclick="filterSeason('summer')">Shop Summer ☀️</button></div></div>
-
-<div class="section"><div class="sec-head"><div><h2>💄 Beauty <span>Best Sellers</span></h2><p>Serum, Lipstick, Perfume - Most Loved</p></div></div><div class="grid" id="gridBeauty"></div></div>
-<div class="section"><div class="sec-head"><div><h2>⌚ Watch & ✨ <span>Jewelry</span></h2><p>Premium Collection - Gift Ke Liye Best</p></div></div><div class="grid" id="gridWatch"></div></div>
-<div class="section" id="products"><div class="sec-head"><div><h2>🛒 All Products - <span>URBAN MART</span></h2><p>Winter + Summer + Beauty + Watch + Jewelry - 80+ Products</p></div></div><div class="grid" id="grid"></div></div>
-
-<div class="features"><div class="feat"><b>🚚 Fast Delivery</b><p>Daraz delivery all over Pakistan in 2-4 days. Vehari me jaldi!</p></div><div class="feat"><b>↩️ Easy Return</b><p>7-day easy return & exchange. No tension.</p></div><div class="feat"><b>🛡️ 100% Original</b><p>Daraz verified, original products. Fake nahi!</p></div><div class="feat"><b>💬 WhatsApp Support</b><p>0334-1765911 - Subah 10 se Raat 10 tak.</p></div></div>
+<div class="toolbar">
+<input id="minP" type="number" placeholder="Min Price" oninput="render()">
+<input id="maxP" type="number" placeholder="Max Price" oninput="render()">
+<select id="sort" onchange="render()"><option value="low">Price Low to High</option><option value="high">Price High to Low</option><option value="pop">Most Popular</option></select>
+<b id="countLabel"></b>
 </div>
 
-<div id="page-cart" class="page"><h2>My Cart 🛒 - URBAN MART</h2><div id="cartList"></div><div id="cartTotal"></div><button class="btn-orange" onclick="showPage('home')" style="margin-top:10px">← Continue Shopping</button></div>
-<div id="page-checkout" class="page"><h2>Checkout - COD ✅ - URBAN MART</h2><div style="max-width:560px;margin-top:12px;background:#fff;padding:18px;border-radius:16px;border:1px solid #eee"><input class="inp" id="coName" placeholder="Full Name"><input class="inp" id="coPhone" placeholder="Phone - 0334-xxxxxxx"><input class="inp" id="coAddress" placeholder="Full Address"><input class="inp" id="coCity" placeholder="City" value="Vehari"><label><input type="radio" name="pay" value="COD" checked> Cash on Delivery (COD)</label><br><label><input type="radio" name="pay" value="DARAZ"> Buy via Daraz</label><div id="checkoutSummary" style="background:#f8f8f8;padding:12px;border-radius:10px;margin-top:10px;font-size:14px"></div><button class="btn-orange" style="width:100%;margin-top:12px;padding:14px" onclick="placeOrder()">Place Order - COD ✅</button></div></div>
-<div id="page-orders" class="page"><h2>My Orders 📦 - URBAN MART</h2><div id="ordersList"></div><button class="btn-orange" onclick="showPage('home')" style="margin-top:10px">Shop More →</button></div>
-<div id="page-admin" class="page"><h2>Admin Dashboard 📊 - URBAN MART</h2><div class="stat-grid"><div class="stat" style="background:#111"><b>Orders</b><h2 id="stOrders">0</h2></div><div class="stat" style="background:#f85606"><b>Revenue</b><h2 id="stRevenue">Rs 0</h2></div><div class="stat" style="background:#16a34a"><b>Products</b><h2 id="stProducts">0</h2></div><div class="stat" style="background:#2563eb"><b>Users</b><h2 id="stUsers">1</h2></div></div>
-<h3 style="margin-top:14px">➕ Add New Product</h3><div style="background:#fff;padding:14px;border-radius:12px;margin-top:8px;border:1px solid #eee"><input class="inp" id="newName" placeholder="Product Name"><select class="inp" id="newCat"><option value="fashion">Fashion</option><option value="beauty">Beauty</option><option value="watch">Watch</option><option value="jewelry">Jewelry</option><option value="audio">Audio</option><option value="gaming">Gaming</option><option value="home">Home</option><option value="kids">Kids</option></select><select class="inp" id="newSeason"><option value="winter">❄️ Winter</option><option value="summer">☀️ Summer</option><option value="all">🛒 All Season</option></select><input class="inp" id="newPrice" type="number" placeholder="Price"><input class="inp" id="newOld" type="number" placeholder="Old Price"><input class="inp" id="newImg" placeholder="Image Link - https://..."><input class="inp" id="newDaraz" placeholder="Daraz Link"><input class="inp" id="newTag" placeholder="Tag"><button class="btn-orange" onclick="addProduct()">Add Product ✅</button></div>
-<h3 style="margin-top:16px">📦 Orders</h3><div id="adminOrders"></div><h3 style="margin-top:16px">🛍️ Products</h3><div id="adminProducts"></div></div>
+<div class="section"><h2 id="secTitle">All Collections • 45 Products</h2><p>Best quality, best price - Cash on Delivery all over Pakistan</p><div class="grid" id="grid"></div></div>
 
-<footer><div class="foot"><div><h3 style="font-size:26px">URBAN <span style="color:#f85606">MART 🛒</span></h3><p>Shop Smart. Live Better.<br>❄️ Winter & ☀️ Summer - 80+ Products Available!<br>Vehari ki apni premium Mart - Daraz Best Deals</p><p style="margin-top:10px">⭐⭐⭐⭐⭐ 4.9 | 📍 Main Bazaar, Vehari | 📞 0334-1765911</p><p style="font-size:12px;color:#777;margin-top:10px">URBAN MART is an independent affiliate store. We are not affiliated with or endorsed by Daraz. Daraz is a trademark of its respective owner. We may earn commission on Daraz links at no extra cost to you.</p></div><div><h4>Shop</h4><a href="#" onclick="filterSeason('winter');return false">❄️ Winter Collection</a><a href="#" onclick="filterSeason('summer');return false">☀️ Summer Collection</a><a href="#" onclick="filterCat('fashion');return false">Fashion</a><a href="#" onclick="filterCat('beauty');return false">Beauty</a></div><div><h4>Help</h4><a href="#" onclick="showPage('orders');return false">Track Order</a><a href="#">Shipping Info</a><a href="#">Returns & Exchange</a><a href="#">Contact Us</a></div><div><h4>Stay Updated</h4><p>Daily best deals ke liye WhatsApp karo</p><a href="https://wa.me/923341765911" style="background:#25D366;color:#fff;text-align:center;padding:12px;border-radius:100px;font-weight:800;margin-top:10px">WhatsApp Us 💬</a><p style="font-size:12px;margin-top:10px;color:#888">Made by Huzaifa Tariq - URBAN MART<br>© 2026 All Rights Reserved</p></div></div><div class="foot-bottom">© 2026 URBAN MART - Vehari, Pakistan | 80+ Products | Winter & Summer Available | COD Available</div></footer>
-<a class="wa" href="https://wa.me/923341765911?text=Assalam-o-Alaikum%20URBAN%20MART!%20Mujhe%20Order%20Karna%20Hai" target="_blank">💬</a>
-<div class="modal" id="loginModal"><div class="modal-box"><h2>Welcome to URBAN MART 👋</h2><p>Login karo, order karo. Admin: admin / 1234</p><input class="inp" id="loginName" placeholder="Apna Naam"><input class="inp" id="loginPhone" placeholder="Phone - 0334-xxxxxxx"><button class="btn-orange" style="width:100%;padding:13px" onclick="doLogin()">Login / Register ✅</button><button style="width:100%;padding:12px;margin-top:8px;background:#fff;border:1px solid #ddd;border-radius:12px" onclick="closeModal('loginModal')">Close</button></div></div>
-<div class="modal" id="productModal"><div class="modal-box" style="max-width:620px"><div id="productDetail"></div><button style="width:100%;padding:12px;margin-top:10px;background:#fff;border:1px solid #ddd;border-radius:12px" onclick="closeModal('productModal')">Close</button></div></div>
+<div id="cartDrawer"><h2>🛒 Your Cart <button style="float:right" onclick="toggleCart()">X</button></h2><div id="cartItems"></div><h3 id="cartTotal">Total: Rs 0</h3><button class="add" onclick="checkout()">Checkout - Cash on Delivery</button><p style="font-size:13px;color:#666;margin-top:10px">Delivery 2-4 Days • 7-Day Easy Return • 100% Original</p></div>
+
+<footer>
+<div class="foot-top">
+<div><h3>URBAN MART</h3><p style="font-size:14px;line-height:1.6">Vehari ki apni premium online mart. Fashion, Beauty, Tech - sab kuch ek jagah, best price par.</p><div class="newsletter"><input placeholder="Your Email"><button onclick="alert('Subscribed!')">Join</button></div></div>
+<div><h3>Shop</h3><a href="#" onclick="filterCat('Fashion');return false">Fashion</a><a href="#" onclick="filterCat('Beauty');return false">Beauty</a><a href="#" onclick="filterCat('Tech');return false">Tech & Audio</a><a href="#" onclick="filterCat('Watch');return false">Watches</a><a href="#" onclick="filterCat('Gaming');return false">Gaming</a></div>
+<div><h3>Help</h3><a href="#">Track Order</a><a href="#">Delivery Info</a><a href="#">Return & Refund</a><a href="#">Contact Us</a><a href="#">FAQs</a></div>
+<div><h3>Contact</h3><p style="font-size:14px">📍 Vehari, Punjab, Pakistan<br>📞 0300-1234567<br>✉️ support@urbanmart.pk<br>🕒 9AM - 11PM Daily</p><p style="margin-top:10px">💵 Cash on Delivery<br>🚚 All Pakistan Delivery</p></div>
+</div>
+<div class="foot-bottom">© 2026 URBAN MART - Shop Smart Live Better | Made in Vehari, Pakistan | Privacy Policy • Terms • Sitemap</div>
+</footer>
 
 <script>
-const DARAZ="PASTE_YOUR_DARAZ_LINK_HERE";
-const FB="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&auto=format&fit=crop&q=80";
-function fix(e){e.onerror=null;e.src=FB}
-let products=[
-{name:"Winter Hoodie Black Warm Unisex",cat:"fashion",season:"winter",price:1999,old:3299,img:"https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600&auto=format&fit=crop&q=80",tag:"WINTER",rate:"4.9 (320)",desc:"Warm Hoodie Winter - Premium Quality",daraz:DARAZ},
-{name:"Winter Hoodie Beige Oversized",cat:"fashion",season:"winter",price:2199,old:3599,img:"https://images.unsplash.com/photo-1578681994506-b8f463449011?w=600&auto=format&fit=crop&q=80",tag:"WINTER",rate:"4.8 (210)",desc:"Oversized Beige Hoodie",daraz:DARAZ},
-{name:"Men Winter Jacket Black Warm",cat:"fashion",season:"winter",price:3499,old:5999,img:"https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format&fit=crop&q=80",tag:"WINTER",rate:"4.9 (180)",desc:"Winter Jacket Premium",daraz:DARAZ},
-{name:"Winter Sweater Wool Grey Men",cat:"fashion",season:"winter",price:1799,old:2999,img:"https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=600&auto=format&fit=crop&q=80",tag:"WINTER",rate:"4.8 (150)",desc:"Wool Sweater Grey",daraz:DARAZ},
-{name:"Ladies Shawl Pashmina Maroon Warm",cat:"fashion",season:"winter",price:1499,old:2499,img:"https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=600&auto=format&fit=crop&q=80",tag:"WINTER",rate:"4.9 (240)",desc:"Pashmina Shawl",daraz:DARAZ},
-{name:"Winter Joggers Fleece Grey Men",cat:"fashion",season:"winter",price:1399,old:2299,img:"https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=600&auto=format&fit=crop&q=80",tag:"WINTER",rate:"4.8 (170)",desc:"Fleece Joggers",daraz:DARAZ},
-{name:"Winter Cap + Gloves Set Black",cat:"fashion",season:"winter",price:899,old:1499,img:"https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=600&auto=format&fit=crop&q=80",tag:"WINTER",rate:"4.7 (120)",desc:"Cap + Gloves Combo",daraz:DARAZ},
-{name:"Winter Long Coat Girls Camel",cat:"fashion",season:"winter",price:3999,old:6499,img:"https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=600&auto=format&fit=crop&q=80",tag:"WINTER",rate:"4.9 (110)",desc:"Long Coat Girls",daraz:DARAZ},
-{name:"Winter Socks 5 Pairs Warm",cat:"fashion",season:"winter",price:799,old:1299,img:"https://images.unsplash.com/photo-1586350977771-b3b0abd50c82?w=600&auto=format&fit=crop&q=80",tag:"WINTER",rate:"4.8 (200)",desc:"Warm Socks 5 Pairs",daraz:DARAZ},
-{name:"Winter Tracksuit 2 Pcs Men",cat:"fashion",season:"winter",price:2799,old:4499,img:"https://images.unsplash.com/photo-1517438476312-10d79c077509?w=600&auto=format&fit=crop&q=80",tag:"WINTER",rate:"4.9 (160)",desc:"Tracksuit 2 Pcs",daraz:DARAZ},
-{name:"Winter Sweatshirt Grey Unisex",cat:"fashion",season:"winter",price:1599,old:2599,img:"https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600&auto=format&fit=crop&q=80",tag:"WINTER",rate:"4.8 (140)",desc:"Sweatshirt Grey",daraz:DARAZ},
-{name:"Winter Muffler Wool Black",cat:"fashion",season:"winter",price:699,old:1199,img:"https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=600&auto=format&fit=crop&q=80",tag:"WINTER",rate:"4.7 (90)",desc:"Wool Muffler",daraz:DARAZ},
-{name:"Winter Denim Jacket Blue Men",cat:"fashion",season:"winter",price:2999,old:4999,img:"https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format&fit=crop&q=80",tag:"WINTER",rate:"4.8 (130)",desc:"Denim Jacket",daraz:DARAZ},
-{name:"Winter Kurti Wool Girls Maroon",cat:"fashion",season:"winter",price:1899,old:3199,img:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600&auto=format&fit=crop&q=80",tag:"WINTER",rate:"4.8 (110)",desc:"Wool Kurti Girls",daraz:DARAZ},
-{name:"Winter Boots Leather Brown Men",cat:"fashion",season:"winter",price:3499,old:5499,img:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&auto=format&fit=crop&q=80",tag:"WINTER",rate:"4.9 (150)",desc:"Leather Boots",daraz:DARAZ},
-{name:"Winter Blanket Double Soft Grey",cat:"home",season:"winter",price:2999,old:4999,img:"https://images.unsplash.com/photo-1580301762395-83604735cbc5?w=600&auto=format&fit=crop&q=80",tag:"WINTER",rate:"4.9 (200)",desc:"Double Blanket Soft",daraz:DARAZ},
-{name:"Winter Baby Suit Warm 2 Pcs",cat:"kids",season:"winter",price:1499,old:2499,img:"https://images.unsplash.com/photo-1522771930-78848d9293e8?w=600&auto=format&fit=crop&q=80",tag:"WINTER",rate:"4.9 (120)",desc:"Baby Warm Suit",daraz:DARAZ},
-{name:"Winter Fleece Jacket Navy Men",cat:"fashion",season:"winter",price:2499,old:4199,img:"https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&auto=format&fit=crop&q=80",tag:"WINTER",rate:"4.8 (140)",desc:"Fleece Jacket Navy",daraz:DARAZ},
-{name:"Winter Hoodie White Girls",cat:"fashion",season:"winter",price:1999,old:3299,img:"https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600&auto=format&fit=crop&q=80",tag:"WINTER",rate:"4.9 (130)",desc:"Hoodie White Girls",daraz:DARAZ},
-{name:"Winter Sweater Black Men Classic",cat:"fashion",season:"winter",price:1699,old:2799,img:"https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=600&auto=format&fit=crop&q=80",tag:"WINTER",rate:"4.8 (125)",desc:"Sweater Black",daraz:DARAZ},
-{name:"Summer T-Shirt Cotton White Men",cat:"fashion",season:"summer",price:899,old:1499,img:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&auto=format&fit=crop&q=80",tag:"SUMMER",rate:"4.9 (410)",desc:"Cotton T-Shirt White",daraz:DARAZ},
-{name:"Summer T-Shirt Black Oversized",cat:"fashion",season:"summer",price:1099,old:1799,img:"https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=600&auto=format&fit=crop&q=80",tag:"SUMMER",rate:"4.8 (260)",desc:"Oversized Black",daraz:DARAZ},
-{name:"Lawn Kurti Printed Girls Summer",cat:"fashion",season:"summer",price:1499,old:2499,img:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600&auto=format&fit=crop&q=80",tag:"SUMMER",rate:"4.9 (300)",desc:"Lawn Kurti Printed",daraz:DARAZ},
-{name:"Lawn Suit 2 Pcs Girls Summer",cat:"fashion",season:"summer",price:1999,old:3299,img:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600&auto=format&fit=crop&q=80",tag:"SUMMER",rate:"4.8 (190)",desc:"Lawn 2 Pcs",daraz:DARAZ},
-{name:"Summer Shorts Cotton Men Blue",cat:"fashion",season:"summer",price:999,old:1699,img:"https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=600&auto=format&fit=crop&q=80",tag:"SUMMER",rate:"4.7 (140)",desc:"Cotton Shorts",daraz:DARAZ},
-{name:"Summer Slippers Soft Unisex",cat:"fashion",season:"summer",price:799,old:1299,img:"https://images.unsplash.com/photo-1603487742131-4160ec999306?w=600&auto=format&fit=crop&q=80",tag:"SUMMER",rate:"4.8 (220)",desc:"Soft Slippers",daraz:DARAZ},
-{name:"Summer Cap White Adjustable",cat:"fashion",season:"summer",price:599,old:999,img:"https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=600&auto=format&fit=crop&q=80",tag:"SUMMER",rate:"4.7 (180)",desc:"Summer Cap White",daraz:DARAZ},
-{name:"Summer Sunglasses Black UV",cat:"fashion",season:"summer",price:999,old:1799,img:"https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&auto=format&fit=crop&q=80",tag:"SUMMER",rate:"4.8 (210)",desc:"UV Sunglasses",daraz:DARAZ},
-{name:"Summer Lawn Dupatta Printed",cat:"fashion",season:"summer",price:799,old:1299,img:"https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=600&auto=format&fit=crop&q=80",tag:"SUMMER",rate:"4.8 (130)",desc:"Lawn Dupatta",daraz:DARAZ},
-{name:"Summer Sneakers White Light",cat:"fashion",season:"summer",price:2499,old:3999,img:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&auto=format&fit=crop&q=80",tag:"SUMMER",rate:"4.9 (320)",desc:"Light Sneakers",daraz:DARAZ},
-{name:"Summer Polo T-Shirt Blue Men",cat:"fashion",season:"summer",price:1199,old:1999,img:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&auto=format&fit=crop&q=80",tag:"SUMMER",rate:"4.8 (170)",desc:"Polo T-Shirt Blue",daraz:DARAZ},
-{name:"Summer Kurti White Girls",cat:"fashion",season:"summer",price:1399,old:2299,img:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600&auto=format&fit=crop&q=80",tag:"SUMMER",rate:"4.8 (160)",desc:"Kurti White",daraz:DARAZ},
-{name:"Summer Lawn 3 Pcs Suit Girls",cat:"fashion",season:"summer",price:2499,old:3999,img:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600&auto=format&fit=crop&q=80",tag:"SUMMER",rate:"4.9 (220)",desc:"Lawn 3 Pcs",daraz:DARAZ},
-{name:"Summer Sandals Black Girls",cat:"fashion",season:"summer",price:1299,old:2199,img:"https://images.unsplash.com/photo-1603487742131-4160ec999306?w=600&auto=format&fit=crop&q=80",tag:"SUMMER",rate:"4.8 (140)",desc:"Sandals Black",daraz:DARAZ},
-{name:"Summer Shirt Linen Men White",cat:"fashion",season:"summer",price:1499,old:2499,img:"https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600&auto=format&fit=crop&q=80",tag:"SUMMER",rate:"4.8 (150)",desc:"Linen Shirt White",daraz:DARAZ},
-{name:"Summer Frock Girls Floral",cat:"kids",season:"summer",price:1399,old:2299,img:"https://images.unsplash.com/photo-1522771930-78848d9293e8?w=600&auto=format&fit=crop&q=80",tag:"SUMMER",rate:"4.9 (120)",desc:"Frock Floral Girls",daraz:DARAZ},
-{name:"Summer Baby Suit Cotton 2 Pcs",cat:"kids",season:"summer",price:999,old:1699,img:"https://images.unsplash.com/photo-1522771930-78848d9293e8?w=600&auto=format&fit=crop&q=80",tag:"SUMMER",rate:"4.8 (110)",desc:"Baby Cotton Suit",daraz:DARAZ},
-{name:"Summer Jeans Light Blue Men",cat:"fashion",season:"summer",price:1799,old:2999,img:"https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&auto=format&fit=crop&q=80",tag:"SUMMER",rate:"4.8 (180)",desc:"Light Blue Jeans",daraz:DARAZ},
-{name:"Summer Maxi Dress Girls Floral",cat:"fashion",season:"summer",price:2199,old:3599,img:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600&auto=format&fit=crop&q=80",tag:"SUMMER",rate:"4.9 (140)",desc:"Maxi Dress Floral",daraz:DARAZ},
-{name:"Summer Water Bottle Steel 1L",cat:"home",season:"summer",price:1299,old:2199,img:"https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=600&auto=format&fit=crop&q=80",tag:"SUMMER",rate:"4.8 (160)",desc:"Steel Bottle 1L",daraz:DARAZ},
-{name:"Vitamin C Face Serum Glowing",cat:"beauty",season:"all",price:899,old:1499,img:"https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&auto=format&fit=crop&q=80",tag:"BEST SELLER",rate:"4.9 (520)",desc:"Vitamin C Serum",daraz:DARAZ},
-{name:"Matte Lipstick Set 6 Pcs",cat:"beauty",season:"all",price:1299,old:2199,img:"https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=600&auto=format&fit=crop&q=80",tag:"BEST SELLER",rate:"4.8 (260)",desc:"Matte Lipstick 6 Pcs",daraz:DARAZ},
-{name:"Sunscreen SPF 50 Summer Special",cat:"beauty",season:"summer",price:899,old:1499,img:"https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&auto=format&fit=crop&q=80",tag:"SUMMER",rate:"4.9 (310)",desc:"Sunscreen SPF 50",daraz:DARAZ},
-{name:"Night Cream Winter Moisturizing",cat:"beauty",season:"winter",price:1399,old:2299,img:"https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&auto=format&fit=crop&q=80",tag:"WINTER",rate:"4.8 (180)",desc:"Night Cream Winter",daraz:DARAZ},
-{name:"Hair Growth Oil Onion Argan 200ml",cat:"beauty",season:"all",price:1199,old:1999,img:"https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=600&auto=format&fit=crop&q=80",tag:"TRENDING",rate:"4.8 (190)",desc:"Hair Growth Oil",daraz:DARAZ},
-{name:"Perfume Long Lasting 100ml",cat:"beauty",season:"all",price:1999,old:3499,img:"https://images.unsplash.com/photo-1541643600914-78b084683601?w=600&auto=format&fit=crop&q=80",tag:"PREMIUM",rate:"4.9 (300)",desc:"Perfume 100ml",daraz:DARAZ},
-{name:"Face Wash Tea Tree Oil Control",cat:"beauty",season:"all",price:699,old:1099,img:"https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&auto=format&fit=crop&q=80",tag:"DAILY USE",rate:"4.7 (220)",desc:"Face Wash",daraz:DARAZ},
-{name:"Makeup Brush Set 12 Pcs",cat:"beauty",season:"all",price:1099,old:1899,img:"https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&auto=format&fit=crop&q=80",tag:"-42%",rate:"4.8 (140)",desc:"Brush Set 12 Pcs",daraz:DARAZ},
-{name:"Hyaluronic Acid Serum Hydrating",cat:"beauty",season:"all",price:999,old:1799,img:"https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&auto=format&fit=crop&q=80",tag:"NEW",rate:"4.8 (150)",desc:"Hydrating Serum",daraz:DARAZ},
-{name:"Eyeliner + Mascara Combo Waterproof",cat:"beauty",season:"all",price:799,old:1299,img:"https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&auto=format&fit=crop&q=80",tag:"COMBO",rate:"4.8 (170)",desc:"Eyeliner + Mascara",daraz:DARAZ},
-{name:"Smart Watch Black Fitness",cat:"watch",season:"all",price:3999,old:6499,img:"https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=600&auto=format&fit=crop&q=80",tag:"BEST SELLER",rate:"4.9 (380)",desc:"Smart Watch Fitness",daraz:DARAZ},
-{name:"Minimal White Watch Unisex",cat:"watch",season:"all",price:4999,old:7999,img:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&auto=format&fit=crop&q=80",tag:"PREMIUM",rate:"4.9 (210)",desc:"Minimal White Watch",daraz:DARAZ},
-{name:"Classic Brown Chronograph Watch",cat:"watch",season:"all",price:3499,old:5499,img:"https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=600&auto=format&fit=crop&q=80",tag:"-36%",rate:"4.8 (170)",desc:"Brown Chronograph",daraz:DARAZ},
-{name:"Luxury Gold Watch Men",cat:"watch",season:"all",price:5499,old:8999,img:"https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=600&auto=format&fit=crop&q=80",tag:"LUXURY",rate:"4.9 (130)",desc:"Luxury Gold Watch",daraz:DARAZ},
-{name:"Gold Plated Classic Ring",cat:"jewelry",season:"all",price:1499,old:2499,img:"https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&auto=format&fit=crop&q=80",tag:"BEST SELLER",rate:"4.9 (290)",desc:"Gold Plated Ring",daraz:DARAZ},
-{name:"Pearl Classic Necklace",cat:"jewelry",season:"all",price:2999,old:4999,img:"https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=600&auto=format&fit=crop&q=80",tag:"ELEGANT",rate:"4.8 (160)",desc:"Pearl Necklace",daraz:DARAZ},
-{name:"Gold Traditional Jhumka",cat:"jewelry",season:"all",price:1299,old:1999,img:"https://images.unsplash.com/photo-1630019852942-f89202989a59?w=600&auto=format&fit=crop&q=80",tag:"TRENDING",rate:"4.9 (240)",desc:"Traditional Jhumka",daraz:DARAZ},
-{name:"Complete Bridal Jewelry Set",cat:"jewelry",season:"all",price:7999,old:12000,img:"https://images.unsplash.com/photo-1610694955371-d4a3e0ce4b52?w=600&auto=format&fit=crop&q=80",tag:"BRIDAL",rate:"4.9 (110)",desc:"Bridal Set",daraz:DARAZ},
-{name:"Wireless Headphones Black",cat:"audio",season:"all",price:2999,old:4999,img:"https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80",tag:"BEST SELLER",rate:"4.9 (410)",desc:"Wireless Headphones",daraz:DARAZ},
-{name:"Gaming Controller Wireless",cat:"gaming",season:"all",price:4999,old:7999,img:"https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=600&auto=format&fit=crop&q=80",tag:"GAMING",rate:"4.8 (190)",desc:"Gaming Controller",daraz:DARAZ},
-{name:"Earbuds Wireless Bluetooth",cat:"audio",season:"all",price:1999,old:3499,img:"https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600&auto=format&fit=crop&q=80",tag:"TRENDING",rate:"4.8 (280)",desc:"Wireless Earbuds",daraz:DARAZ},
+const cats=["All","Fashion","Beauty","Tech","Watch","Jewelry","Audio","Gaming","Home","Kids"];
+let curCat="All", cart=[];
+let products=[];
+// 45 Products - Har ek ki alag pic, sahi category
+const data=[
+["Fashion","Winter Hoodie Black Warm Unisex",1999,3299,"photo-1556821840-3a63f95609a7"],["Fashion","Winter Hoodie Oversized Grey",2199,3499,"photo-1509942774463-acf339cf87d5"],["Fashion","Leather Jacket Premium Black",4999,8999,"photo-1551028719-00167b16eac5"],["Fashion","Denim Jacket Classic Blue",3499,5999,"photo-1576995853123-5a10305d93c0"],["Fashion","Ladies Kurti Embroidered",1899,2999,"photo-1594633312681-425c7b97ccd1"],["Fashion","Ladies Shawl Pashmina Warm",1499,2499,"photo-1601924994987-69e26d50dc26"],["Fashion","Men T-Shirt Cotton White",999,1799,"photo-1521572163474-6864f9cf17ab"],["Fashion","Men Sweater Woolen Brown",2799,4499,"photo-1576871337622-98d48d1cf531"],["Fashion","Jeans Pants Slim Fit",2299,3999,"photo-1542272604-787c3835535d"],["Fashion","Sneakers Running Shoes",3299,5499,"photo-1542291026-7eec264c27ff"],["Fashion","Winter Cap & Gloves Set",899,1499,"photo-1576871337622-98d48d1cf531"],["Fashion","Formal Shirt Men",1799,2999,"photo-1596755094514-f87e34085b2c"],["Fashion","Ladies Handbag Premium",2499,4199,"photo-1584917865442-de89df76afd3"],["Fashion","Kids Winter Jacket",1999,3299,"photo-1519238263530-99bdd11df2ea"],["Fashion","Ladies Long Coat",3999,6999,"photo-1539533018447-63fcce2678e3"],
+["Beauty","Vitamin C Serum Glow",1299,2199,"photo-1620916566398-39f1143a93f7"],["Beauty","Hyaluronic Acid Serum",1499,2499,"photo-1620756236308-65c3ef5d25f9"],["Beauty","Makeup Kit 12 Pcs",2999,4999,"photo-1512496015851-a90fb38ba796"],["Beauty","Lipstick Matte Set 6",1199,1999,"photo-1586495777744-4413f21062fa"],["Beauty","Face Wash Neem & Aloe",799,1299,"photo-1556228720-195a672e8a03"],["Beauty","Hair Oil Argan Repair",1099,1899,"photo-1526947425960-945c6e72858f"],["Beauty","Night Cream Whitening",1399,2299,"photo-1570172619644-dfd03ed5d881"],["Beauty","Foundation Full Coverage",1699,2799,"photo-1631729371254-42c2892f0e6e"],["Beauty","Hair Dryer Professional",2499,3999,"photo-1522338242992-e1a54906a8da"],["Beauty","Perfume Oud Premium",2799,4499,"photo-1541643600914-78b084683601"],["Beauty","Eye Shadow Palette",1899,2999,"photo-1512496015851-a90fb38ba796"],["Beauty","Face Mask Pack 5",999,1699,"photo-1596755094514-f87e34085b2c"],["Beauty","Nail Polish Set",899,1499,"photo-1604654894610-df63bc536371"],["Beauty","Beard Oil Men",899,1499,"photo-1621605815971-fbc98d53b06d"],["Beauty","Sunscreen SPF 50",1199,1999,"photo-1556228720-195a672e8a03"],
+["Tech","Wireless Earbuds Pro",1999,3499,"photo-1590658268037-6bf12165a8df"],["Tech","Smart Watch Ultra",3999,6999,"photo-1546868871-7041f2a55e12"],["Tech","Bluetooth Speaker Mini",2499,4199,"photo-1608043152269-423dbba4e7e1"],["Tech","Power Bank 20000mAh",2999,4999,"photo-1609091839311-d5365f9ff1c5"],["Tech","Mobile Cover Premium",499,999,"photo-1601593346740-925612772716"],["Tech","Wireless Charger Fast",1499,2499,"photo-1583863788434-e58a36330cf0"],["Tech","Gaming Headphones RGB",3499,5999,"photo-1505740420928-5e560c06d30e"],["Tech","Smart Watch Fitness",2999,4999,"photo-1579586337278-3befd40fd17a"],["Tech","Air Purifier Home",5999,9999,"photo-1585771724684-38269d6639fd"],["Tech","Drone Camera 4K",12999,19999,"photo-1473968512647-3e447244af8f"],["Watch","Luxury Watch Gold",5999,9999,"photo-1524592094714-0f0654e20314"],["Watch","Smart Watch Black",3499,5999,"photo-1523275335684-37898b6baf30"],["Watch","Couple Watch Set",4999,7999,"photo-1524805444758-089113d48a6d"],["Jewelry","Gold Necklace Set",2999,4999,"photo-1515562141207-7a88fb7ce338"],["Jewelry","Earrings Pearl",1299,2199,"photo-1573408301185-9146fe634ad0"],["Audio","Earbuds Air Pro 2",1799,2999,"photo-1572569511254-d8f925fe2cbb"],["Audio","Home Speaker Bass",4499,7499,"photo-1545454675-3531b543be5d"],["Gaming","PS5 Controller",7999,11999,"photo-1606813907291-d86efa9b94db"],["Gaming","Gaming Mouse RGB",1999,3499,"photo-1527864550417-7fd91fc51a46"],["Home","LED Ring Light",1499,2499,"photo-1598550476439-6847785fcea6"]
 ];
-let cur='all'; let curSeason='all';
-let cart=JSON.parse(localStorage.getItem('urban_mart_cart')||'[]');
-let orders=JSON.parse(localStorage.getItem('urban_mart_orders')||'[]');
-let user=JSON.parse(localStorage.getItem('urban_mart_user')||'null');
-function save(){localStorage.setItem('urban_mart_cart',JSON.stringify(cart));localStorage.setItem('urban_mart_orders',JSON.stringify(orders));localStorage.setItem('urban_mart_user',JSON.stringify(user));localStorage.setItem('urban_mart_products',JSON.stringify(products));}
-let saved=JSON.parse(localStorage.getItem('urban_mart_products')||'null'); if(saved&&saved.length>50) products=saved;
-function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('page-'+id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});if(id=='cart')renderCart();if(id=='orders')renderOrders();if(id=='admin')renderAdmin();}
-function openModal(id){document.getElementById(id).classList.add('open')} function closeModal(id){document.getElementById(id).classList.remove('open')}
-function filterSeason(s){curSeason=s;document.querySelectorAll('.season-tabs button').forEach(b=>b.classList.remove('active'));document.getElementById('tab-'+s).classList.add('active');showPage('home');render();document.getElementById('products').scrollIntoView({behavior:'smooth'})}
-function filterCat(c,btn){cur=c;document.querySelectorAll('.cat-row button').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');showPage('home');render()}
-function cardHTML(p,idx){let off=Math.round((1-p.price/p.old)*100);let cls=p.tag=='WINTER'?'o':p.tag=='SUMMER'?'y':p.tag=='BEST SELLER'?'o':'g';return `<div class="card"><div class="card-img" onclick="openProduct(${idx})"><span class="tag ${cls}">${p.tag} • -${off}%</span><img src="${p.img}" loading="lazy" onerror="fix(this)"></div><div class="card-info"><small>${p.cat.toUpperCase()} • ${p.season=='winter'?'❄️ WINTER':p.season=='summer'?'☀️ SUMMER':'ALL SEASON'}</small><h3>${p.name}</h3><div class="stars">⭐⭐⭐⭐⭐ <span>${p.rate}</span></div><div><span class="price">Rs ${p.price.toLocaleString()}</span><span class="old">Rs ${p.old.toLocaleString()}</span><span class="disc">-${off}%</span></div><button class="add" onclick="addToCart(${idx})">Add to Cart 🛒</button><a class="buy-daraz" href="${p.daraz||DARAZ}" target="_blank">Buy on Daraz 🛒</a><a class="wa-order" href="https://wa.me/923341765911?text=Assalam-o-Alaikum URBAN MART! Mujhe ye chahiye: ${encodeURIComponent(p.name)} - Rs ${p.price}" target="_blank">Order on WhatsApp 💬</a></div></div>`}
-function getFiltered(){let q=(document.getElementById('searchInput').value||'').toLowerCase();let min=parseInt(document.getElementById('minPrice').value)||0;let max=parseInt(document.getElementById('maxPrice').value)||999999;let sort=document.getElementById('sortBy').value;let list=products.map((p,i)=>({...p,idx:i})).filter(p=>(cur=='all'||p.cat==cur)&&(curSeason=='all'||p.season==curSeason||p.season=='all')&&(p.name.toLowerCase().includes(q))&&p.price>=min&&p.price<=max);if(sort=='low')list.sort((a,b)=>a.price-b.price);if(sort=='high')list.sort((a,b)=>b.price-a.price);if(sort=='discount')list.sort((a,b)=>(1-b.price/b.old)-(1-a.price/a.old));return list}
-function render(){let list=getFiltered();document.getElementById('resultCount').innerText=list.length+' Products Found - URBAN MART 🛒';document.getElementById('grid').innerHTML=list.map(p=>cardHTML(p,p.idx)).join('')||'<p style="grid-column:1/-1;text-align:center;padding:30px;color:#999">Koi product nahi mila 😔</p>';let w=products.map((p,i)=>({...p,idx:i})).filter(p=>p.season=='winter').slice(0,10);document.getElementById('gridWinter').innerHTML=w.map(p=>cardHTML(p,p.idx)).join('');let s=products.map((p,i)=>({...p,idx:i})).filter(p=>p.season=='summer').slice(0,10);document.getElementById('gridSummer').innerHTML=s.map(p=>cardHTML(p,p.idx)).join('');let b=products.map((p,i)=>({...p,idx:i})).filter(p=>p.cat=='beauty').slice(0,10);document.getElementById('gridBeauty').innerHTML=b.map(p=>cardHTML(p,p.idx)).join('');let ww=products.map((p,i)=>({...p,idx:i})).filter(p=>p.cat=='watch'||p.cat=='jewelry').slice(0,10);document.getElementById('gridWatch').innerHTML=ww.map(p=>cardHTML(p,p.idx)).join('');updateUserUI();updateCartCount();}
-function openProduct(idx){let p=products[idx];let off=Math.round((1-p.price/p.old)*100);document.getElementById('productDetail').innerHTML=`<img src="${p.img}" onerror="fix(this)" style="width:100%;border-radius:14px;aspect-ratio:1/1;object-fit:cover"><small style="color:#888;font-weight:700">${p.cat.toUpperCase()} • ${p.season.toUpperCase()} • URBAN MART</small><h2 style="margin:6px 0">${p.name}</h2><div class="stars">⭐⭐⭐⭐⭐ ${p.rate}</div><h2 style="color:#f85606;margin:8px 0">Rs ${p.price.toLocaleString()} <s style="color:#999;font-size:15px">Rs ${p.old.toLocaleString()}</s> <span style="font-size:12px;background:#fff0ed;color:#f85606;padding:4px 8px;border-radius:6px">-${off}% OFF</span></h2><p style="color:#555;font-size:14px;line-height:1.6">${p.desc}<br>100% Original • Daraz Verified • Best Quality</p><p style="font-size:13px;color:#666;margin-top:8px">🚚 COD Available • ↩️ 7-Day Return • 🛡️ 100% Original • URBAN MART</p><button class="add" onclick="addToCart(${idx});closeModal('productModal')">Add to Cart 🛒</button><a class="buy-daraz" href="${p.daraz||DARAZ}" target="_blank">Buy on Daraz 🛒</a><a class="wa-order" href="https://wa.me/923341765911?text=Assalam-o-Alaikum URBAN MART! Mujhe ye chahiye: ${encodeURIComponent(p.name)}" target="_blank">Order on WhatsApp 💬</a>`;openModal('productModal')}
-function addToCart(idx){let p=products[idx];let ex=cart.find(c=>c.name==p.name);if(ex)ex.qty++;else cart.push({name:p.name,price:p.price,img:p.img,qty:1,daraz:p.daraz});save();updateCartCount();alert('✅ '+p.name+' Cart me add ho gaya! - URBAN MART')}
-function updateCartCount(){document.getElementById('cartCount').innerText=cart.reduce((s,c)=>s+c.qty,0)}
-function renderCart(){if(cart.length==0){document.getElementById('cartList').innerHTML='<p style="padding:20px;text-align:center;color:#999">Cart khali hai 😔</p>';document.getElementById('cartTotal').innerHTML='';return}let html='';let sub=0;cart.forEach((c,i)=>{let t=c.price*c.qty;sub+=t;html+=`<div class="cart-item"><img src="${c.img}" onerror="fix(this)"><div style="flex:1"><b>${c.name}</b><p style="font-size:13px;color:#666">Rs ${c.price.toLocaleString()} x ${c.qty} = Rs ${t.toLocaleString()}</p></div><button class="qty-btn" onclick="changeQty(${i},-1)">-</button><b>${c.qty}</b><button class="qty-btn" onclick="changeQty(${i},1)">+</button><button style="border:none;background:#fee;color:#dc2626;padding:8px 12px;border-radius:20px;font-weight:700;margin-left:6px" onclick="removeCart(${i})">Remove</button></div>`});document.getElementById('cartList').innerHTML=html;let del=sub>3000?0:250;document.getElementById('cartTotal').innerHTML=`<div style="background:#fff;padding:14px;border-radius:12px;margin-top:10px;border:1px solid #eee"><p>Subtotal: Rs ${sub.toLocaleString()}</p><p>Delivery: ${del==0?'FREE':'Rs '+del}</p><h3>Total: Rs ${(sub+del).toLocaleString()}</h3><button class="btn-orange" style="width:100%;padding:14px;margin-top:10px" onclick="goCheckout()">Proceed to Checkout - COD →</button></div>`}
-function changeQty(i,d){cart[i].qty+=d;if(cart[i].qty<=0)cart.splice(i,1);save();renderCart();updateCartCount()}
-function removeCart(i){cart.splice(i,1);save();renderCart();updateCartCount()}
-function goCheckout(){if(cart.length==0){alert('Cart khali hai');return}if(!user){alert('Pehle Login karo!');openModal('loginModal');return}showPage('checkout');let sub=cart.reduce((s,c)=>s+c.price*c.qty,0);let del=sub>3000?0:250;document.getElementById('checkoutSummary').innerHTML=`Items: ${cart.length} | Subtotal: Rs ${sub.toLocaleString()}<br>Delivery: ${del==0?'FREE':'Rs '+del}<br><b>Total (COD): Rs ${(sub+del).toLocaleString()}</b>`;document.getElementById('coName').value=user.name||'';document.getElementById('coPhone').value=user.phone||''}
-function placeOrder(){let name=document.getElementById('coName').value.trim();let phone=document.getElementById('coPhone').value.trim();let addr=document.getElementById('coAddress').value.trim();let city=document.getElementById('coCity').value.trim();if(!name||!phone||!addr){alert('Naam, Phone, Address likho!');return}let sub=cart.reduce((s,c)=>s+c.price*c.qty,0);let del=sub>3000?0:250;let pay=document.querySelector('input[name="pay"]:checked').value;let order={no:'UM-'+Math.floor(10000+Math.random()*89999),name,phone,address:addr,city,pay,total:sub+del,status:'Pending',date:new Date().toLocaleDateString(),items:[...cart]};orders.unshift(order);cart=[];save();updateCartCount();alert('🎉 URBAN MART - Order Ho Gaya! '+order.no);showPage('orders')}
-function renderOrders(){if(!user){document.getElementById('ordersList').innerHTML='<p style="padding:20px;text-align:center">Pehle Login karo! <button class="btn-orange" onclick="openModal(\'loginModal\')">Login</button></p>';return}if(orders.length==0){document.getElementById('ordersList').innerHTML='<p style="padding:20px;text-align:center;color:#999">Abhi koi order nahi</p>';return}let html='';orders.forEach(o=>{let steps=['Pending','Processing','Shipped','Delivered'];let ci=steps.indexOf(o.status);if(ci<0)ci=0;let th=steps.map((s,si)=>`<div class="${si<=ci?'on':''}">${si<ci?'✅':si==ci?'📦':'⏳'}<br>${s}</div>`).join('');html+=`<div class="order-card"><b>${o.no} - URBAN MART</b> <span style="background:#fef3c7;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:700">${o.status}</span><p style="font-size:13px;color:#666;margin-top:6px">${o.date} | ${o.name} | ${o.phone} | ${o.city} | ${o.pay} | Rs ${o.total.toLocaleString()}</p><p style="font-size:13px">${o.items.map(it=>`• ${it.name} x ${it.qty}`).join('<br>')}</p><div class="track">${th}</div></div>`});document.getElementById('ordersList').innerHTML=html}
-function doLogin(){let name=document.getElementById('loginName').value.trim();let phone=document.getElementById('loginPhone').value.trim();if(!name||!phone){alert('Naam aur Phone likho!');return}if(name.toLowerCase()=='admin'&&phone=='1234'){user={name:'Admin - URBAN MART',phone:'1234',isAdmin:true};save();closeModal('loginModal');showPage('admin');render();return}user={name,phone,isAdmin:false};save();closeModal('loginModal');alert('Welcome '+name+'! 🎉 URBAN MART');updateUserUI()}
-function updateUserUI(){if(user){document.getElementById('userLabel').innerText='Hi, '+user.name+(user.isAdmin?' 👑':'');document.getElementById('loginBtn').innerText='Logout';document.getElementById('loginBtn').onclick=()=>{user=null;save();updateUserUI();alert('Logout ho gaya')}}else{document.getElementById('userLabel').innerText='';document.getElementById('loginBtn').innerText='Login';document.getElementById('loginBtn').onclick=()=>openModal('loginModal')}}
-function openAdmin(){if(user&&user.isAdmin){showPage('admin');return}alert('Admin Login: admin / 1234');openModal('loginModal')}
-function addProduct(){let name=document.getElementById('newName').value.trim();let cat=document.getElementById('newCat').value;let season=document.getElementById('newSeason').value;let price=parseInt(document.getElementById('newPrice').value);let old=parseInt(document.getElementById('newOld').value)||price+500;let img=document.getElementById('newImg').value.trim()||FB;let daraz=document.getElementById('newDaraz').value.trim()||DARAZ;let tag=document.getElementById('newTag').value.trim()||'NEW';if(!name||!price){alert('Naam aur Price likho!');return}products.unshift({name,cat,season,price,old,img,tag,rate:'4.9 (10)',desc:'New Product from URBAN MART',daraz});save();render();renderAdmin();alert('✅ Product Add Ho Gaya!');document.getElementById('newName').value=''}
-function deleteProduct(idx){if(!confirm('Delete karna hai?'))return;products.splice(idx,1);save();render();renderAdmin()}
-function renderAdmin(){let rev=orders.reduce((s,o)=>s+o.total,0);document.getElementById('stOrders').innerText=orders.length;document.getElementById('stRevenue').innerText='Rs '+rev.toLocaleString();document.getElementById('stProducts').innerText=products.length;let oh='';orders.forEach((o,oi)=>{oh+=`<div class="order-card"><b>${o.no}</b> - ${o.name} - Rs ${o.total.toLocaleString()} - ${o.status}<br><select onchange="changeStatus(${oi},this.value)" style="padding:8px;border-radius:8px;border:1px solid #ddd;margin-top:8px"><option ${o.status=='Pending'?'selected':''}>Pending</option><option ${o.status=='Processing'?'selected':''}>Processing</option><option ${o.status=='Shipped'?'selected':''}>Shipped</option><option ${o.status=='Delivered'?'selected':''}>Delivered</option><option ${o.status=='Cancelled'?'selected':''}>Cancelled</option></select></div>`});document.getElementById('adminOrders').innerHTML=oh||'<p style="color:#999">Koi order nahi</p>';let ph='<table class="table"><tr><th>Product</th><th>Season</th><th>Price</th><th>Action</th></tr>'+products.map((p,i)=>`<tr><td><img src="${p.img}" onerror="fix(this)" style="width:40px;height:40px;object-fit:cover;border-radius:6px"> ${p.name}</td><td>${p.season}</td><td>Rs ${p.price}</td><td><button onclick="deleteProduct(${i})" style="background:#fee;color:#dc2626;border:none;padding:6px 12px;border-radius:20px;font-weight:700">Delete</button></td></tr>`).join('')+'</table>';document.getElementById('adminProducts').innerHTML=ph}
-function changeStatus(oi,val){orders[oi].status=val;save();renderAdmin();renderOrders();alert('Status '+val+' ho gaya!')}
-render();
+products=data.map((d,i)=>({id:i,cat:d[0],name:d[1],price:d[2],old:d[3],img:`https://images.unsplash.com/${d[4]}?w=600&q=80`,rating:(4.5+Math.random()*0.5).toFixed(1),sold:Math.floor(100+Math.random()*400)}));
+
+function renderCats(){
+  document.getElementById('cats').innerHTML=cats.map(c=>`<button class="cat ${c===curCat?'active':''}" onclick="filterCat('${c}')">${c==='All'?'🛍️ All':c}</button>`).join('');
+}
+function filterCat(c){curCat=c;document.getElementById('secTitle').innerText=c==='All'?'All Collections • 45 Products':c+' Collection';renderCats();render();window.scrollTo({top:650,behavior:'smooth'});}
+function doSearch(){render();}
+function render(){
+  let q=document.getElementById('searchInput').value.toLowerCase();
+  let min=parseInt(document.getElementById('minP').value)||0;
+  let max=parseInt(document.getElementById('maxP').value)||999999;
+  let sort=document.getElementById('sort').value;
+  let list=products.filter(p=>(curCat==='All'||p.cat===curCat)&&p.name.toLowerCase().includes(q)&&p.price>=min&&p.price<=max);
+  if(sort==='low')list.sort((a,b)=>a.price-b.price); if(sort==='high')list.sort((a,b)=>b.price-a.price); if(sort==='pop')list.sort((a,b)=>b.sold-a.sold);
+  document.getElementById('countLabel').innerText=list.length+' Products Found - URBAN MART 🛒';
+  document.getElementById('grid').innerHTML=list.map(p=>`
+  <div class="card"><img src="${p.img}" loading="lazy"><div class="card-body"><small>${p.cat.toUpperCase()} • WINTER</small><h3>${p.name}</h3><div class="stars">⭐⭐⭐⭐⭐ ${p.rating} (${p.sold})</div><div><span class="price">Rs ${p.price.toLocaleString()}</span> <span class="old">Rs ${p.old.toLocaleString()}</span> <span class="off">-${Math.round((1-p.price/p.old)*100)}%</span></div><button class="add" onclick="addCart(${p.id})">Add to Cart 🛒</button><button class="buy" onclick="buyNow(${p.id})">Buy Now →</button></div></div>`).join('')||'<h3 style="padding:30px">No product found. Try another search.</h3>';
+}
+function addCart(id){cart.push(products.find(p=>p.id===id));updateCart();alert('Added to Cart!');}
+function buyNow(id){addCart(id);toggleCart();}
+function updateCart(){
+  document.getElementById('cartCount').innerText=cart.length;
+  let total=cart.reduce((s,p)=>s+p.price,0);
+  document.getElementById('cartTotal').innerText='Total: Rs '+total.toLocaleString();
+  document.getElementById('cartItems').innerHTML=cart.map((p,i)=>`<div class="cart-item"><img src="${p.img}"><div><b>${p.name}</b><br>Rs ${p.price} <button onclick="removeItem(${i})">Remove</button></div></div>`).join('')||'Cart is empty';
+}
+function removeItem(i){cart.splice(i,1);updateCart();}
+function toggleCart(){document.getElementById('cartDrawer').classList.toggle('open');}
+function checkout(){if(!cart.length)return alert('Cart empty');alert('Order Placed! Cash on Delivery. Hum aap se rabta karenge.');cart=[];updateCart();toggleCart();}
+document.getElementById('searchInput').addEventListener('keyup',e=>{if(e.key==='Enter')doSearch();else render();});
+renderCats();render();
 </script>
 </body>
 </html>
