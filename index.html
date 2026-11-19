@@ -1,108 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Royal Avenue - Online Shopping in Vehari</title>
-<link rel="stylesheet" href="style.css">
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Urban Mart - Online Shopping in Vehari</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 </head>
 <body>
 
-<header>
-  <div class="logo" onclick="location.reload()">👑 Royal <span>Avenue</span></div>
-  <input type="text" id="searchInput" placeholder="Search in Royal Avenue..." oninput="searchProducts(this.value)">
-  <div class="header-btns">
-    <button onclick="openTrack()">Track Order</button>
-    <button onclick="openCart()">🛒 Cart (<span id="cartCount">0</span>)</button>
-    <div id="loggedOut">
-      <button onclick="openAuth()">Login / Sign Up</button>
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <span>Free Delivery in Vehari on Orders Over Rs. 5,000</span>
+    <span>
+      <a onclick="openTrack()">Track Order</a> • 
+      <a onclick="openInfo('shipping')">Help</a>
+    </span>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="head">
+      <div class="logo" onclick="goHome()">
+        <div class="badge">UM</div>
+        <div>
+          <b>URBAN MART</b>
+          <span>VEHARI • PREMIUM</span>
+        </div>
+      </div>
+
+      <div class="search">
+        <input id="searchInput" placeholder="Search - iPhone, Watch, Perfume..." oninput="doSearch()">
+        <button onclick="doSearch()">Search</button>
+      </div>
+
+      <div class="head-right">
+        <button onclick="openCart()">🛒 Cart <span id="cartCount">0</span></button>
+        <span id="loggedOut">
+          <button class="dark" onclick="openAuth('login')">Login</button>
+          <button class="gold" onclick="openAuth('register')">Sign Up</button>
+        </span>
+        <span id="loggedIn" class="hidden">
+          <button onclick="openDashboard()">👤 My Account</button>
+          <button onclick="logout()">Logout</button>
+        </span>
+      </div>
     </div>
-    <div id="loggedIn" style="display:none">
-      <button onclick="openDashboard()" style="cursor:pointer;position:relative;z-index:999">My Account</button>
-      <button onclick="logout()">Logout</button>
+
+    <nav id="catNav">
+      <button class="on" onclick="filterCat('All', this)">All</button>
+      <button onclick="filterCat('Mobiles', this)">Mobiles</button>
+      <button onclick="filterCat('Fashion', this)">Fashion</button>
+      <button onclick="filterCat('Watches', this)">Watches</button>
+      <button onclick="filterCat('Health & Beauty', this)">Health & Beauty</button>
+      <button onclick="filterCat('Shoes', this)">Shoes</button>
+      <button onclick="filterCat('Home & Living', this)">Home & Living</button>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <section class="hero">
+      <div class="hero-main">
+        <span class="tag">UP TO 50% OFF • LIMITED TIME</span>
+        <h1>Online Shopping<br>in Vehari</h1>
+        <p>Mobiles, Fashion, Watches, Health & Beauty, Shoes, Home & Living.</p>
+        <button class="gold" onclick="filterCat('All')">Shop Now →</button>
+      </div>
+      <div class="hero-side">
+        <div class="mini" onclick="filterCat('Watches')">
+          <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=800&q=80">
+          <div><span>FROM Rs. 4,999</span><b>Watches Collection</b></div>
+        </div>
+        <div class="mini" onclick="filterCat('Health & Beauty')">
+          <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=800&q=80">
+          <div><span>FROM Rs. 1,899</span><b>Health & Beauty</b></div>
+        </div>
+      </div>
+    </section>
+
+    <h2>Categories</h2>
+    <div id="catGrid" class="cat-row"></div>
+
+    <h2 id="gridTitle">Just For You</h2>
+    <div id="productGrid" class="grid"></div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="foot">
+      <div>
+        <b>URBAN MART</b>
+        <p>Vehari's premium shopping destination. Verified products, fair prices, careful delivery.<br>Rating: 4.9 / 5 • Since 2026</p>
+        <div class="news">
+          <input id="newsEmail" placeholder="Enter email for offers...">
+          <button onclick="subscribe()">Join</button>
+        </div>
+        <small>Join to receive code URBAN10 - Rs. 500 OFF.</small>
+      </div>
+      <div>
+        <h4>SHOP</h4>
+        <a onclick="filterCat('Mobiles')">Mobiles</a>
+        <a onclick="filterCat('Fashion')">Fashion</a>
+        <a onclick="filterCat('Watches')">Watches</a>
+        <a onclick="filterCat('Health & Beauty')">Health & Beauty</a>
+        <a onclick="filterCat('Shoes')">Shoes</a>
+        <a onclick="filterCat('Home & Living')">Home & Living</a>
+      </div>
+      <div>
+        <h4>CUSTOMER CARE</h4>
+        <a onclick="openTrack()">Track Your Order</a>
+        <a onclick="openInfo('shipping')">Shipping Information</a>
+        <a onclick="openInfo('returns')">Returns & Refunds</a>
+        <a onclick="openInfo('privacy')">Privacy Policy</a>
+        <a onclick="openInfo('terms')">Terms & Conditions</a>
+        <a onclick="openInfo('sell')">Sell on Urban Mart</a>
+      </div>
+      <div>
+        <h4>CONTACT US</h4>
+        <p>Main Bazaar Road, Vehari<br>Phone: 0334-1765911<br>Email: support@urbanmart.pk<br><a href="https://wa.me/923341765911" target="_blank">Chat on WhatsApp</a></p>
+        <button onclick="openInfo('contact')">View Full Contact Details</button>
+      </div>
+    </div>
+    <div class="fb">
+      <span>© 2026 Urban Mart. All Rights Reserved.</span>
+      <span>COD • JazzCash • EasyPaisa</span>
+    </div>
+  </footer>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal hidden">
+    <div class="mbox">
+      <button class="x" onclick="closeModal()">✕</button>
+      <div id="modalBody"></div>
     </div>
   </div>
-</header>
 
-<div class="cats">
-  <button onclick="filterCat('All')">All</button>
-  <button onclick="filterCat('Mobiles')">Mobiles</button>
-  <button onclick="filterCat('Fashion')">Fashion</button>
-  <button onclick="filterCat('Watches')">Watches</button>
-  <button onclick="filterCat('Health & Beauty')">Health & Beauty</button>
-  <button onclick="filterCat('Shoes')">Shoes</button>
-  <button onclick="filterCat('Home & Living')">Home & Living</button>
-</div>
-
-<div class="hero" style="background-image:url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&q=80'); background-size:cover; background-position:center;">
-  <div class="hero-text">
-    <span class="badge">UP TO 50% OFF • LIMITED TIME</span>
-    <h1>Online Shopping<br>in Vehari</h1>
-    <p>Mobiles, Fashion, Watches, Health & Beauty, Shoes, Home & Living</p>
-    <button onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Shop Now →</button>
-  </div>
-</div>
-
-<h2 class="sec-title">Featured Products</h2>
-<div id="products" class="grid"></div>
-
-<footer>© 2026 Royal Avenue - Made by Huzaifa Tariq | Vehari, Pakistan</footer>
-
-<!-- CART MODAL -->
-<div id="cartModal" class="modal"><div class="modal-box">
-  <span class="close" onclick="closeModal('cartModal')">×</span>
-  <h3>Your Cart</h3><div id="cartItems"></div>
-  <h3 id="cartTotal"></h3>
-  <button class="big-btn" onclick="openCheckout()">Checkout</button>
-</div></div>
-
-<!-- CHECKOUT MODAL -->
-<div id="checkoutModal" class="modal"><div class="modal-box">
-  <span class="close" onclick="closeModal('checkoutModal')">×</span>
-  <h3>Checkout</h3>
-  <input id="custName" placeholder="Full Name">
-  <input id="custPhone" placeholder="Phone Number">
-  <input id="custAddress" placeholder="Full Address - Vehari">
-  <label><input type="radio" name="pay" value="COD" checked onclick="toggleTID()"> Cash on Delivery</label><br>
-  <label><input type="radio" name="pay" value="EasyPaisa" onclick="toggleTID()"> EasyPaisa</label>
-  <div id="easyBox" style="display:none">
-    <p><b>Account Title:</b> Huzaifa Tariq<br><b>Number:</b> 0334-1765911<br>Rs. <span id="payAmount"></span> send karein</p>
-    <input id="tidInput" placeholder="Transaction ID (TID)">
-  </div>
-  <button class="big-btn" onclick="placeOrder()">Place Order</button>
-</div></div>
-
-<!-- AUTH MODAL -->
-<div id="authModal" class="modal"><div class="modal-box">
-  <span class="close" onclick="closeModal('authModal')">×</span>
-  <h3>Login / Sign Up</h3>
-  <input id="authEmail" placeholder="Email">
-  <input id="authPass" type="password" placeholder="Password">
-  <button class="big-btn" onclick="login()">Login</button>
-  <button class="big-btn outline" onclick="signup()">Create Account</button>
-</div></div>
-
-<!-- TRACK MODAL -->
-<div id="trackModal" class="modal"><div class="modal-box">
-  <span class="close" onclick="closeModal('trackModal')">×</span>
-  <h3>Track Your Order</h3>
-  <input id="trackId" placeholder="Order ID e.g. RA-1234">
-  <button class="big-btn" onclick="trackOrder()">Track</button>
-  <div id="trackResult"></div>
-</div></div>
-
-<!-- DASHBOARD MODAL -->
-<div id="dashModal" class="modal"><div class="modal-box">
-  <span class="close" onclick="closeModal('dashModal')">×</span>
-  <h3>My Account - Royal Avenue</h3>
-  <p id="dashEmail"></p>
-  <h4>My Orders</h4>
-  <div id="myOrders"></div>
-</div></div>
-
-<script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
