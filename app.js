@@ -4,16 +4,13 @@
 // ============================================
 
 // ===== 1. FIREBASE CONFIG =====
-// Firebase Console -> Project Settings -> Web App se copy karo
-// Yahan apni real keys paste karo
-
 const firebaseConfig = {
-  apiKey: "PASTE_YOUR_API_KEY",
-  authDomain: "PASTE_YOUR_PROJECT.firebaseapp.com",
-  projectId: "PASTE_YOUR_PROJECT_ID",
-  storageBucket: "PASTE_YOUR_PROJECT.appspot.com",
-  messagingSenderId: "PASTE_ID",
-  appId: "PASTE_APP_ID"
+  apiKey: "AIzaSyBlf_w6DPQdlIItPshoAAX7D5guWnHzZOU",
+  authDomain: "urban-mart-e5c0a.firebaseapp.com",
+  projectId: "urban-mart-e5c0a",
+  storageBucket: "urban-mart-e5c0a.firebasestorage.app",
+  messagingSenderId: "962504542587",
+  appId: "1:962504542587:web:57f94ff24b3c8680cad5de"
 };
 
 firebase.initializeApp(firebaseConfig);
