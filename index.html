@@ -3,39 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Urban Mart - Online Shopping in Vehari</title>
+  <title>Royal Avenue - Online Shopping in Vehari</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 </head>
 <body>
-
-  <!-- TOP BAR -->
   <div class="topbar">
     <span>Free Delivery in Vehari on Orders Over Rs. 5,000</span>
-    <span>
-      <a onclick="openTrack()">Track Order</a> • 
-      <a onclick="openInfo('shipping')">Help</a>
-    </span>
+    <span><a onclick="openTrack()">Track Order</a> • <a onclick="openInfo('shipping')">Help</a></span>
   </div>
-
-  <!-- HEADER -->
   <header>
     <div class="head">
       <div class="logo" onclick="goHome()">
-        <div class="badge">UM</div>
-        <div>
-          <b>URBAN MART</b>
-          <span>VEHARI • PREMIUM</span>
-        </div>
+        <div class="badge">RA</div>
+        <div><b>ROYAL AVENUE</b><span>VEHARI • PREMIUM</span></div>
       </div>
-
       <div class="search">
         <input id="searchInput" placeholder="Search - iPhone, Watch, Perfume..." oninput="doSearch()">
         <button onclick="doSearch()">Search</button>
       </div>
-
       <div class="head-right">
         <button onclick="openCart()">🛒 Cart <span id="cartCount">0</span></button>
         <span id="loggedOut">
@@ -48,25 +36,22 @@
         </span>
       </div>
     </div>
-
     <nav id="catNav">
       <button class="on" onclick="filterCat('All', this)">All</button>
-      <button onclick="filterCat('Mobiles', this)">Mobiles</button>
       <button onclick="filterCat('Fashion', this)">Fashion</button>
-      <button onclick="filterCat('Watches', this)">Watches</button>
-      <button onclick="filterCat('Health & Beauty', this)">Health & Beauty</button>
       <button onclick="filterCat('Shoes', this)">Shoes</button>
-      <button onclick="filterCat('Home & Living', this)">Home & Living</button>
+      <button onclick="filterCat('Watches', this)">Watches</button>
+      <button onclick="filterCat('Home', this)">Home</button>
+      <button onclick="filterCat('Beauty', this)">Beauty</button>
+      <button onclick="filterCat('Tech', this)">Tech</button>
     </nav>
   </header>
-
-  <!-- MAIN -->
   <main>
     <section class="hero">
       <div class="hero-main">
         <span class="tag">UP TO 50% OFF • LIMITED TIME</span>
         <h1>Online Shopping<br>in Vehari</h1>
-        <p>Mobiles, Fashion, Watches, Health & Beauty, Shoes, Home & Living.</p>
+        <p>Fashion, Shoes, Watches, Home, Beauty, Tech.</p>
         <button class="gold" onclick="filterCat('All')">Shop Now →</button>
       </div>
       <div class="hero-side">
@@ -74,40 +59,36 @@
           <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=800&q=80">
           <div><span>FROM Rs. 4,999</span><b>Watches Collection</b></div>
         </div>
-        <div class="mini" onclick="filterCat('Health & Beauty')">
+        <div class="mini" onclick="filterCat('Beauty')">
           <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=800&q=80">
-          <div><span>FROM Rs. 1,899</span><b>Health & Beauty</b></div>
+          <div><span>FROM Rs. 1,899</span><b>Beauty Collection</b></div>
         </div>
       </div>
     </section>
-
     <h2>Categories</h2>
     <div id="catGrid" class="cat-row"></div>
-
     <h2 id="gridTitle">Just For You</h2>
     <div id="productGrid" class="grid"></div>
   </main>
-
-  <!-- FOOTER -->
   <footer>
     <div class="foot">
       <div>
-        <b>URBAN MART</b>
+        <b>ROYAL AVENUE</b>
         <p>Vehari's premium shopping destination. Verified products, fair prices, careful delivery.<br>Rating: 4.9 / 5 • Since 2026</p>
         <div class="news">
           <input id="newsEmail" placeholder="Enter email for offers...">
           <button onclick="subscribe()">Join</button>
         </div>
-        <small>Join to receive code URBAN10 - Rs. 500 OFF.</small>
+        <small>Join to receive code ROYAL10 - Rs. 500 OFF.</small>
       </div>
       <div>
         <h4>SHOP</h4>
-        <a onclick="filterCat('Mobiles')">Mobiles</a>
         <a onclick="filterCat('Fashion')">Fashion</a>
-        <a onclick="filterCat('Watches')">Watches</a>
-        <a onclick="filterCat('Health & Beauty')">Health & Beauty</a>
         <a onclick="filterCat('Shoes')">Shoes</a>
-        <a onclick="filterCat('Home & Living')">Home & Living</a>
+        <a onclick="filterCat('Watches')">Watches</a>
+        <a onclick="filterCat('Home')">Home</a>
+        <a onclick="filterCat('Beauty')">Beauty</a>
+        <a onclick="filterCat('Tech')">Tech</a>
       </div>
       <div>
         <h4>CUSTOMER CARE</h4>
@@ -116,28 +97,25 @@
         <a onclick="openInfo('returns')">Returns & Refunds</a>
         <a onclick="openInfo('privacy')">Privacy Policy</a>
         <a onclick="openInfo('terms')">Terms & Conditions</a>
-        <a onclick="openInfo('sell')">Sell on Urban Mart</a>
+        <a onclick="openInfo('sell')">Sell on Royal Avenue</a>
       </div>
       <div>
         <h4>CONTACT US</h4>
-        <p>Main Bazaar Road, Vehari<br>Phone: 0334-1765911<br>Email: support@urbanmart.pk<br><a href="https://wa.me/923341765911" target="_blank">Chat on WhatsApp</a></p>
+        <p>Main Bazaar Road, Vehari<br>Phone: 0334-1765911<br>Email: support@royalavenue.pk<br><a href="https://wa.me/923341765911" target="_blank">Chat on WhatsApp</a></p>
         <button onclick="openInfo('contact')">View Full Contact Details</button>
       </div>
     </div>
     <div class="fb">
-      <span>© 2026 Urban Mart. All Rights Reserved.</span>
+      <span>© 2026 Royal Avenue. All Rights Reserved.</span>
       <span>COD • JazzCash • EasyPaisa</span>
     </div>
   </footer>
-
-  <!-- MODAL -->
   <div id="modal" class="modal hidden">
     <div class="mbox">
       <button class="x" onclick="closeModal()">✕</button>
       <div id="modalBody"></div>
     </div>
   </div>
-
   <script src="app.js"></script>
 </body>
 </html>
