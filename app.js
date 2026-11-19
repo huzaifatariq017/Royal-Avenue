@@ -1,9 +1,6 @@
 // ============================================
-// URBAN MART - APP.JS - COMPLETE - FIXED
-// Firebase Auth + Firestore + Cart + Orders
+// ROYAL AVENUE - APP.JS - COMPLETE
 // ============================================
-
-// ===== 1. FIREBASE CONFIG =====
 const firebaseConfig = {
   apiKey: "AIzaSyBlf_w6DPQdlIItPshoAAX7D5guWnHzZOU",
   authDomain: "urban-mart-e5c0a.firebaseapp.com",
@@ -12,69 +9,63 @@ const firebaseConfig = {
   messagingSenderId: "962504542587",
   appId: "1:962504542587:web:57f94ff24b3c8680cad5de"
 };
-
 try { firebase.initializeApp(firebaseConfig); } catch(e) {}
 const auth = firebase.auth();
 const db = firebase.firestore();
 
-// ===== 2. PRODUCTS - 30 PRODUCTS =====
 const U = '?w=900&q=80';
 let pid = 1;
 function P(n, c, pr, old, img) {
   return { id: pid++, name: n, cat: c, price: pr, old: old, img: 'https://images.unsplash.com/' + img + U };
 }
 const products = [
-  P('Apple iPhone 16 Pro Max - 256GB', 'Mobiles', 185999, 219999, 'photo-1592750475338-74b7b21085ab'),
-  P('Samsung Galaxy S24 Ultra - 512GB', 'Mobiles', 165999, 189999, 'photo-1610945265064-0e34e5519bbf'),
-  P('Google Pixel 9 Pro - 256GB', 'Mobiles', 98999, 119999, 'photo-1598327105666-5b89351aff97'),
-  P('Wireless Earbuds Pro - Noise Cancelling', 'Mobiles', 4999, 7999, 'photo-1590658268037-6bf12165a8df'),
-  P('Wireless Headphones - Premium Sound', 'Mobiles', 6999, 9999, 'photo-1505740420928-5e560c06d30e'),
-  P('Women Premium Fashion Dress - Floral', 'Fashion', 3499, 4999, 'photo-1595777457583-95e059d581b8'),
-  P('Men Premium Casual Shirt - Slim Fit', 'Fashion', 2999, 4499, 'photo-1596755094514-f87e34085b2c'),
-  P('Summer Fashion Dress - Floral Print', 'Fashion', 3999, 5499, 'photo-1572804013309-59a88b7e92f1'),
-  P('Elegant Evening Dress - Red', 'Fashion', 4499, 5999, 'photo-1566174053879-31528523f8ae'),
-  P('Casual Fashion Collection - Everyday', 'Fashion', 2799, 3999, 'photo-1521572163474-6864f9cf17ab'),
+  // FASHION - 5
+  P('Premium Wool Overcoat - Men Classic', 'Fashion', 7999, 11999, 'photo-1543076447-215ad9ba6923'),
+  P('Elegant Silk Evening Dress - Women', 'Fashion', 5999, 8999, 'photo-1595777457583-95e059d581b8'),
+  P('Classic Premium White Shirt - Slim Fit', 'Fashion', 2999, 4499, 'photo-1596755094514-f87e34085b2c'),
+  P('Luxury Leather Jacket - Black Premium', 'Fashion', 8999, 12999, 'photo-1551028719-00167b16eac5'),
+  P('Premium Denim Jacket - Everyday Style', 'Fashion', 4499, 6499, 'photo-1542272604-787c3835535d'),
+  // SHOES - 5
+  P('Red Nike Style Sneakers - Running', 'Shoes', 7999, 11999, 'photo-1542291026-7eec264c27ff'),
+  P('White Premium Sneakers - Everyday Comfort', 'Shoes', 4999, 7499, 'photo-1595950653106-6c9ebd614d3a'),
+  P('Sport Sneakers - Stylish Lightweight', 'Shoes', 6499, 8999, 'photo-1560769629-975ec94e6a86'),
+  P('Running Shoes - Premium Comfort', 'Shoes', 5999, 8499, 'photo-1600185365926-3a2ce3cdb9eb'),
+  P('Leather Boots - Brown Ankle Premium', 'Shoes', 6999, 9999, 'photo-1614252369475-531eba835eb1'),
+  // WATCHES - 5
   P('Luxury Gold Watch - Premium Dial', 'Watches', 6999, 9999, 'photo-1524805444758-089113d48a6d'),
   P('Classic Gold Watch - Leather Strap', 'Watches', 6499, 8999, 'photo-1522312346375-d1a52e2b99b3'),
   P('Silver Classic Watch - Stainless Steel', 'Watches', 5499, 7999, 'photo-1434056886845-dac89ffe9b56'),
   P('Men Steel Chronograph Watch - Silver', 'Watches', 7499, 10999, 'photo-1547996160-81dfa63595aa'),
   P('Modern Minimal Watch - Black Dial', 'Watches', 5999, 8499, 'photo-1622434641406-a158123450f9'),
-  P('Luxury Perfume - Pink Bottle 100ml', 'Health & Beauty', 3999, 5999, 'photo-1541643600914-78b084683601'),
-  P('Premium Perfume - Oud 100ml', 'Health & Beauty', 4499, 6499, 'photo-1594035910387-fea47794261f'),
-  P('Makeup Kit - Beauty Collection 12 Pcs', 'Health & Beauty', 2999, 4499, 'photo-1512496015851-a90fb38ba796'),
-  P('Skin Care Set - Glow 3 Pcs', 'Health & Beauty', 2499, 3999, 'photo-1620916566398-39f1143ab7be'),
-  P('Makeup Brush Set - Premium 10 Pcs', 'Health & Beauty', 1999, 2999, 'photo-1596462502278-27bfdc403348'),
-  P('Red Nike Style Sneakers - Running', 'Shoes', 7999, 11999, 'photo-1542291026-7eec264c27ff'),
-  P('Sport Sneakers - Stylish Lightweight', 'Shoes', 6499, 8999, 'photo-1560769629-975ec94e6a86'),
-  P('White Sneakers - Everyday Comfort', 'Shoes', 2999, 4499, 'photo-1595950653106-6c9ebd614d3a'),
-  P('Running Shoes - Premium Comfort', 'Shoes', 4999, 7499, 'photo-1600185365926-3a2ce3cdb9eb'),
-  P('Leather Boots - Brown Ankle', 'Shoes', 5999, 8499, 'photo-1614252369475-531eba835eb1'),
-  P('Modern Home Chair - Premium Decor', 'Home & Living', 8999, 12999, 'photo-1592078615290-033ee584e267'),
-  P('Kitchen Collection - Cooking Set 5 Pcs', 'Home & Living', 4999, 7499, 'photo-1556911220-bff31c812dba'),
-  P('Luxury Bedsheet Set - King Size', 'Home & Living', 3999, 5999, 'photo-1522770179533-24471fcdba45'),
-  P('Dining Table Set - 4 Seater Wooden', 'Home & Living', 12999, 18999, 'photo-1538688525198-9b88f6f53126'),
-  P('Home Decor Set - Premium Style', 'Home & Living', 3499, 4999, 'photo-1586023492125-27b2c045efd7')
+  // HOME - 5
+  P('Modern Home Chair - Premium Decor', 'Home', 8999, 12999, 'photo-1592078615290-033ee584e267'),
+  P('Luxury Sofa Set - Modern Living Room', 'Home', 45999, 59999, 'photo-1555041469-a586c61ea9bc'),
+  P('Luxury Bedsheet Set - King Size', 'Home', 3999, 5999, 'photo-1522770179533-24471fcdba45'),
+  P('Kitchen Collection - Cooking Set 5 Pcs', 'Home', 4999, 7499, 'photo-1556911220-bff31c812dba'),
+  P('Home Decor Set - Premium Style', 'Home', 3499, 4999, 'photo-1586023492125-27b2c045efd7'),
+  // BEAUTY - 5
+  P('Luxury Perfume - Pink Bottle 100ml', 'Beauty', 3999, 5999, 'photo-1541643600914-78b084683601'),
+  P('Premium Perfume - Oud 100ml', 'Beauty', 4499, 6499, 'photo-1594035910387-fea47794261f'),
+  P('Makeup Kit - Beauty Collection 12 Pcs', 'Beauty', 2999, 4499, 'photo-1512496015851-a90fb38ba796'),
+  P('Skin Care Set - Glow 3 Pcs', 'Beauty', 2499, 3999, 'photo-1620916566398-39f1143ab7be'),
+  P('Makeup Brush Set - Premium 10 Pcs', 'Beauty', 1999, 2999, 'photo-1596462502278-27bfdc403348'),
+  // TECH - 5
+  P('Apple iPhone 16 Pro Max - 256GB', 'Tech', 185999, 219999, 'photo-1592750475338-74b7b21085ab'),
+  P('Samsung Galaxy S24 Ultra - 512GB', 'Tech', 165999, 189999, 'photo-1610945265064-0e34e5519bbf'),
+  P('Wireless Earbuds Pro - Noise Cancelling', 'Tech', 4999, 7999, 'photo-1590658268037-6bf12165a8df'),
+  P('Wireless Headphones - Premium Sound', 'Tech', 6999, 9999, 'photo-1505740420928-5e560c06d30e'),
+  P('Smart Watch - Fitness & Calling', 'Tech', 8999, 12999, 'photo-1579586337278-3befd40fd17a')
 ];
-const cats = ['Mobiles', 'Fashion', 'Watches', 'Health & Beauty', 'Shoes', 'Home & Living'];
+const cats = ['Fashion', 'Shoes', 'Watches', 'Home', 'Beauty', 'Tech'];
 let cart = [];
 try { cart = JSON.parse(localStorage.getItem('um_cart') || '[]'); } catch (e) { cart = []; }
 let disc = 0;
 let currentCat = 'All';
-
-// ===== 3. HELPERS =====
 const $ = function(id) { return document.getElementById(id); };
-function esc(s) {
-  s = String(s || '');
-  s = s.split('&').join('&amp;');
-  s = s.split('<').join('&lt;');
-  s = s.split('>').join('&gt;');
-  return s;
-}
+function esc(s) { s = String(s || ''); s = s.split('&').join('&amp;'); s = s.split('<').join('&lt;'); s = s.split('>').join('&gt;'); return s; }
 function openModal(html) { $('modalBody').innerHTML = html; $('modal').classList.remove('hidden'); }
 function closeModal() { $('modal').classList.add('hidden'); }
 function goHome() { filterCat('All'); window.scrollTo(0, 0); }
-
-// ===== 4. RENDER PRODUCTS =====
 function renderCats() {
   let html = '';
   for (let i = 0; i < cats.length; i++) {
@@ -150,8 +141,6 @@ function openDetail(id) {
   html += '<button style="width:100%;margin-top:8px" onclick="addToCart(' + p.id + ')">Add to Cart</button>';
   openModal(html);
 }
-
-// ===== 5. CART =====
 function saveCart() { try { localStorage.setItem('um_cart', JSON.stringify(cart)); } catch (e) {} }
 function addToCart(id) {
   let found = null;
@@ -208,7 +197,7 @@ function openCart() {
   html += '<p>Delivery: <b>' + delText + '</b></p>';
   html += '<p>Total: <b>Rs. ' + tot.toLocaleString() + '</b></p>';
   html += '<label style="margin-top:10px">Promo Code</label>';
-  html += '<input id="voucher" placeholder="URBAN10">';
+  html += '<input id="voucher" placeholder="ROYAL10">';
   html += '<button onclick="applyVoucher()">Apply Code</button>';
   html += '<button class="gold" style="width:100%;margin-top:8px" onclick="openCheckout()">Proceed to Checkout</button>';
   openModal(html);
@@ -217,12 +206,10 @@ function changeQty(i, d) { cart[i].qty += d; if (cart[i].qty <= 0) cart.splice(i
 function removeItem(i) { cart.splice(i, 1); saveCart(); updateCart(); openCart(); }
 function applyVoucher() {
   let v = $('voucher').value.trim().toUpperCase();
-  if (v === 'URBAN10') { disc = 500; alert('Rs. 500 discount applied!'); }
-  else { disc = 0; alert('Invalid code. Try: URBAN10'); }
+  if (v === 'ROYAL10' || v === 'URBAN10') { disc = 500; alert('Rs. 500 discount applied!'); }
+  else { disc = 0; alert('Invalid code. Try: ROYAL10'); }
   openCart();
 }
-
-// ===== 6. AUTH - FIREBASE =====
 function openAuth(mode) {
   if (mode === 'login') {
     let html = '';
@@ -279,8 +266,6 @@ auth.onAuthStateChanged(function(user) {
   if (user) { out.classList.add('hidden'); inn.classList.remove('hidden'); }
   else { inn.classList.add('hidden'); out.classList.remove('hidden'); }
 });
-
-// ===== 7. CHECKOUT + ORDERS =====
 function openCheckout() {
   if (!cart.length) return alert('Cart is empty.');
   if (!auth.currentUser) return openAuth('login');
@@ -333,7 +318,7 @@ async function placeOrder() {
   if (pay !== 'COD' && txn.length < 5) return alert('Enter Transaction ID for ' + pay);
   let sub = getSubtotal();
   let total = sub + (sub >= 5000 ? 0 : 200) - disc;
-  let oid = 'UM-' + Math.floor(1000 + Math.random() * 9000);
+  let oid = 'RA-' + Math.floor(1000 + Math.random() * 9000);
   let items = '';
   for (let i = 0; i < cart.length; i++) { if (i > 0) items += ', '; items += cart[i].name + ' x ' + cart[i].qty; }
   try {
@@ -345,8 +330,6 @@ async function placeOrder() {
     closeModal();
   } catch (e) { alert(e.message); }
 }
-
-// ===== 8. TRACK + DASHBOARD =====
 function openTrack() {
   let html = '';
   html += '<h2>Track Your Order</h2>';
@@ -372,34 +355,39 @@ async function doTrack() {
     $('trackResult').innerHTML = html;
   } catch (e) { alert(e.message); }
 }
+// ===== MY ACCOUNT - FIXED =====
 async function openDashboard() {
   let user = auth.currentUser;
   if (!user) return openAuth('login');
-  let snap = await db.collection('orders').where('userId', '==', user.uid).orderBy('createdAt', 'desc').get();
-  let orders = snap.docs.map(function(d) { return d.data(); });
-  let ordersHtml = '';
-  if (orders.length === 0) { ordersHtml = '<p>No orders yet.</p>'; }
-  else {
-    for (let i = 0; i < orders.length; i++) {
-      let o = orders[i];
-      ordersHtml += '<div style="border:1px solid #eee;padding:10px;border-radius:10px;margin-top:8px">';
-      ordersHtml += '<b>' + esc(o.id) + '</b> - Rs. ' + o.total + '<br>';
-      ordersHtml += 'Status: <b>' + esc(o.status) + '</b><br>';
-      ordersHtml += 'Items: ' + esc(o.items) + '<br>';
-      ordersHtml += 'Payment: ' + esc(o.pay);
-      ordersHtml += '</div>';
+  // Pehle modal foran kholo taake button kabhi dead na lage
+  openModal('<h2>My Account</h2><p><b>' + esc(user.displayName || '') + '</b><br>' + esc(user.email) + '</p><p>Loading orders...</p>');
+  try {
+    let snap = await db.collection('orders').where('userId', '==', user.uid).get();
+    let orders = snap.docs.map(function(d) { return d.data(); });
+    let ordersHtml = '';
+    if (orders.length === 0) { ordersHtml = '<p>No orders yet.</p>'; }
+    else {
+      for (let i = 0; i < orders.length; i++) {
+        let o = orders[i];
+        ordersHtml += '<div style="border:1px solid #eee;padding:10px;border-radius:10px;margin-top:8px">';
+        ordersHtml += '<b>' + esc(o.id) + '</b> - Rs. ' + o.total + '<br>';
+        ordersHtml += 'Status: <b>' + esc(o.status) + '</b><br>';
+        ordersHtml += 'Items: ' + esc(o.items) + '<br>';
+        ordersHtml += 'Payment: ' + esc(o.pay);
+        ordersHtml += '</div>';
+      }
     }
+    let html = '';
+    html += '<h2>My Account</h2>';
+    html += '<p><b>' + esc(user.displayName || '') + '</b><br>' + esc(user.email) + '</p>';
+    html += '<h3 style="margin-top:12px">My Orders</h3>';
+    html += ordersHtml;
+    html += '<button style="width:100%;margin-top:12px" onclick="logout()">Logout</button>';
+    openModal(html);
+  } catch (e) {
+    openModal('<h2>My Account</h2><p><b>' + esc(user.displayName || '') + '</b><br>' + esc(user.email) + '</p><p>No orders yet.</p><button style="width:100%;margin-top:12px" onclick="logout()">Logout</button>');
   }
-  let html = '';
-  html += '<h2>My Account</h2>';
-  html += '<p><b>' + esc(user.displayName || '') + '</b><br>' + esc(user.email) + '</p>';
-  html += '<h3 style="margin-top:12px">My Orders</h3>';
-  html += ordersHtml;
-  html += '<button style="width:100%;margin-top:12px" onclick="logout()">Logout</button>';
-  openModal(html);
 }
-
-// ===== 9. INFO + SUBSCRIBE - YE HISSA GAYAB THA, AB POORA KIYA =====
 function openInfo(type) {
   let title = 'Information';
   let body = '';
@@ -407,19 +395,17 @@ function openInfo(type) {
   else if (type === 'returns') { title = 'Returns & Refunds'; body = '7-Day Return. Product unused ho, original packing me ho. WhatsApp 0334-1765911 pe rabta karein. Refund 3-5 working days me.'; }
   else if (type === 'privacy') { title = 'Privacy Policy'; body = 'Aapka data sirf order ke liye use hota hai. Kisi teesre ko nahi diya jata.'; }
   else if (type === 'terms') { title = 'Terms & Conditions'; body = 'Prices change ho sakti hain. Order confirm karne se pehle stock check kiya jata hai. COD par parcel khol ke check karein.'; }
-  else if (type === 'sell') { title = 'Sell on Urban Mart'; body = 'Apna product bechna hai? WhatsApp 0334-1765911 pe product ki pics aur price bhejein.'; }
-  else if (type === 'contact') { title = 'Contact Us'; body = 'Main Bazaar Road, Vehari<br>Phone: 0334-1765911<br>Email: support@urbanmart.pk<br>WhatsApp: <a href="https://wa.me/923341765911" target="_blank">Chat on WhatsApp</a>'; }
+  else if (type === 'sell') { title = 'Sell on Royal Avenue'; body = 'Apna product bechna hai? WhatsApp 0334-1765911 pe product ki pics aur price bhejein.'; }
+  else if (type === 'contact') { title = 'Contact Us'; body = 'Main Bazaar Road, Vehari<br>Phone: 0334-1765911<br>Email: support@royalavenue.pk<br>WhatsApp: <a href="https://wa.me/923341765911" target="_blank">Chat on WhatsApp</a>'; }
   else { title = 'Help'; body = 'Kisi bhi help ke liye WhatsApp karein: 0334-1765911'; }
   openModal('<h2>' + title + '</h2><p style="margin-top:10px">' + body + '</p>');
 }
 function subscribe() {
   let em = $('newsEmail').value.trim();
   if (!em || em.indexOf('@') === -1) return alert('Enter valid email.');
-  alert('Thanks! Code URBAN10 - Rs. 500 OFF. Aapko offers email par milengi.');
+  alert('Thanks! Code ROYAL10 - Rs. 500 OFF. Aapko offers email par milengi.');
   $('newsEmail').value = '';
 }
-
-// ===== 10. START =====
 renderCats();
 renderProducts(products);
 updateCart();
