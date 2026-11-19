@@ -1,5 +1,5 @@
 // ============================================
-// ROYAL AVENUE - APP.JS - COMPLETE - FIXED PICS
+// ROYAL AVENUE - APP.JS - COMPLETE - FINAL FIX
 // ============================================
 const firebaseConfig = {
   apiKey: "AIzaSyBlf_w6DPQdlIItPshoAAX7D5guWnHzZOU",
@@ -19,29 +19,29 @@ function P(n, c, pr, old, img) {
   return { id: pid++, name: n, cat: c, price: pr, old: old, img: 'https://images.unsplash.com/' + img + U };
 }
 const products = [
-  // FASHION - 5 - FIXED
-  P('Premium Wool Overcoat - Men Classic', 'Fashion', 7999, 11999, 'photo-1591047139829-d91aecb6caea'),
+  // FASHION - 5 - FINAL FIXED
+  P('Premium Wool Overcoat - Men Classic', 'Fashion', 7999, 11999, 'photo-1544022613-e87ca75a784a'),
   P('Elegant Silk Evening Dress - Women', 'Fashion', 5999, 8999, 'photo-1595777457583-95e059d581b8'),
   P('Classic Premium White Shirt - Slim Fit', 'Fashion', 2999, 4499, 'photo-1603252109303-2751441dd157'),
-  P('Luxury Leather Jacket - Black Premium', 'Fashion', 8999, 12999, 'photo-1521223890158-f9f7c3d5d504'),
-  P('Premium Denim Jacket - Everyday Style', 'Fashion', 4499, 6499, 'photo-1576995853123-5a10305d93c0'),
-  // SHOES - 5 - FIXED BOOTS
+  P('Luxury Leather Jacket - Black Premium', 'Fashion', 8999, 12999, 'photo-1551028719-00167b16eac5'),
+  P('Premium Denim Jacket - Everyday Style', 'Fashion', 4499, 6499, 'photo-1543076447-215ad9ba6923'),
+  // SHOES - 5 - FINAL FIXED BOOTS
   P('Red Nike Style Sneakers - Running', 'Shoes', 7999, 11999, 'photo-1542291026-7eec264c27ff'),
   P('White Premium Sneakers - Everyday Comfort', 'Shoes', 4999, 7499, 'photo-1595950653106-6c9ebd614d3a'),
   P('Sport Sneakers - Stylish Lightweight', 'Shoes', 6499, 8999, 'photo-1560769629-975ec94e6a86'),
   P('Running Shoes - Premium Comfort', 'Shoes', 5999, 8499, 'photo-1600185365926-3a2ce3cdb9eb'),
-  P('Leather Boots - Brown Ankle Premium', 'Shoes', 6999, 9999, 'photo-1520639888713-7851133b1ed0'),
-  // WATCHES - 5 - FIXED DARK ONES
-  P('Luxury Gold Watch - Premium Dial', 'Watches', 6999, 9999, 'photo-1523170335258-f5ed11844a49'),
+  P('Leather Boots - Brown Ankle Premium', 'Shoes', 6999, 9999, 'photo-1608256246200-53e635b5b65f'),
+  // WATCHES - 5 - FINAL FIXED
+  P('Luxury Gold Watch - Premium Dial', 'Watches', 6999, 9999, 'photo-1622434641406-a158123450f9'),
   P('Classic Gold Watch - Leather Strap', 'Watches', 6499, 8999, 'photo-1522312346375-d1a52e2b99b3'),
   P('Silver Classic Watch - Stainless Steel', 'Watches', 5499, 7999, 'photo-1434056886845-dac89ffe9b56'),
   P('Men Steel Chronograph Watch - Silver', 'Watches', 7499, 10999, 'photo-1524592094714-0f0654e20314'),
-  P('Modern Minimal Watch - Black Dial', 'Watches', 5999, 8499, 'photo-1508057198894-247b23fe5ade'),
-  // HOME - 5 - FIXED BEDSHEET + KITCHEN
+  P('Modern Minimal Watch - Black Dial', 'Watches', 5999, 8499, 'photo-1524805444758-089113d48a6d'),
+  // HOME - 5 - FINAL FIXED
   P('Modern Home Chair - Premium Decor', 'Home', 8999, 12999, 'photo-1592078615290-033ee584e267'),
   P('Luxury Sofa Set - Modern Living Room', 'Home', 45999, 59999, 'photo-1555041469-a586c61ea9bc'),
   P('Luxury Bedsheet Set - King Size', 'Home', 3999, 5999, 'photo-1631049307264-da0ec9d70304'),
-  P('Kitchen Collection - Cooking Set 5 Pcs', 'Home', 4999, 7499, 'photo-1585515320310-259814833e62'),
+  P('Kitchen Collection - Cooking Set 5 Pcs', 'Home', 4999, 7499, 'photo-1574269909862-7e1d70bb8078'),
   P('Home Decor Set - Premium Style', 'Home', 3499, 4999, 'photo-1586023492125-27b2c045efd7'),
   // BEAUTY - 5 - SAME, SAHI THIN
   P('Luxury Perfume - Pink Bottle 100ml', 'Beauty', 3999, 5999, 'photo-1541643600914-78b084683601'),
