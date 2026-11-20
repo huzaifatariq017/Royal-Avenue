@@ -1,5 +1,5 @@
 // ============================================
-// ROYAL AVENUE - APP.JS - COMPLETE - FINAL FIX
+// ROYAL AVENUE - APP.JS - COMPLETE - FINAL
 // ============================================
 const firebaseConfig = {
   apiKey: "AIzaSyBlf_w6DPQdlIItPshoAAX7D5guWnHzZOU",
@@ -19,37 +19,37 @@ function P(n, c, pr, old, img) {
   return { id: pid++, name: n, cat: c, price: pr, old: old, img: 'https://images.unsplash.com/' + img + U };
 }
 const products = [
-  // FASHION - 5 - FINAL FIXED
-  P('Premium Wool Overcoat - Men Classic', 'Fashion', 7999, 11999, 'photo-1544022613-e87ca75a784a'),
+  // FASHION - 5 - FINAL
+  P('Premium Wool Overcoat - Men Classic', 'Fashion', 7999, 11999, 'photo-1591047139829-d91aecb6caea'),
   P('Elegant Silk Evening Dress - Women', 'Fashion', 5999, 8999, 'photo-1595777457583-95e059d581b8'),
   P('Classic Premium White Shirt - Slim Fit', 'Fashion', 2999, 4499, 'photo-1603252109303-2751441dd157'),
   P('Luxury Leather Jacket - Black Premium', 'Fashion', 8999, 12999, 'photo-1551028719-00167b16eac5'),
   P('Premium Denim Jacket - Everyday Style', 'Fashion', 4499, 6499, 'photo-1543076447-215ad9ba6923'),
-  // SHOES - 5 - FINAL FIXED BOOTS
+  // SHOES - 5 - FINAL
   P('Red Nike Style Sneakers - Running', 'Shoes', 7999, 11999, 'photo-1542291026-7eec264c27ff'),
   P('White Premium Sneakers - Everyday Comfort', 'Shoes', 4999, 7499, 'photo-1595950653106-6c9ebd614d3a'),
   P('Sport Sneakers - Stylish Lightweight', 'Shoes', 6499, 8999, 'photo-1560769629-975ec94e6a86'),
   P('Running Shoes - Premium Comfort', 'Shoes', 5999, 8499, 'photo-1600185365926-3a2ce3cdb9eb'),
-  P('Leather Boots - Brown Ankle Premium', 'Shoes', 6999, 9999, 'photo-1608256246200-53e635b5b65f'),
-  // WATCHES - 5 - FINAL FIXED
-  P('Luxury Gold Watch - Premium Dial', 'Watches', 6999, 9999, 'photo-1622434641406-a158123450f9'),
+  P('Leather Boots - Brown Ankle Premium', 'Shoes', 6999, 9999, 'photo-1520639888713-7851133b1ed0'),
+  // WATCHES - 5 - FINAL
+  P('Luxury Gold Watch - Premium Dial', 'Watches', 6999, 9999, 'photo-1614164185128-e4ec99c436d7'),
   P('Classic Gold Watch - Leather Strap', 'Watches', 6499, 8999, 'photo-1522312346375-d1a52e2b99b3'),
   P('Silver Classic Watch - Stainless Steel', 'Watches', 5499, 7999, 'photo-1434056886845-dac89ffe9b56'),
   P('Men Steel Chronograph Watch - Silver', 'Watches', 7499, 10999, 'photo-1524592094714-0f0654e20314'),
-  P('Modern Minimal Watch - Black Dial', 'Watches', 5999, 8499, 'photo-1524805444758-089113d48a6d'),
-  // HOME - 5 - FINAL FIXED
+  P('Modern Minimal Watch - Black Dial', 'Watches', 5999, 8499, 'photo-1523275335684-37898b6baf30'),
+  // HOME - 5 - FINAL
   P('Modern Home Chair - Premium Decor', 'Home', 8999, 12999, 'photo-1592078615290-033ee584e267'),
   P('Luxury Sofa Set - Modern Living Room', 'Home', 45999, 59999, 'photo-1555041469-a586c61ea9bc'),
   P('Luxury Bedsheet Set - King Size', 'Home', 3999, 5999, 'photo-1631049307264-da0ec9d70304'),
-  P('Kitchen Collection - Cooking Set 5 Pcs', 'Home', 4999, 7499, 'photo-1574269909862-7e1d70bb8078'),
+  P('Kitchen Collection - Cooking Set 5 Pcs', 'Home', 4999, 7499, 'photo-1584990347449-a2d4c2c6d4e8'),
   P('Home Decor Set - Premium Style', 'Home', 3499, 4999, 'photo-1586023492125-27b2c045efd7'),
-  // BEAUTY - 5 - SAME, SAHI THIN
+  // BEAUTY - 5 - SAME
   P('Luxury Perfume - Pink Bottle 100ml', 'Beauty', 3999, 5999, 'photo-1541643600914-78b084683601'),
   P('Premium Perfume - Oud 100ml', 'Beauty', 4499, 6499, 'photo-1594035910387-fea47794261f'),
   P('Makeup Kit - Beauty Collection 12 Pcs', 'Beauty', 2999, 4499, 'photo-1512496015851-a90fb38ba796'),
   P('Skin Care Set - Glow 3 Pcs', 'Beauty', 2499, 3999, 'photo-1620916566398-39f1143ab7be'),
   P('Makeup Brush Set - Premium 10 Pcs', 'Beauty', 1999, 2999, 'photo-1596462502278-27bfdc403348'),
-  // TECH - 5 - SAME, SAHI THIN
+  // TECH - 5 - SAME
   P('Apple iPhone 16 Pro Max - 256GB', 'Tech', 185999, 219999, 'photo-1592750475338-74b7b21085ab'),
   P('Samsung Galaxy S24 Ultra - 512GB', 'Tech', 165999, 189999, 'photo-1610945265064-0e34e5519bbf'),
   P('Wireless Earbuds Pro - Noise Cancelling', 'Tech', 4999, 7999, 'photo-1590658268037-6bf12165a8df'),
