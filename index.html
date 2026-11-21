@@ -168,7 +168,7 @@ function changeQty(i,d){cart[i].qty+=d; if(cart[i].qty<=0)cart.splice(i,1); save
 function removeItem(i){cart.splice(i,1); saveCart(); updateCart(); openCart()}
 function applyVoucher(){var v=$('voucher').value.trim().toUpperCase(); if(v==='ROYAL10'||v==='URBAN10'){disc=500;alert('Rs. 500 discount applied!')}else{disc=0;alert('Invalid code. Try: ROYAL10')} openCart()}
 var auth=null, db=null;
-try{ firebase.initializeApp({apiKey:"AIzaSyBlf_w6DPQdlIItPshoAAX7D5guWnHzZOU",authDomain:"urban-mart-e5c0a.firebaseapp.com",projectId:"urban-mart-e5c0a",storageBucket:"urban-mart-e5c0a.firebasestorage.app",messagingSenderId:"962504542587",appId:"1:962504542587:web:57f94ff24b3c8680cad5de"}); auth=firebase.auth(); db=firebase.firestore(); }catch(e){console.log("Firebase off")}
+try{ firebase.initializeApp({apiKey:"AIzaSyBHTH9L5jF2CMOnrbOQYsKAoe1XYMwlbnQ",authDomain:"royal-avenue-app.firebaseapp.com",projectId:"royal-avenue-app",storageBucket:"royal-avenue-app.firebasestorage.app",messagingSenderId:"240572939688",appId:"1:240572939688:web:cc312668a7379292e0f19d"}); auth=firebase.auth(); db=firebase.firestore(); }catch(e){console.log("Firebase off")}
 function updateAuthUI(logged){ if(logged) document.body.classList.add('logged-in'); else document.body.classList.remove('logged-in'); }
 function openAuth(mode){
   if(mode==='login'){
